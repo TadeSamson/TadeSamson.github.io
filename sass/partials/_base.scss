@@ -1,0 +1,429 @@
+// antialiasing mode font rendering
+
+html * {
+  @include font-smoothing;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+body {
+    font-family: $body_font;
+    color: $color_text;
+    font-size: 12px;
+    line-height: 1.35;
+    letter-spacing: .75px;
+    font-weight: 400;
+    position: relative;
+}
+
+/* Backgrounds */
+
+.bg_default {
+    background-color: $border_grey_light !important;
+}
+
+.bg_slate_grey {
+    background-color: $color_grey_dark !important;
+}
+
+.bg_primary {
+    background-color: $brand_primary !important;
+}
+
+.bg_accent {
+    background-color: $brand_accent !important;
+}
+
+.bg_inverse {
+    background-color: $brand_inverse !important;
+}
+
+.bg_black {
+    background-color: $color_text !important;
+}
+
+.bg_white {
+    background-color: $color_white !important;
+}
+
+.color-primary {
+    color: $brand_primary !important;
+}
+
+.color-secondary {
+    color: $brand_accent !important;
+}
+
+.color-inverse {
+    color: $brand_inverse !important;
+}
+
+.color-slate_grey {
+    color: $color_grey_dark !important;
+}
+
+.color-grey {
+    color: $border_grey_dark !important;
+}
+
+.color-white {
+    color: $color_white !important;
+}
+
+.color-default {
+    color: $color_text;
+}
+
+.title_font {
+    font-family: $header_font;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.body_font {
+    font-family: $body_font;
+}
+
+.container {
+    @include MQ(XL) {
+        width: 85%;
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $header_font;
+    margin: 0;
+    color: inherit;
+    line-height: 1.2;
+}
+
+.divider {
+    display: inline-block;
+    height: 2px;
+    width: 100px;
+    margin: .5em auto;
+    background-color: $border_grey;       
+}
+
+h1 {
+	font-size: 2.6em;
+}
+
+h2 {
+	font-size: 2.2em;
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+h4 {
+	font-size: 1.6em;
+}
+
+h5 {
+	font-size: 1.4em;
+}
+
+h6 {
+	font-size: 1.2em;
+}
+
+p {
+    margin: 0;
+
+    + p {
+        padding-top: .5em;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+    
+    em,quote {
+        font-weight: 600;
+        font-style: italic;
+
+        sup {
+            color: $brand_accent;
+        }
+    }
+}
+
+.bracket_enclosure {
+    &::before, &::after {
+        padding: 0 2px;
+    }
+
+    &::before {
+        content: "(";
+    }
+
+    &::after {
+        content: ")";
+    }
+}
+
+.input-group {
+    z-index: 1;
+    
+    + .input-group {
+        margin-top: 1em;
+    }
+}
+
+.input-group-addon {
+    background: $color_grey_dark;
+    border: 1px solid $border_grey;
+    color: $color_white;
+    padding: 6px 15px;
+
+    .checkbox-inline {
+        padding-left: 0;
+        margin:0;
+        
+        input[type="checkbox"] {
+            margin-left: 0
+        }
+    }
+
+    select {
+        background-color: inherit;
+        border:none;
+        font-size: 12px;
+    }
+}
+
+.input-group-btn {
+    font-size: 1em;
+
+    .btn {
+        vertical-align: top;
+        text-transform: capitalize;
+        padding: 6px 14px;
+    }
+}
+
+.centered {
+	float: none; 
+	margin: 0 auto; 
+	display: table; 
+	text-align: center;
+}
+
+.form-horizontal {
+    @include clearfix;
+    margin-bottom: 1em;
+    
+    h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-family: $body_font;
+        font-weight: 600;
+    }
+}
+
+.slim_form {
+    max-width: 450px;
+    margin: auto;
+}
+
+.form-group {
+    &[class*="col-"] {
+
+        .control-label {
+            margin-bottom: 10px;
+        }
+
+        @include MQ(M) {
+            margin:0;
+
+            &:first-of-type{
+                padding-right: 7.5px;
+                padding-left: 0;
+            }
+
+            &:last-of-type {
+                padding-left: 7.5px;
+                padding-right: 0;
+            }  
+        }
+    }
+}
+
+textarea, textarea.form-control, 
+input.form-control, input[type=text], input[type=password], 
+input[type=email], input[type=number], [type=text].form-control,select.form-control, 
+[type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+	border: 1px solid darken($color_grey_light, 7.5);
+    border-radius: 3px;
+    padding: 8px 10px;
+    line-height: normal;
+    color: $color_text;
+    font-size: 1em;
+    margin: 0;
+    outline: 0;
+    overflow: hidden;
+    text-indent: .01px;
+    background: white;
+    @include appearance(none);
+    box-shadow: none;
+    resize: none;
+   
+    &:focus {
+    	outline: 0;
+        border-color: $brand_primary;
+    	box-shadow: none;
+    }
+}
+
+select.form-control {
+    background: white url(../img/arrow-down.png) right center no-repeat;
+
+    &:focus {
+        outline: none;
+        background: white url(../img/arrow-down.png) right center no-repeat;
+    }
+}
+
+input[type="checkbox"]:checked, 
+.checkbox input[type="checkbox"]:checked, 
+.checkbox-inline input[type="checkbox"]:checked {
+    &::after {
+        background-color: $brand_accent;
+        border-color: darken($brand_accent,5);
+    }
+}
+
+input[type="radio"], 
+.radio input[type="radio"], 
+.radio-inline input[type="radio"] {
+    &::before {
+        background: $brand_accent;
+    }
+    
+    &:checked:after {
+		border-color: $brand_accent;
+	}
+}
+
+.control-label {
+	text-transform: none;
+    color: $color_text;
+    
+    &[class*="col-"] {
+        padding: 0;
+        text-align: right;
+    }
+
+	> small {
+	    color: $color_grey_dark;
+	    font-size: .8em;
+	    margin-left: 4px;
+
+	    &::before {
+	    	padding-right: 2px;
+	    	content: "(";
+	    }
+
+	    &::after {
+	    	padding-left: 2px;
+	    	content: ")";
+	    }
+	}
+}
+
+.form_title {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.label {
+    color: inherit;
+    padding: 0;
+    font-weight: normal;
+    white-space: initial;
+    line-height: normal
+}
+
+.required {
+    &::before {
+        content: "*";
+        font-size: 1.025em;
+        padding-left: 3px;
+        color: adjust-hue($brand_accent, 5);
+    }
+}
+
+hr {
+    border-color: $border_grey;
+    margin: 15px 0;
+    clear: both;
+}
+
+.form-control-static {
+    padding: 0;
+    font-size: 1.125em;
+    color: $color_grey_dark;
+    min-height: 0;
+}
+
+.help-block {
+	color: $color_grey_dark;
+}
+
+.form_mng {
+	.form-control {
+		width: 100%;
+
+		@include MQ(M) {
+			width: 60%;
+		}
+	}
+}
+
+.action_btn {
+    padding-top: 20px;
+}
+
+.empty_state {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgba($border_grey_light, .5);
+    border: 1px dashed $border_grey_dark;
+    text-align: center;
+    
+    .title {
+        margin: 0 0 10px;
+    }
+    
+    .btn {
+        margin-top: 10px;
+    }
+    
+    .def_img {
+        width: 120px;
+        height: 120px;
+        margin: 0px auto 10px;
+        clear: both;
+    }
+        
+    @include MQ(M) {
+        padding: 30px;
+    }
+}

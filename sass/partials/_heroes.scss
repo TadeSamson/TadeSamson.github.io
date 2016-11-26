@@ -1,0 +1,245 @@
+%hero_background {
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    height: auto;
+    z-index: 1;
+}
+
+.hero_section {
+    @extend %hero_background;
+    
+    @include MQ(M) {
+        min-height: 550px;
+    }
+}
+
+.user_hero {
+    background-image: url(../img/banners/user_hero_banner.jpg);
+    background-position: bottom center;
+}
+
+.church_hero {
+    background-image: url(../img/banners/church_banner.jpg);
+}
+
+.app_block {
+    background-image: url(../img/banners/user_support_bg.jpg);
+}
+
+.bg_weed {
+    background-size: 250px;
+    background-image: url(../img/banners/weed.png);
+    background-repeat: repeat;
+}
+
+.bg_guaz {
+    background-size: 250px;
+    background-image: url(../img/banners/guaz.png);
+    background-repeat: repeat;
+}
+
+.hero_tiles {
+    @include flexbox();
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include MQ(M) {
+        flex-direction: row;
+    }
+}
+
+.tile {
+    @include MQ(M) {
+        flex: 1;
+        height: 460px;
+    }
+
+    .tile_wrapper {
+        height: 100%;
+        padding: 30px 15px;
+
+        @include MQ(M) {
+            padding: 30px 50px;
+        }
+
+        &::before {
+            content: "";
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            width: 100%; 
+            height: 100%;
+            position: absolute;
+        }
+    }
+}
+
+.tile_wrapper {
+    display: block;
+    padding: 30px 15px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .intro-text {
+        padding: 0;
+        margin: auto;
+    }
+
+    @include MQ(M) {
+
+        .intro-text { 
+            width: 450px;
+            position: absolute;
+            @include center(xy);
+        }
+    }
+
+    .tile_left & {
+        background-color: $brand_inverse;
+        background-image: url(../img/banners/user_banner.jpg);
+
+        &::before {
+            background-color: rgba($brand_inverse, .85);
+        }
+    }
+
+    .tile_right & {
+        background-color: $color_white;
+        background-image: url(../img/banners/church_banner.jpg);
+
+        &::before {
+            background-color: rgba($border_grey, .85);
+        }
+    }
+
+    .banner_text {
+        position: relative;
+        z-index: 5;
+    }
+}
+
+
+.banner_cto {
+    padding: 15px 0 10px;
+}
+
+.banner_text {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.intro-text {
+    max-width: 450px;
+    padding-top: 15px;
+
+    .subtitle {
+        margin: 5px auto 10px;
+    }
+
+    .app_block & {
+        padding: 40px 0;
+    }
+    
+    @include MQ(M) {
+        padding-top: 100px;
+
+        &.right_aligned {
+            float: right;
+        }
+
+        .app_block & {
+            padding: 120px 0;
+        }
+
+        .subtitle {
+            margin: 15px auto 25px;
+        }
+    }
+}
+
+.subtitle {
+    font-size: 15px;
+    line-height: 1.5em;
+}
+
+.title-text {
+    font-size: 21px;
+
+    @include MQ(M) {
+        font-size: 35px;
+    }
+}
+
+.flex_tiles {
+    @include flexbox();
+    flex-wrap: wrap;
+    flex-flow: column;
+
+    @include MQ(M) {
+        flex-flow: row;
+    }
+}
+
+.home_boxes {
+    background-color: rgba(darken($color_white, 5), .8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-left: 3px solid $color_white;
+
+    .tile_wrapper {
+        min-height: 160px;
+    }
+
+    .tile_text {
+        padding-top: 20px;
+        font-size: 16px;
+        font-family: $header_font;
+    }
+
+    &.box_app {
+        background-image: url(../img/banners/app_download_bg.jpg);
+        border-right: 3px solid $color_white;
+    }
+
+    @include MQ(M) {
+        width: 33.333%;
+    }
+}
+
+.app_btns {
+    padding-top: 15px;
+}
+
+.list_item {
+    display: block;
+    line-height: 1.5;
+    position: relative;
+}
+
+.list_img {
+    width: 10px;
+    height: 10px;
+    background-image: url(../img/list_marker.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 10px;
+
+    + .list_text {
+        padding-left: 15px;
+    }
+}
+
+.call_out {
+    > * + * {
+        margin-top: 15px;
+    }
+}
+
+.call_out_headline {
+    font-size: 35px;
+}

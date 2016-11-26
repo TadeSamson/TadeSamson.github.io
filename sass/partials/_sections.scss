@@ -1,0 +1,278 @@
+.st-content {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    &::before {
+		/* never visible - used to check MQ in jQuery */
+		display: none;
+		content: 'mobile';
+	}
+
+    @include MQ(M) {
+        &::before {
+            /* never visible - used to check MQ in jQuery */
+            content: 'tablet';
+        }
+    }
+
+    @include MQ(L) {
+        margin-top: 0;
+
+         &::before {
+            /* never visible - used to check MQ in jQuery */
+            content: 'desktop';
+        }
+    }
+}
+
+.section_block {
+    padding: 30px 0;
+    display: block;
+    width: 100%;
+
+    @include MQ(M) {
+        padding: 50px 0;
+    }
+}
+
+.section_border {
+    border-bottom: 3px solid $border_grey;
+}
+
+.user_title {
+    font-size: 14px;
+
+    @include MQ(M) {
+        font-size: 16px;
+    }
+
+    img {
+        width: 79px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.quote_text {
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    @include MQ(M) {
+        font-size: 25px;
+    }
+}
+
+.q_author {
+    font-style: italic;
+
+    &::before {
+        content:"-";
+        padding-right: 2px;
+    }
+}
+
+footer[role="contentinfo"]{
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    clear:both;
+
+    .footer_sections {
+        padding: 10px 0;
+    }
+
+    .foot_top {
+        border-bottom: 1px solid $border_grey;
+    }
+
+    @include MQ(M) {
+        text-align: left;
+    }
+
+    .copyright {
+        font-size: 10px;
+    }
+
+    li {
+        text-transform: uppercase;
+        display: inline-block;
+
+        + li::before {
+            content: '\f111';
+            font-family: "FontAwesome";
+            color: $brand_accent;
+            padding: 0 5px;
+            font-size: .5em;
+        }
+    }
+}
+
+.footer_social_links {
+    margin-bottom: 0;
+    float: none;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1em;
+
+    li {
+        + li {
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    a {
+        margin:5px;
+        display: block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        border-radius: 50%;
+        text-align: center;
+        color: $color_white;
+        @include transform(scale(1,1));
+        @include transition(all, .4s, ease-in-out);
+
+        &:hover {
+            @include transform(scale(1.5,1.5));
+        }
+
+        .fa {
+            padding: 0;
+        }
+
+        &.fb {
+            background-color: $color_fb;
+        }
+
+        &.twi {
+            background-color: $color_tw;
+        }
+
+        &.gplus {
+            background-color: $color_gplus;
+        }
+
+        @include MQ(M) {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    @include MQ(M) {
+        float: right;
+        padding: 0;
+    }
+}
+
+.misc-nav {
+    float: left;
+    text-align: center;
+    display: block;
+    position: relative;
+    padding: 0 5px;
+
+    a {
+        text-transform: uppercase;
+        font-size: 11px;
+        vertical-align: middle;
+
+        &:hover, &:focus {
+            color: $brand_accent;
+        }
+    }
+}
+
+.section_header {
+    padding-bottom: 40px;
+
+    .section_title {
+        font-size: 16px;
+        margin-bottom: 15px;
+
+        @include MQ(M) {
+            font-size: 25px;
+        }
+    }
+
+    .subtitle {
+        max-width: 450px;
+        margin: auto;
+    }
+}
+
+.feature {
+    padding-bottom: 20px;
+    display: inline-block;
+
+    .faeture_details {
+        white-space: normal;
+    }
+
+    @include MQ(M) {
+        width: 25%;
+        float: left;
+        padding: 0 15px;
+        vertical-align: top;
+    }
+
+    .content_wrapper {
+        padding: 20px 0px;
+        display: block;
+        width: 100%;
+    }
+}
+
+.feature_image {
+    margin: 10px auto;
+    position: relative;
+    
+    img {
+        max-width: 96px;
+    }
+}
+
+.feature_title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.col {
+    + .col {
+        border-top: 2px solid $border_grey;
+    }
+    
+    .user_title {
+        margin-bottom: 20px;
+    }
+
+    .list_item {
+        font-size: 13px;
+    }
+
+    @include MQ(M) {
+        flex: 1;
+
+        .tile_wrapper {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        + .col {
+            border-top: none;
+            border-left: 1px solid $border_grey;
+        } 
+
+        .list_item {
+            line-height: 2;
+        }
+    }
+
+}

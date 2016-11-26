@@ -1,0 +1,139 @@
+/*Main Site Nav */
+
+header[role="banner"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height-S;
+    z-index: $header-zindex;
+    box-shadow: 0 1px 3px rgba($border_grey, .3);
+    @include font-smoothing;
+
+    + .st-content {
+        padding-top: $header-height-S;
+    }
+
+    @include MQ(S) {
+        height: $header-height-M;
+
+        + .st-content {
+            padding-top: $header-height-M;
+        }
+    }
+}
+
+.nav_header {
+    background: rgba(white, .9);
+    font-family: $body_font;
+
+    .sec_nav {
+        display: inline-block;
+    }
+
+    .logo {
+        line-height: 50px;
+    }
+
+    @include MQ(S) {
+        position: absolute;
+
+        .logo {
+            float: left;
+            height: 100%;
+            line-height: $header-height-M;
+        }
+
+        .sec_nav {
+            line-height: $header-height-M;
+            display: inline-block;
+        }
+    }
+
+    @include MQ(L) {
+        @include transition(background-color .5s);
+        /* Force Hardware Acceleration in WebKit */
+        @include transform(translate3d(0,0,0));
+        @include backface-visibility(hidden);
+
+        &.is-fixed {
+            /* when the user scrolls down, we hide the header right above the viewport */
+            position: fixed;
+            top: -$header-height-M;
+            background-color: rgba($color_white, .96);
+            @include transition(transform .5s);
+            border-bottom: 1px solid $border_grey;
+        }
+
+        &.is-visible {
+            /* if the user changes the scrolling direction, we show the header */
+            @include transform(translate3d(0,$header-height-M,0));
+        }
+    }
+}
+
+.nav_item {
+    display: inline-block;
+}
+
+.sec_nav {
+    ul {
+        margin-bottom: 0;
+    }
+
+    @include MQ(S) {
+        float: right;
+    }
+}
+
+.nav_link_item {
+    text-transform: uppercase;
+    color: $brand_accent;
+    display: block;
+    padding: 0 .75em;
+    font-family: $header_font;
+    letter-spacing: .75px;
+
+    @include MQ(M) {
+        font-size: 14px;
+    }
+
+    .fa { 
+        color: $border_grey_dark;
+    }
+
+    &:hover, &:focus {
+        color: $brand_accent;
+        box-shadow: inset 0 -3px 0 $brand_accent;
+    }
+}
+
+.nav_btn {
+    background-color: #4c5563;
+    color: $color_white;
+    font-size: 12px;
+    text-transform: none;
+    font-family: $body_font;
+    padding: 5px 12px;
+    border-radius: 4px;
+    
+    .active &, &:hover, &:focus {
+        background: $brand_primary;
+        color: $brand_inverse;
+    }
+}
+
+.logo {
+    height: 100%;
+    width: 120px;
+    margin-right: 15px;
+
+    > a {
+        display: block;
+        background: transparent url(../img/logo.png) no-repeat center center;
+        padding: 0;
+        background-size: contain;
+        font-size: 16px;
+        @include image_replacement;
+    }
+}

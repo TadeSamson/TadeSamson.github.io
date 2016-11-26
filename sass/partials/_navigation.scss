@@ -1,0 +1,299 @@
+a {
+    text-decoration: none;
+    opacity: 1;
+    @include transition(all, .4s, ease);
+    color: inherit;
+
+    &:hover, &:focus {
+        color: inherit;
+        opacity: .85;
+    }
+
+    > i {
+        padding: 0 4px;
+    }
+
+    &:focus {
+      outline: thin dotted $brand_accent;
+
+      .no-touch & {
+        outline: none;
+      }
+    }
+}
+
+.store_btn {
+    display: inline-block;
+    max-width: 140px;
+    padding: 5px;
+}
+
+a:link, button {
+    -webkit-tap-highlight-color: rgba($brand_accent, .6);
+    -moz-tap-highlight-color: rgba($brand_accent, .6);
+}
+
+.btn, a.btn {
+    font-family: $body_font;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    color: $color_white;
+    letter-spacing: .5px;
+    padding: 6px 24px;
+    text-transform: capitalize;
+    @include border-radius(3px);
+    @include transition(all, .6s,ease);
+    @include background-image(none);
+    margin: 5px;
+    
+    .btn-group &, .input-group & {
+        margin: 0;
+    }
+
+    &.btn-primary {
+        background-color: $brand_primary;
+        @include background-image(none);
+
+        &:hover, &:focus {
+            background-color: darken($brand_primary, 5);
+            opacity:1;
+        }
+    }
+
+    &.btn-secondary {
+        background: $brand_accent;
+        @include background-image(none);
+
+        &:hover, &:focus {
+            background: darken($brand_accent, 5);
+            color: $color_white;
+        }
+    }
+
+    &.btn-outline-secondary {
+        background-color: transparent;
+        border: 2px solid $brand_accent;
+        color: $brand_primary;
+
+        &:hover, &:focus {
+            background-color: $brand_accent;
+            color: $color_white;
+        }
+    }
+
+    &.btn-inverse {
+        background-color: $brand_inverse;
+        color: $color_white;
+
+        &:hover, &:focus {
+            background-color: darken($brand_inverse, 7.5);
+            opacity:1;
+        }
+    }
+
+    &.btn-icon {
+        padding: 4px 8px;
+        font-size: 14px;
+        @include border-radius(50%);
+    }
+
+    &.btn-default {
+        @include background-image(none);
+        background-color: $border_grey_light;
+        border: 1px solid $border_grey;
+        color: $color_text;
+
+        &:hover {
+            background-color: rgba($color_white, .9)
+        }
+    }
+
+    &:hover, &:focus {
+        text-decoration: none !important;
+
+        .no-touch &{
+            outline: none;
+        }
+    }
+
+}
+
+.btn-sm.btn, .btn-group-sm > .btn {
+    padding: 5px 15px;
+}
+
+.btn-lg.btn, .btn-group-lg > .btn {
+    padding: 12px 48px;
+}
+
+.btn-link {
+    padding: 0;
+    font-size: 1em;
+    color: $brand_inverse;
+    display: inline-block;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+        color: $color_grey_dark;
+        text-decoration: none;
+        background-color: transparent;
+        border:none;
+    }
+
+    &:active {
+        background-color:transparent;
+        background-image: none;
+    }
+}
+
+.pagination {
+    border-top: 4px solid $border_grey;
+    width: 100%;
+    display: block;
+    padding: 30px 0 0;
+    margin-bottom: 0;
+    text-align: center;
+    border-radius: 3px;
+
+    > .active > a {
+        &,&:hover, &:focus {
+            background-color: $brand_accent;
+            z-index: 1;
+        }
+    }
+
+    > li {
+        display: inline-block;
+
+        > a, > span {
+            margin-left: .85em;
+            @include border-radius(3px);
+            color: $color_text;
+            font-size: 1em;
+            border: none;
+            background-color: $border_grey;
+            font-weight: bold;
+
+            &:hover, &:focus {
+                background: $brand_accent;
+                color: $color_white;
+            }
+        }
+        
+
+        &:first-of-type, &:last-of-type {
+            a, span {
+                background-color: $color_grey_dark;
+                color: $color_white;
+
+                &:hover, &:focus {
+                    background-color: $brand_accent;
+                }
+            }
+        }
+        
+        &.disabled {
+            > a, > span {
+                background-color: $color_white;
+                color: $color_text;
+                
+                &:hover, &:focus {
+                    background-color: $color_white;
+                    color: $color_text;
+                }
+            }
+        }
+    }
+}
+
+.nav-tabs{
+    > li {
+        > a {
+            font-family: $body_font;
+            color: $border_grey_dark;
+            text-decoration: none;
+        }
+
+        &.active > a {
+            color: $color_text;
+            background-color: white;
+            pointer-events: none;
+        }
+        
+    }
+}
+
+.nav-tabs, .nav-pills {
+    float: none;
+    border: none;
+    
+    li {
+        > a {
+            border-radius: 0;
+        } 
+    }
+}
+
+.nav-pills {
+    > li {
+        display: block;
+        clear: both;
+        float: none;
+
+        > a  {
+            color: $color_text;
+            display: block;
+            padding: .5em 1em;
+            border: 1px solid transparent;
+        }
+
+        &.active > a, > a:hover, > a:focus {
+            color:  $brand_accent;
+            box-shadow: inset 4px 0 $brand_accent;
+            border-color: $border_grey_light;
+            background-color: white;
+        }
+    }
+}
+
+.to-top {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 15px;
+    right: 3.5%;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: $brand_accent url(../img/top-arrow.svg) no-repeat center 50%;
+    visibility: hidden;
+    opacity: 0;
+    @include transition (opacity .3s 0s, visibility 0s .3s);
+    z-index: 30000;
+
+    .no-touch & {
+        &:hover, &:focus {
+            background-color: rgba($brand_accent, .6);
+            opacity: 1;
+        }
+    }
+
+    &.is-visible, &.fade-out, .no-touch &:hover {
+        @include transition(opacity .3s, visibility 0s);
+    }
+
+    &.is-visible {
+        /* the button becomes visible */
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.fade-out {
+        /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+        opacity: .5;
+    }
+}

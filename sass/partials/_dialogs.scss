@@ -1,0 +1,121 @@
+
+.dropdown-menu {
+    padding: 0;
+    font-size: 1em;
+    width: auto;
+    min-width: 100px;
+
+    &.dropdown-right {
+        left: auto;
+        right: 0;
+    }
+
+    li {
+
+        +li {
+            border-top: 1px solid $border_grey;
+        }
+
+        &.active > a {
+            background: $brand_accent;
+            color: $color_white; 
+        }
+
+        a {
+            padding: 5px 10px;
+            white-space: normal;
+            line-height: normal;
+            color: $color_text;
+            
+            > span {
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            &:hover {
+                background: rgba($color_grey_dark, .05); 
+                color: $brand_accent;
+            }
+        }
+    }
+    
+    &.datepicker {
+        padding: 10px 15px;
+
+        .prev, .next {
+            color: $brand_primary;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .datepicker-switch {
+            color: $brand_accent;
+        }
+
+        .dow {
+            color: $color_grey_dark;
+            font-family: $header_font;
+        }
+    }
+}
+
+
+.modal-backdrop {
+    z-index: 0;
+}
+
+.modal {
+    .modal-open & {
+        background-color: rgba($border_grey, .9)
+    }
+
+    .modal-header {
+        background: $color_grey_dark;
+        padding: 20px 15px;
+        @include clearfix;
+
+        .close {
+            margin-top: 0;
+            font-size: .85em;
+            line-height: 1;
+            background: rgba($color_white, .5);
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+    }
+
+    .modal-title {
+        color: $color_white;
+        text-align: center;
+        line-height:1;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+
+    .content-panel {
+        padding: 10px 15px;
+        
+        @include MQ(M) {
+            padding: 20px 30px;
+        }
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 0;
+
+        .help-block {
+            margin-bottom: 15px;
+        }
+    }
+
+    .modal-footer {
+        background: darken($color_white, 2);
+        border-top: 1px solid $border_grey;
+        padding: 10px 15px;
+    }
+}
+
+.modal_nav {
+    border-bottom: 1px solid $border_grey;
+}

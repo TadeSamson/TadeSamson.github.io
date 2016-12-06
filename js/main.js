@@ -76,12 +76,11 @@ jQuery(document).ready(function($){
 
 // Show and hide password, user login
 var visualTrigger = $('#show-pass');
-var pwd_input = $('#pwd');
+var pwd_input = $('.user_pass');
 visualTrigger.click(function () {
     if (pwd_input.attr("type")=="password") {
         pwd_input.attr("type", "text");
     } else{
         pwd_input.attr("type", "password");
     }
- 
- });
+});

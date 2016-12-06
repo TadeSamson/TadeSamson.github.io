@@ -28,11 +28,12 @@ header[role="banner"] {
     font-family: $body_font;
 
     .sec_nav {
-        display: inline-block;
+        line-height: 30px;
     }
 
     .logo {
-        line-height: 50px;
+        line-height: 40px;
+        display: inline-block;
     }
 
     @include MQ(S) {
@@ -135,5 +136,86 @@ header[role="banner"] {
         background-size: contain;
         font-size: 16px;
         @include image_replacement;
+    }
+}
+
+.accounts {
+    .profile_img {
+        overflow: hidden;
+
+        img {
+            border-radius: 50%;
+            border: 1px solid $border_grey;
+            display: inline-block;
+            vertical-align: middle;
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .fa {
+        color: $brand_primary;
+        padding: 0;
+    }
+
+    .profile_name {
+        display: none;
+        visibility: hidden;
+    }
+
+    .dropdown-menu {
+        border-radius: 0 0 4px 4px;
+        margin-top: 0px;
+        padding: 0;
+        border: none;
+
+        .fa {
+            color: $color_grey_dark;
+            padding-right: 5px;
+        }
+
+        a {
+            color: inherit;
+            padding: 7.5px 20px;
+        }
+    } 
+
+    @include MQ(S) {
+        .profile_img {
+            margin-right: 5px;   
+        }
+
+        .profile_name {
+            display: inline-block;
+            visibility: visible;
+        }
+    }
+}
+
+.account_info {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    .dropdown-menu {
+        left: -110px;
+        min-width: 160px;
+    }
+
+    > li {
+        display: inline-block;
+    }
+
+    @include MQ(M) {
+        position: static;
+
+        > li > a {
+            padding: 0 1em;
+        }
+
+        .dropdown-menu {
+            left: auto;
+            min-width: 100px;
+        }
     }
 }

@@ -55,21 +55,27 @@
 }
 
 .quote_text {
-    font-size: 18px;
-    margin-bottom: 20px;
-
+    font-family: "open-sans", sans-serif;
+    font-size: 14px;
+    line-height: 140%;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    max-width: 750px;
+    margin: auto;
+    
     @include MQ(M) {
-        font-size: 25px;
+        font-size: 18px;
     }
 }
 
 .q_author {
-    font-style: italic;
+    font-size: 0.85em;
+    letter-spacing: 0.2em;
+    margin-top: 20px;
+}
 
-    &::before {
-        content:"-";
-        padding-right: 2px;
-    }
+.subscribe_form {
+    padding: 30px 0 10px;
 }
 
 footer[role="contentinfo"]{
@@ -244,6 +250,11 @@ footer[role="contentinfo"]{
     font-size: 1em;
 }
 
+.title {
+    font-style: 14px;
+    padding-bottom: 10px;
+}
+
 .col {
     + .col {
         border-top: 2px solid $border_grey;
@@ -274,5 +285,65 @@ footer[role="contentinfo"]{
             line-height: 2;
         }
     }
+}
 
+.media_items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include MQ(S) {
+        flex-direction: row;
+    } 
+}
+
+.item {
+    padding: 15px 10px;
+
+    p {
+        line-height: 140%;
+        letter-spacing: .1em;
+    }
+
+    .item_wrapper {
+        width: 100%;
+        display: block;
+    }
+
+    .item_title {
+        font-size: 15px;
+    }
+
+    .item_icon {
+        height: 40px;
+        margin-bottom: 15px;
+        display: block;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    @include MQ(S) {
+        width: 50%;
+        padding: 15px 10px;
+    }
+
+    @include MQ(M) {
+        padding: 30px 60px;
+
+        .item_title {
+            font-size: 18px;
+        }
+
+        .item_icon {
+            height: 70px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
 }

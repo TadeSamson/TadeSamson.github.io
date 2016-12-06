@@ -29,6 +29,12 @@
     background-image: url(../img/banners/user_support_bg.jpg);
 }
 
+.newsletter {
+    background-image: url(../img/banners/newsletter.jpg);
+    background-position: center;
+}
+
+
 .bg_weed {
     background-size: 250px;
     background-image: url(../img/banners/weed.png);
@@ -85,7 +91,6 @@
 
     .intro-text {
         padding: 0;
-        margin: auto;
     }
 
     @include MQ(M) {
@@ -121,7 +126,6 @@
     }
 }
 
-
 .banner_cto {
     padding: 15px 0 10px;
 }
@@ -134,25 +138,19 @@
 
 .intro-text {
     max-width: 450px;
-    padding-top: 15px;
+    padding: 40px 0;
+    margin: auto;
 
     .subtitle {
-        margin: 5px auto 10px;
-    }
-
-    .app_block & {
-        padding: 40px 0;
+        margin: 10px auto;
     }
     
     @include MQ(M) {
-        padding-top: 100px;
+        padding: 120px 0;
+        margin:0;
 
         &.right_aligned {
             float: right;
-        }
-
-        .app_block & {
-            padding: 120px 0;
         }
 
         .subtitle {

@@ -110,6 +110,10 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0;
     color: inherit;
     line-height: 1.2;
+
+    small {
+        text-transform: none;
+    }
 }
 
 .divider {
@@ -118,6 +122,19 @@ h1,h2,h3,h4,h5,h6 {
     width: 100px;
     margin: .5em auto;
     background-color: $border_grey;       
+}
+
+.more-btn{
+    display: block;
+    position: relative;
+    text-align: center;
+    padding: 15px 0;
+    @include clearfix;
+
+    .btn {
+        max-width: 200px;
+        display: inline-block;
+    }
 }
 
 h1 {
@@ -188,9 +205,9 @@ p {
 }
 
 .input-group-addon {
-    background: $color_grey_dark;
+    background: $border_grey_light;
     border: 1px solid $border_grey;
-    color: $color_white;
+    color: $brand_primary;
     padding: 6px 15px;
 
     .checkbox-inline {
@@ -229,12 +246,13 @@ p {
 .form-horizontal {
     @include clearfix;
     margin-bottom: 1em;
-    
-    h3 {
-        font-size: 14px;
-        margin-bottom: 5px;
-        font-family: $body_font;
+    clear: both;
+
+    > .form_title {
         font-weight: 600;
+        text-transform: none;
+        margin-bottom: 10px;
+        font-size: 13px;
     }
 }
 
@@ -245,7 +263,6 @@ p {
 
 .form-group {
     &[class*="col-"] {
-
         .control-label {
             margin-bottom: 10px;
         }
@@ -284,6 +301,11 @@ input[type=email], input[type=number], [type=text].form-control,select.form-cont
     @include appearance(none);
     box-shadow: none;
     resize: none;
+
+    &.control-rounded {
+        border-radius: 25px;
+        padding-left: 20px;
+    }
    
     &:focus {
     	outline: 0;
@@ -299,6 +321,13 @@ select.form-control {
         outline: none;
         background: white url(../img/arrow-down.png) right center no-repeat;
     }
+}
+
+input[type="radio"], 
+.radio input[type="radio"], 
+.radio-inline input[type="radio"] {
+    vertical-align: middle;
+    margin-top: 0;
 }
 
 input[type="checkbox"]:checked, 
@@ -324,7 +353,8 @@ input[type="radio"],
 
 .control-label {
 	text-transform: none;
-    color: $color_text;
+    font-size: 13px;
+    font-weight: 600;
     
     &[class*="col-"] {
         padding: 0;
@@ -335,6 +365,7 @@ input[type="radio"],
 	    color: $color_grey_dark;
 	    font-size: .8em;
 	    margin-left: 4px;
+        font-weight: normal;
 
 	    &::before {
 	    	padding-right: 2px;
@@ -348,9 +379,20 @@ input[type="radio"],
 	}
 }
 
+
+fieldset {
+    padding-top: 1em;
+    border-top: 1px solid $border_grey_light;
+    
+    &:last-of-type {
+        border-top: none;
+    }
+}
+
 .form_title {
-    font-size: 16px;
-    margin-top: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
 .label {
@@ -381,6 +423,28 @@ hr {
     font-size: 1.125em;
     color: $color_grey_dark;
     min-height: 0;
+}
+
+.radio-inline, .checkbox-inline {
+    padding: 10px 0 5px;
+}
+
+label {
+    font-weight: normal;
+
+    &.radio-inline {
+        + label {
+            margin-left: 15px;
+        }
+    }
+
+    &.checkbox-inline{
+        margin: 5px 0;
+        margin-bottom: 0 !important;
+        font-size: 14px;
+        display: inline-block;
+        vertical-align: top;
+    }
 }
 
 .help-block {
@@ -426,4 +490,10 @@ hr {
     @include MQ(M) {
         padding: 30px;
     }
+}
+
+.naira::before {
+    content: "\20A6";
+    color: inherit;
+    font-style: normal;
 }

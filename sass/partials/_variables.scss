@@ -48,3 +48,14 @@ $header-zindex: 3;
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+  font-family: 'paytithe_icons';
+  src:  url('fonts/pt_icons/paytithe_icons.eot?13u6i9');
+  src:  url('fonts/pt_icons/paytithe_icons.eot?13u6i9#iefix') format('embedded-opentype'),
+    url('../fonts/pt_icons/paytithe_icons.ttf?13u6i9') format('truetype'),
+    url('../fonts/pt_icons/paytithe_icons.woff?13u6i9') format('woff'),
+    url('../fonts/pt_icons/paytithe_icons.svg?13u6i9#paytithe_icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -43,9 +43,11 @@
         padding: 10px 15px;
 
         .prev, .next {
-            color: $brand_primary;
-            font-weight: 600;
+            color: $color_text;
             font-size: 15px;
+            padding: 0 10px;
+            font-weight: bold;
+            background-color: rgba($border_grey_light, .5);
         }
 
         .datepicker-switch {
@@ -58,7 +60,6 @@
         }
     }
 }
-
 
 .modal-backdrop {
     z-index: 0;
@@ -114,8 +115,4 @@
         border-top: 1px solid $border_grey;
         padding: 10px 15px;
     }
-}
-
-.modal_nav {
-    border-bottom: 1px solid $border_grey;
 }

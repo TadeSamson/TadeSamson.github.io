@@ -3,15 +3,25 @@
 }
 
 .list_card {
-	
-}
-
-.result_list {
 	display: block;
 	padding: 15px 0;
 
-	+ .result_list {
+	.new_item & {
+		padding-bottom: 0;
+	}
+
+	.card_sm & {
+		padding: 10px 0;
+	}
+
+	+ .list_card {
 		border-top: 1px solid $border_grey_light;
+	}
+}
+
+.new_item {
+	.act_icon {
+
 	}
 }
 
@@ -19,19 +29,22 @@
 	width: 100%;
 	min-height: 50px;
 	position: relative;
+
+	.new_item &, .card_sm & {
+		min-height: auto;
+	}
 }
 
 .item_image_wrapper {
 	position: absolute;
-	width: 50px;
-	height: 50px;
 	top: 0;
-	background-color: rgba($brand_primary, .3);
-	border: 2px solid rgba($brand_primary, .6);
-	border-radius: 4px;
-
+	
 	+ .item_detail_wrapper {
 		padding-left: 50px;
+
+		.card_sm & {
+			padding-left: 20px;
+		}
 	}
 }
 
@@ -40,6 +53,23 @@
 	overflow: hidden;
 	height: 100%;
 	padding: 4px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	background-color: $border_grey_light;
+	border: 2px solid $brand_primary;
+	border-radius: 4px;
+
+	.card_sm & {
+		width: 20px;
+		height: 20px;
+		border: none;
+	}
+
+	.info_card & {
+		width: 40px;
+		height: 40px;
+	}
 }
 
 .item_detail_wrapper {
@@ -47,34 +77,55 @@
 }
 
 .item_info {
-	padding: 0 10px;
+	padding-left: 10px;
+
+	.title {
+		font-size: 14px;
+	}
 }
 
 .info_header {
 	@include clearfix;
+	width: 100%;
 }
 
 .info_title {
-	font-size: 14px;
 	display: inline-block;
+	cursor: pointer; 
+
+	.info_sub {
+		font-size: 11px;
+		padding-bottom: 5px;
+	}
 
 	@include MQ(M) {
 		font-size: 16px;
 	}
 
+	.card_sm & {
+		font-size: 13px;
+	}
+
 	.result_list &{
 		width: 80%;
+	}
+
+	.schedule_list &{
+		width: 90%;
 	}
 }
 
 .title_text {
 	display: block;
+	font-size: 14px;
 	@include text_truncate;
 	color: $brand_primary;
 
 	&:hover, &:focus{
 		color: rgba($brand_primary, .8);
 		text-decoration: underline;
+		white-space: normal;
+		overflow: visible;
 	}
 
 	&:visited {
@@ -83,13 +134,19 @@
 }
 
 .info_action {
-	background-color: transparent;
+	background-color: $brand_inverse;
 	border-radius: 4px;
 	padding: 4px 11px;
 	font-size: 11px;
-	border: 1px solid $brand_inverse;
-	color: $brand_inverse;
+	border: 2px solid transparent;
+	color: $color_white;
+	@include transition(all .6s ease-in-out);
 
+	&.btn-md {
+		padding: 5px 18px;
+		font-size: 1em;
+		line-height: 1.846;
+	}
 
 	.btn_icon::after {
 		content: "\f067";
@@ -97,33 +154,34 @@
 	}
 
 	&:hover {
-		background-color: rgba($brand_inverse, .1);
+		background-color: rgba($brand_inverse, .8);
 	}
 	
 	@include MQ(S) {
 		.btn_label::after {
-			content: "Select"
+			content: "Follow";
+			text-transform: capitalize;
 		}
 
 		.u_selected & {
 			.btn_label::after {
-				content: "Selected"
+				content: "Unfollow";
 			}
 		}
-
 	}
 
 	.u_selected & {
-		background-color: $brand_inverse;
-		border-color: transparent;
-		color: $color_white;
+		background-color: transparent;
+		border-color: $brand_inverse;
+		color: $brand_inverse;
 
 		.btn_icon::after {
 			content: "\f00c";
 		}
 
 		&:hover {
-			background-color: rgba($brand_inverse, .9);
+			background-color: rgba($brand_inverse, .8);
+			color: $color_white;
 		}
 	}
 }
@@ -131,4 +189,301 @@
 .info_action_btn {
 	display: inline-block;
 	float: right;
+}
+
+.date_box {
+	width: 50px;
+	height: 50px;
+    text-align: center;
+	color: $brand_primary;
+	background-color: white;
+    font-family: $header_font;
+    text-transform: uppercase;
+	border: 2px solid $brand_inverse;
+
+	.box_wrapper {
+        position: absolute;
+        @include center(xy);
+        
+        > * {
+        	display: block;
+        }
+    }
+
+    .month, .year {
+        font-size: 11px;
+    }
+
+    .day {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 0px 5px;
+    }
+}
+
+/* Thumb list */
+
+.thumb_list {
+	@include clearfix;
+	margin: 0 -5px;
+}
+
+.img_thumb {
+	float: left;
+	
+	+ .img_thumb {
+		padding-left: 5px;
+	}
+}
+
+.thumb_wrapper {
+    display: block;
+    width: 40px;
+	height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    background-color: lighten($border_grey_light, 1);
+
+    .thumb_xs & {
+    	width: 20px;
+		height: 20px;
+    }
+
+    img {
+    	height: 100%;
+    }
+
+    .new_item & {
+    	border-color: $brand_inverse;
+    }
+
+    .more_item & {
+    	background-color: $border_grey_light;
+    }
+
+    &:hover, &:focus {
+        border-color: $brand_accent;
+        border-width: 2px;
+        color: $brand_accent;
+        text-decoration: none;
+    }
+}
+
+.item_pos {
+    position: absolute;
+    @include center(y);
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+
+    .fa{display: block;}
+
+    .more_item & {
+    	font-size: 14px;
+    }
+}
+
+/* Church Cards */
+
+.item_cards {
+	@include flexbox();
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+
+	@include MQ(S) {
+		flex-direction: row;
+	}
+}
+
+.info_card {
+	width: 280px;
+	padding: 0 15px; 
+	margin: 15px 0;
+
+	&.new_item {
+		.card_wrapper {
+			height: 204px;
+		}
+	}
+
+	@include MQ(M) {
+		width: 290px;
+	}
+
+	.card_wrapper {
+		display: block;
+		border: 1px solid $border_grey;
+		box-shadow: 0 0px 2px $border_grey;
+		border-radius: 10px;
+		background-color: white;
+		overflow: hidden;
+		transition: all, .5s, ease-in-out;
+
+		&:hover, &:focus {
+			border-color: $brand_primary;
+			box-shadow: 0 0px 2px $brand_primary;
+
+			.banner_btns {
+				visibility: visible;
+				height: 40px;
+				opacity: 1;
+			}
+
+			.banner_title a, .subtitle {
+				@include text_truncate;
+			}
+		}
+	}
+
+	.banner_overlay {
+		background-color: rgba($brand_primary, .6);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: block;
+		z-index: 3;
+		top:0;
+	}
+}
+
+.card_banner {
+	position: relative;
+	border-bottom: 1px solid $brand_primary;
+
+	.banner_caption {
+		position: absolute;
+		width: 100%;
+		z-index: 5;
+		@include center(y);
+		padding: 0 10px;
+		
+		.subtitle {
+			font-size: 10px;
+		}
+	}
+
+	.banner_image {
+		margin-right: 10px;
+	}
+
+	.banner_details {
+		padding: 0;
+	}
+
+	.banner_btns {
+		padding-top: 10px;
+		visibility: hidden;
+		height: 0;
+		opacity: 0;
+		@include transition(all, .4s, ease-in-out);
+	}
+
+	.banner_title {
+		font-size: 12px;
+	}
+}
+
+.card_banner_img {
+	position: relative;
+	z-index: 2;
+	height: 100px;
+	display: block;
+
+	img {
+		position: absolute;
+		top: 0; left: 0;
+		right: 0; bottom: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.card_details {
+	padding: 15px 10px;
+}
+
+/* Request Lists */
+
+.sp_list_item {
+	display: block;
+	clear: both;
+	position: relative;
+
+	+ .sp_list_item {
+		border-top: 1px solid lighten($border_grey_light, 1.5);
+	}
+}
+
+.list_wrapper {
+	padding: 10px 0 10px 20px;
+
+	@include MQ(S) {
+		@include flexbox();
+		padding-left: 30px;
+	}
+
+	&::before {
+		content: "\f105";
+		font-family: "fontAwesome";
+		font-size: 1.2em;
+		position: absolute;
+		left: 0;
+
+		@include MQ(M) {
+			font-size: 1.5em;
+		}
+		
+		.list_done & {
+			content: "\f046";
+			color: green;
+			font-size: 1.3em;
+		}
+	}
+
+}
+
+.list_controls {
+	padding-top: 10px;
+
+	@include MQ(S) {
+		text-align: right;
+		padding-top: 0;
+		padding-left: 10px;
+		width: 150px;
+	}
+}
+
+.list_text {
+	padding:  5px 0;
+	.list_done & {
+		text-decoration: line-through;
+		color: $color_grey_dark;
+	}
+}
+
+.control_alt {
+	* + * {
+		margin-left: 1em;
+	}
+}
+
+.list_segment {
+	display: block;
+	padding: 15px 0;
+
+	.title {
+		padding: 10px 0;
+		font-family: $body_font;
+		font-size: 14px;
+		text-transform: capitalize;
+	}
+
+	+ .list_segment {
+		border-top: 1px solid $border_grey;
+	}
 }

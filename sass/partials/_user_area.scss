@@ -1,0 +1,187 @@
+.page_header {
+	@include clearfix;
+	padding: 30px 0;
+
+	.title {
+		padding-bottom: 0;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+
+	+ .section_block {
+		padding-top: 20px;
+	}
+
+}
+
+.main_info, .pry_action {
+
+	@include MQ(S) {
+		display: inline-block;
+	}
+}
+
+.main_info {
+	padding-bottom: 10px;
+
+	@include MQ(S) {
+		max-width: 70%;
+		padding-bottom: 0;
+		padding-right: 10px;
+	}
+}
+
+.pry_action {
+	@include MQ(S) {
+		float: right;
+	}
+}
+
+.title {
+    padding-bottom: 10px;
+}
+
+.page_content_wrapper {
+	@include clearfix;
+	clear: both;
+
+	@include MQ(M) {
+		margin: 0 -20px;
+	} 
+}
+
+.page_subitems, .page_main {
+
+	@include MQ(M) {
+		padding: 0 20px;
+		float: left;
+	}
+}
+
+.page_subitems {
+	@include MQ(M) {
+		width: 35%;
+	}
+
+	&.left_bordered {
+		padding-top: 30px;
+		
+		@include MQ(M) {
+			padding-top: 0;
+			border-left: 1px solid $border_grey;
+		} 
+	}
+}
+
+.page_main {
+
+	@include MQ(M) {
+		width: 65%;
+	}
+
+	.pane_title {
+		margin-top: 5px;
+	} 
+
+	.content_wrapper {
+		min-height: 400px;
+	}
+}
+
+.pane_widget {
+	width: 100%;
+	background-color: white;
+	border-radius: 4px;
+	border:  1px solid $border_grey_light;
+
+	&.widget_transparent {
+		background-color: transparent;
+		border: none;
+	}
+
+	+ .pane_widget {
+		margin-top: 15px;
+	}
+}
+
+.pane_header {
+	@include clearfix;
+
+	.pane_widget & {
+		border-bottom: 1px solid $border_grey;
+	}
+
+	.widget_transparent & {
+		padding-top: 0;
+	}
+
+	.pane_title, .pane_action {
+		display: inline-block;
+		vertical-align: -webkit-baseline-middle;
+	}
+}
+
+.pane_title {
+	font-size: 18px;
+
+	.pane_widget & {
+		font-size: 12px;
+	}
+}
+
+.pane_body, .pane_header {
+	padding: 10px 15px;
+
+	@include MQ(M) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.widget_transparent {
+	.pane_body, .pane_header {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.pane_header {
+		margin-bottom: 15px;
+	}
+}
+
+.info_meta {
+	@include flexbox();
+	font-size: 12px;
+
+	+ .info_meta {
+		margin-top: 5px;
+	}
+
+	.card_details & {
+		font-size: 11px;
+	}
+
+	a {
+		color: $brand_primary;
+		display: block;
+		white-space: normal;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.meta_label {
+	text-align: right;
+	font-weight: 600;
+	padding-right: 10px;
+
+	&.has_colon::after {
+		content: ":";
+	}
+
+	.card_details & {
+		padding-right: 5px;
+	}
+}

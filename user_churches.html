@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>My Churches  | Paytithe</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/theme.css"/>
+    <link rel="stylesheet" href="css/paytithe.css"/>
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+</head>
+
+<body>
+    
+    <header role="banner" class="nav_header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.png" alt="Automate your tithing">
+                </a>
+            </div>	
+            <div class="sec_nav">
+                <ul class="menu_nav">
+                    <li class="nav_item">
+                        <a href="user_dashboard.html" class="nav_link_item collapsibile" data-title="Offerings">
+                           <span class="long_text">Offerings</span>
+                        </a>
+                    </li>
+                    <li class="nav_item active">
+                       <a href="user_churches.html" class="nav_link_item collapsibile" data-title="Churches">
+                           <span class="long_text">My Churches</span>
+                       </a>
+                    </li>
+                    <li class="nav_item">
+                       <a href="user_prayers.html" class="nav_link_item collapsibile" data-title="Requests">
+                           <span class="long_text">Prayer Requests</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="account_info">
+                    <li class="dropdown accounts">
+                        <a href="#" data-toggle="dropdown" class="nav_btn dropdown-toggle">
+                        <span class="profile_img">
+                            <img src="./img/default_user.png" alt="David Oyepoju">
+                        </span>
+                        <span class="profile_name">David Oyepoju</span>
+                        <i class="fa fa-chevron-circle-down"></i></a>
+                        <ul class="dropdown-menu dropdown-right">
+                            <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
+                            <li><a href="#"><i class="fa fa-gear"></i>Account Settings</a></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i>Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</header>
+		
+	<main class="st-content">
+        <header class="page_header bg_cotton">
+            <div class="container clearfix">
+                <div class="main_info">
+                    <h3 class="title color-secondary">Churches I'm Following</h3>
+                    <span class="divider bg_slate_grey"></span>
+                </div>
+            </div>
+        </header>
+	    <section class="section_block bg_cotton">
+            <div class="container">
+                <div class="empty_state hidden">
+                    <div class="def_img">
+                        <img src="./img/icons/empty_note.png" alt="Oops! Empty">
+                    </div>
+                    <p class="">You do not have any church on your list</p>
+                    <a href="find_church.html" class="btn btn-secondary">
+                    Find your Church</a>
+                </div>
+                <div class="pane_inner">
+                    <div class="pager">
+                    <div class="count_details">
+                        <p><strong class="">1</strong><strong class="">12</strong>of 30</p>
+                    </div>
+                    <nav class="pager_nav">
+                       <!--Show on page 2 upward-->
+                        <span class="pager_item hidden prev">
+                            <a href="#">Previous<i class="fa fa-caret-left"></i></a>
+                        </span>
+                        <span class="pager_item active">
+                            <a href="#">1</a>
+                        </span>
+                        <span class="pager_item">
+                            <a href="#">2</a>
+                        </span>
+                        <span class="pager_item">
+                            <a href="#">3</a>
+                        </span>
+                        <span class="pager_item">
+                            <a href="#">4</a>
+                        </span>
+                        <span class="pager_item">
+                            <a href="#">5</a>
+                        </span>
+                        <span class="pager_item next">
+                            <a href="#">Next<i class="fa fa-caret-right"></i></a>
+                        </span>
+                    </nav>
+                </div>        
+               
+                    <div class="item_cards">
+                    <article class="info_card new_item">
+                        <a href="find_church.html" class="card_wrapper bg_primary color-white">
+                            <div class="item_pos" title="Find a church">
+                                <img src="./img/icons/add_church.png" alt="Add Church">
+                                <span class="sr-only">Find a Church</span>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="info_card">
+                        <div class="card_wrapper">
+                            <div class="card_banner">
+                                <div class="card_banner_img">
+                                    <img src="./img/banners/cc_center_banner.jpg" alt="Covenant christian center">
+                                </div>
+                                <span class="banner_overlay"></span>
+                                <div class="banner_caption ">
+                                    <div class="banner_image">
+                                        <a href="church_bio.html" class="item_image">
+                                            <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                        </a>
+                                    </div>
+                                    <div class="banner_details">
+                                        <h4 class="banner_title color-white">
+                                            <a href="church_bio.html">Covenant Christian Center</a>
+                                        </h4>
+                                        <p class="subtitle color-white">Insights for Living</p>
+                                        <!--Add the class "u_selected" if the user is already following the church-->
+                                        <div class="banner_btns u_selected">
+                                           <button class="info_action" title="Unfollow" data-toggle="tooltip" data-placement="top">
+                                               <span class="btn_icon"></span>
+                                           </button>
+                                            <a href="donate.html" title="Give Offering" data-toggle="tooltip" data-placement="top" class="btn btn-sm btn-secondary"><i class="pt pt-donate"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_details">
+                                <div class="info_meta">
+                                    <span class="meta_label">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <span class="meta_value">
+                                       <address>
+                                           <p>Lagos, Nigeria</p>
+                                       </address>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-envelope"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-external-link"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                   </span>
+                               </div>
+                               <div class="info_meta">
+                                   <span class="meta_label">
+                                       <i class="fa fa-phone"></i>
+                                   </span>
+                                   <span class="meta_value">
+                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                   </span>
+                               </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                    <div class="pager">
+                    
+                    <nav class="pager_nav">
+                       <!--Show on page 2 upward-->
+                        <span class="pager_item hidden prev">
+                            <a href="#">Previous<i class="fa fa-caret-left"></i></a>
+                        </span>
+                        <span class="pager_item active">
+                            <a href="#">1</a>
+                        </span>
+                        <span class="pager_item">
+                            <a href="#">2</a>
+                        </span>
+                        <span class="pager_item">
+                            <a href="#">3</a>
+                        </span>
+                        <span class="pager_item">
+                            <a href="#">4</a>
+                        </span>
+                        <span class="pager_item">
+                            <a href="#">5</a>
+                        </span>
+                        <span class="pager_item next">
+                            <a href="#">Next<i class="fa fa-caret-right"></i></a>
+                        </span>
+                    </nav>
+                </div> 
+                </div>
+            </div>
+        </section>
+        
+        <section class="section_block bg_default">
+            <div class="container text-center">
+                <div class="col-md-offset-4 col-md-4 col-sm-6 col-sm-offset-3 call_out">
+
+                    <h3 class="body_font color-primary">Need any help?</h3>
+                    <p class="color-default">Got problems with anything? Don't worry. <br>Visit our <a href="help_center.html">Help Center</a> or contact our support team.</p>
+                </div>
+            </div>
+        </section>
+	</main>
+	
+    <footer class="" role="contentinfo">
+        <div class="container">
+            <div class="foot_top footer_sections clearfix">
+                <ul class="misc-nav title_font">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="for_user.html">For Me</a></li>
+                    <li><a href="for_church.html">For Church</a></li>
+                    <li><a href="projects.html">Help Center</a></li>
+                    <li><a href="terms.html">Terms of Services</a></li>
+                    <li><a href="policy.html">Privacy Policy</a></li>
+                </ul>
+                <ul class="footer_social_links">
+                    <li><span class="title_font color-default">Follow Us:</span></li>
+                    <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="twi"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer_sections text-center">
+                <p class="copyright color-slate_grey">
+                    &copy; Sahara Internet 2017, all rights reserved. 
+                </p>
+            </div>
+        </div>
+    </footer>
+	
+	<script src="js/jquery-2.1.3.js"></script>
+	<script src="js/base.min.js"></script>
+	<script src="js/datepicker.min.js"></script>
+	<script src="js/main.js"></script>
+	
+	 <script>
+        $(document).ready(function(){
+            $('.date').datepicker({
+                format: "dd M, yyyy",
+                startView: "decade",
+                multidate: false,
+                autoclose: true,
+            });
+            
+            $('.month_year').datepicker({
+                minViewMode: 'months',
+                startView: 'year',
+                format: "M, yyyy",
+                autoclose: true,
+            });
+        });
+    </script>
+</body>
+</html>

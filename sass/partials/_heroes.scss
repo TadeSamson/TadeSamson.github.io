@@ -35,16 +35,25 @@
 }
 
 
-.bg_weed {
-    background-size: 250px;
-    background-image: url(../img/banners/weed.png);
+[class*="bg_"] {
     background-repeat: repeat;
+    background-size: 250px;
+}
+
+.bg_weed {
+    background-image: url(../img/banners/weed.png);
+}
+
+.bg_bubbles {
+    background-image: url(../img/banners/bubbles.png);
+}
+
+.bg_triangles {
+    background-image: url(../img/banners/triangles.png);
 }
 
 .bg_guaz {
-    background-size: 250px;
     background-image: url(../img/banners/guaz.png);
-    background-repeat: repeat;
 }
 
 .hero_tiles {
@@ -183,10 +192,21 @@
 }
 
 .home_boxes {
-    background-color: rgba(darken($color_white, 5), .8);
     background-repeat: no-repeat;
     background-size: cover;
-    border-left: 3px solid $color_white;
+    border-top: 3px solid $border_grey_light;
+
+
+    &.box_first {
+        background-color: $color_white;
+    } 
+    
+    &.box_second {
+        background-color: rgba(white, .8);
+        background-image: url(../img/banners/guaz.png);
+        background-repeat: repeat;
+        background-size: 200px;
+    } 
 
     .tile_wrapper {
         min-height: 160px;
@@ -200,36 +220,21 @@
 
     &.box_app {
         background-image: url(../img/banners/app_download_bg.jpg);
-        border-right: 3px solid $color_white;
+        
+        @include MQ(M) {
+            border-right: 3px solid $border_grey_light;
+        }
     }
 
     @include MQ(M) {
         width: 33.333%;
+        border-top: none;
+        border-left: 3px solid $border_grey_light;
     }
 }
 
 .app_btns {
     padding-top: 15px;
-}
-
-.list_item {
-    display: block;
-    line-height: 1.5;
-    position: relative;
-}
-
-.list_img {
-    width: 10px;
-    height: 10px;
-    background-image: url(../img/list_marker.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    top: 10px;
-
-    + .list_text {
-        padding-left: 15px;
-    }
 }
 
 .call_out {
@@ -240,4 +245,99 @@
 
 .call_out_headline {
     font-size: 35px;
+}
+
+/*  */
+
+.info_banner {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-color: $brand_primary;
+
+    > .container {
+        position: relative;
+        z-index: 4;
+    }
+
+    .banner_caption {
+        padding: 20px 0;
+
+        @include MQ(M) {
+            padding: 70px 0;
+        }
+    }
+    
+    &.offering_banner {
+        min-height: 270px;
+        background-image: url(../img/banners/offering_default.jpg);
+    }
+
+    .banner_image {
+        height: 96px;
+        margin-right: 10px;
+
+        @include MQ(M) {
+            height: 128px;
+            margin-right: 30px;
+        }
+    }
+}
+
+.overlay_pattern {
+    background: black url(../img/circles-main.png) repeat;
+    position: absolute;
+    display: block;
+    top: 0;
+    opacity: .35;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+.offering_banner {
+    .banner_caption {
+        position: absolute;
+        left: 0; right: 0;
+        bottom: 0;
+        background-color: rgba($brand_primary, .8);
+        padding: 10px 15px;
+    }
+}
+
+.banner_caption {
+    display: flex;
+}
+
+.banner_details {
+    padding-top: 10px;
+
+    @include MQ(M) {
+        .subtitle {
+            font-size: 15px;
+        }
+    }
+}
+
+.banner_btns {
+    padding-top: 15px;
+
+    > * + * {
+        margin-left: 1em;
+    }
+}
+
+.banner_title {
+    letter-spacing: 0.05em;
+
+    @include MQ(M) {
+        .info_banner & {
+            font-size: 35px;
+            line-height: 40px;
+        }
+    }
 }

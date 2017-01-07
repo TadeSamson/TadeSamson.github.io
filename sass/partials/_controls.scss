@@ -83,6 +83,7 @@
 
 	.subtitle {
 		font-size: 12px;
+		margin-bottom: 5px;
 	}
 }
 
@@ -103,12 +104,33 @@
 	}
 
 	&.icon_md {
-		width: 72px;
+		width: 75px;
 	}
+
+    &.icon_circle {
+        border: 2px solid $brand_inverse;
+        border-radius: 50%;
+    }
+
+    &.icon_lg {
+        width: 128px;
+    }
 }
 
 .wizard_body {
     padding: 50px 0;
+}
+
+/* filter */
+
+.filter_widget {
+	padding: 10px 0;
+	clear:both;
+	@include clearfix;	
+}
+
+.widget_btn {
+    padding-top: 20px;
 }
 
 .search_tray {
@@ -178,6 +200,126 @@
 	}
 }
 
+.filter_block {
+    display: inline-block;
+    width: 120px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    + .filter_block {
+        padding-left: 10px;
+    }
+    
+    img {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+    }
+
+    .filter_control {
+        text-transform: uppercase;
+        font-family: $header_font;
+        position: relative;
+        display: block;
+
+        &:hover, &:focus {
+            text-decoration: none;
+            color: $brand_primary;
+        }
+    }
+
+    &.filter_actions {
+    	float: right;
+    	width: auto;
+    }
+
+    &.search_bar {
+        float: right;
+    }
+}
+
+.user_control {
+
+    .control {
+        display: inline-block;
+        margin: 0;
+        vertical-align: bottom;
+
+        a:not(.btn) {
+            display: block;
+            padding: 5px;
+            font-size: 14px;
+            border:1px solid $border_grey;
+            border-radius: 4px;
+
+            &:hover {
+                background-color: $border_grey_light;
+            }
+        }
+
+        + .control {
+            margin-left: 5px;
+        }
+    }
+}
+
+/* pager */
+
+.pager {
+    display: block;
+    @include clearfix;
+
+    >* {
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .count_details {
+        float: left;
+    }
+
+    .pager_nav {
+        float: right;
+    }
+}
+
+.pager_nav {
+    .pager_item {
+        display: inline-block;
+        float: left;
+
+        &.active a {
+            pointer-events: none;
+            text-decoration: underline;
+            color: $brand_inverse;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 5px 10px;;
+
+        &:hover {
+            color: $brand_accent;
+        }
+    }
+}
+
+.count_details {
+    display: inline-block;
+    font-size: 11px;
+
+    strong {
+        font-size: 12px;
+        padding-right: 2px;
+
+        + strong::before {
+            content: "to";
+            padding: 0 4px;
+        }
+    }
+}
+
 /* Media Upload */
 
 .file_upload {
@@ -236,11 +378,7 @@
     background-color: $border_grey_light;
     overflow: hidden;
     margin-bottom: 10px;
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
+    text-align: center;
 
     .media_small & {
         width: 100px;
@@ -259,5 +397,63 @@
         @include MQ(S) {
             height: 128px;
         }
+    }
+}
+
+.action_links {
+    padding-top: 20px;
+
+    a {
+        display: inline-block;
+        padding: 0 5px;
+        text-decoration: underline;
+
+        .pane_call_out & {
+            font-weight: 600;
+            color: $brand_accent;
+        }
+
+        + a {
+            border-left: 1px solid $border_grey_dark;
+        }
+    }
+}
+
+/* List control with custoom marker */
+
+.list_item {
+    @include flexbox();
+    padding: 2.5px 0;
+
+    .list_text {
+        padding: 0;
+    }
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+            color: $brand_accent;
+        }
+    }
+    
+    .pane_body & {
+        font-size: 12px;
+    }
+}
+
+.list_img {
+    padding-right: 5px;
+    
+    &::after {
+        content:"";
+        display: inline-block;
+        vertical-align: middle;
+        width: 10px;
+        height: 10px;
+        background-image: url(../img/list_marker.png);
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 }

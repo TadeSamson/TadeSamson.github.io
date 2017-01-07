@@ -250,11 +250,6 @@ footer[role="contentinfo"]{
     font-size: 1em;
 }
 
-.title {
-    font-style: 14px;
-    padding-bottom: 10px;
-}
-
 .col {
     + .col {
         border-top: 2px solid $border_grey;
@@ -266,6 +261,7 @@ footer[role="contentinfo"]{
 
     .list_item {
         font-size: 13px;
+        justify-content: center;
     }
 
     @include MQ(M) {
@@ -302,7 +298,6 @@ footer[role="contentinfo"]{
 
     p {
         line-height: 140%;
-        letter-spacing: .1em;
     }
 
     .item_wrapper {
@@ -343,7 +338,7 @@ footer[role="contentinfo"]{
         }
 
         p {
-            font-size: 14px;
+            font-size: 13px;
         }
     }
 }

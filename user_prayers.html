@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>My Prayer requests | Paytithe</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link href="https://cdn.quilljs.com/1.1.9/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/theme.css"/>
+    <link rel="stylesheet" href="css/paytithe.css"/>
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+</head>
+
+<body>
+  
+    <div class="modal fade" id="shedule_pay">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">New credit card</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                        <p class="help-block color-secondary">All fields are required</p>
+                        <form action="">
+                            <div class="form-horizontal">
+                                <div class="form-group col-sm-6">
+                                    <label class="control-label">Amount</label>
+                                    <input type="number" autofocus class="form-control" placeholder="How much you want to give">
+                                    <p class="help-block">E.g <i class="naira"></i>45,000</p>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label">Offering Type</label>
+                                   <select class="form-control">
+                                        <option>Tithe</option>
+                                        <option>Regular offering</option>
+                                        <option>Church created offering 1</option>
+                                        <option>Church created offering 2</option>
+                                        <option>Church created offering 3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label ">Recipient</label>
+                                <a href="#find_church" data-toggle="modal" data-backdrop="static" class="btn-link pull-right"><i class="fa fa-plus"></i>Add Church</a>
+                                <select class="form-control">
+                                    <option>Select a church</option>
+                                    <option>Church name 1</option>
+                                    <option>Church name 2</option>
+                                    <option>Church name 3</option>
+                                    <option>Church name 4</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="control-label ">Pay with</label>
+                                <a href="#new_card" data-toggle="modal" data-backdrop="static" class="btn-link pull-right"><i class="fa fa-plus"></i>Add Card</a>
+                                <select class="form-control">
+                                    <option>Credit card name 1</option>
+                                    <option>Credit card name 2</option>
+                                    <option>Credit card name 3</option>
+                                </select>
+                                <p class="help-block">Select the card you wish to pay with</p>
+                            </div>
+
+                            <div class="form-horizontal">
+                                <div class="form-group col-sm-6">
+                                    <label class="control-label">Start Date</label>
+                                    <input type="text" class="form-control date" placeholder="Payment date">
+                                    <p class="help-block">First payment will be made on this date.</p>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label class="control-label">Duration</label>
+                                    <select class="form-control ">
+                                        <option>Daily (Every day)</option>
+                                        <option>Weekly (Every week)</option>
+                                        <option selected>Monthly (Every month)</option>
+                                        <option>Quarterly (Every four months)</option>
+                                        <option>Annually (Every year)</option>
+                                    </select>
+                                </div>
+                            </div>
+                       </form>            
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Create Schedule</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="modal fade" id="find_church">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">Add Church</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                        <header class="filter_widget text-center">
+                            <div class="form-group">
+                                <input type="search" autofocus class="form-control" placeholder="Find church by Name, Alias or Denomination">
+                                <p class="help-block">Example: RCCG Upper room assembly, Abuja</p>
+                            </div>
+
+                            <!--Show when the user clicks the advance search button-->
+                            <div class="form-horizontal hidden">
+                               <div class="form-group col-sm-6">
+                                   <select class="form-control">
+                                       <option value="">-Filter by State-</option>
+                                       <option value="">Lagos</option>
+                                       <option value="">Fedral Capital Territory</option>
+                                       <option value="">Kano</option>
+                                       <option value="">Benue</option>
+                                       <option value="">Borno</option>
+                                       <option value="">Ogun</option>
+                                       <option value="">Oyo</option>
+                                       <option value="">Osun</option>
+                                   </select>
+                               </div>
+                               <div class="form-group col-sm-6">
+                                   <select class="form-control">
+                                       <option value="">-Filter by Denomination-</option>
+                                       <option value="">Pentecostal</option>
+                                       <option value="">Anglican</option>
+                                       <option value="">Catholic</option>
+                                       <option value="">Methodist</option>
+                                       <option value="">Presbyterian</option>
+                                       <option value="">Baptist</option>
+                                       <option value="">Evangelical</option>
+                                       <option value="">Apostolic</option>
+                                   </select>
+                               </div>
+                           </div> 
+
+                            <div class="widget_btn text-center">
+                                <button type="submit" class="btn btn-inverse"> 
+                                    <i class="fa fa-search"></i> Search
+                                </button>
+                                <!--Show the advance search option-->
+                                <button type="button" class="btn btn-card">Advance Search</button>
+                            </div>
+                        </header>
+                        <hr>
+                        <div class="info_cards has_image">
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/rccg.png" alt="Redeemed Christian Church of God">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">RCCG-World Changers Assembly</a>
+                                               </span>
+                                               <span class="info_action_btn">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Plot 3, Alagomeji, Yaba, Lagos State, Nigeria
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </article>
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/Foursquare.png" alt="Foursquare Gospel Church">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">Foursquare Gospel Church</a>
+                                               </span>
+                                               <span class="info_action_btn ">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Church Address here
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                            </article>
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/cac.gif" alt="Christ appostolic Church">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">CAC Agbala Ishegu</a>
+                                               </span>
+                                               <span class="info_action_btn ">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Church Address here
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                            </article>
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">Covenant Christian center</a>
+                                               </span>
+                                               <span class="info_action_btn ">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Church Address here
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                            </article>
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/Foursquare.png" alt="Foursquare Gospel Church">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">Foursquare Gospel Church</a>
+                                               </span>
+                                               <span class="info_action_btn ">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Church Address here
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                            </article>
+
+                       </div>
+
+                       <div class="pager">
+                           <div class="count_details">
+                                <p><strong class="">1</strong><strong class="">20</strong>of 327</p>
+                            </div>
+                            <nav class="pager_nav">
+                               <!--Show on page 2 upward-->
+                                <span class="pager_item hidden prev">
+                                    <a href="#">Previous<i class="fa fa-caret-left"></i></a>
+                                </span>
+                                <span class="pager_item active">
+                                    <a href="#">1</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">2</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">3</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">4</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">5</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">6</a>
+                                </span>
+                                <span class="pager_item next">
+                                    <a href="#">Next<i class="fa fa-caret-right"></i></a>
+                                </span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="modal fade" id="offering_info">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="info_banner offering_banner" style="">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <div class="banner_caption text-center">
+                        <h2 class="info_title title_font color-white">Tithe</h2>
+                    </div>
+                </div>
+                <div class="modal-body info_details">
+                    <p>Your tithe is the 10% of your income. This income can be a cash gift, your monthly salary or wage for a job done. </p>
+                    <div class="more-btn h-pad">
+                        <a href="donate.html" class="btn btn-secondary"><i class="pt pt-donate"></i> Give Offering</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="new_card">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">New credit card</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                       <p class="help-block color-secondary">All fields are required</p>
+                        <form action="">
+                            <div class="form-horizontal">
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label">Card Type</label>
+                                   <select class="form-control" placeholder="">
+                                       <option>Select card type</option>
+                                       <option>Visa</option>
+                                       <option>Mastercard</option>
+                                       <option>Valve</option>
+                                       <option>American Express</option>
+                                  </select>
+                                </div>
+                                
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label">Card Number</label>
+                                   <input type="number" class="form-control" maxlength="16">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                               <label class="control-label">Card Holder name</label>
+                               <input type="text" class="form-control" value="David Oyepoju">
+                            </div>
+
+                            <div class="form-horizontal">
+                               <h4 class="form_title body_font">Expiry Date</h4>
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label sr-only">Month</label>
+                                    <input type="number" step="1" min="1" max="12" maxlength="2" class="form-control" placeholder="Month">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label sr-only">year</label>
+                                    <select class="form-control">
+                                        <option>Year</option>
+                                        <option>2016</option>
+                                        <option>2017</option>
+                                        <option>2018</option>
+                                        <option>2019</option>
+                                        <option>2020</option>
+                                        <option>2021</option>
+                                        <option>2022</option>
+                                        <option>2023</option>
+                                        <option>2025</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group form_mng">
+                                <label class="control-label ">CVV/CVC Number</label>
+                                <input type="password" maxlength="4" class="form-control" placeholder="cvv/cvc">
+                                <p class="help-block">Last 3 digits at the back of your card</p>
+                            </div>
+                          
+                       </form>              
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Save Card</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="tst_share">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">Share testimony</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                        <p class="">Select the churches you want to share this testimony with</p>
+                        <form action="">
+                           <!--List all the churches the user is following, with any church he's shared with already checked-->
+                            <div class="info_cards">
+                                <article class="list_card card_sm">
+                                   <label for="church_name_1" class="card_wrapper">
+                                       <div class="item_image_wrapper">
+                                           <div class="item_image">
+                                               <img src="./img/chc_logos/rccg.png" alt="Redeemed Christian Church of God">
+                                           </div>
+                                       </div>
+                                       <div class="item_detail_wrapper">
+                                           <div class="item_info">
+                                               <header class="info_header">
+                                                   <span class="info_title ">RCCG-World Changers Assembly</span>
+                                                   <span class="info_action_btn">
+                                                       <input type="checkbox" id="church_name_1" checked name="share_test" >
+                                                   </span>
+                                               </header>
+                                           </div>
+                                       </div>
+                                   </label>
+                               </article>
+                                <article class="list_card card_sm">
+                                   <label for="church_name_3" class="card_wrapper">
+                                       <div class="item_image_wrapper">
+                                           <div class="item_image">
+                                               <img src="./img/chc_logos/rccg.png" alt="Redeemed Christian Church of God">
+                                           </div>
+                                       </div>
+                                       <div class="item_detail_wrapper">
+                                           <div class="item_info">
+                                               <header class="info_header">
+                                                   <span class="info_title ">RCCG-World Changers Assembly</span>
+                                                   <span class="info_action_btn">
+                                                       <input type="checkbox" id="church_name_3" name="share_test" >
+                                                   </span>
+                                               </header>
+                                           </div>
+                                       </div>
+                                   </label>
+                               </article>
+                                <article class="list_card card_sm">
+                                   <label for="church_name_2" class="card_wrapper">
+                                       <div class="item_image_wrapper">
+                                           <div class="item_image">
+                                               <img src="./img/chc_logos/rccg.png" alt="Redeemed Christian Church of God">
+                                           </div>
+                                       </div>
+                                       <div class="item_detail_wrapper">
+                                           <div class="item_info">
+                                               <header class="info_header">
+                                                   <span class="info_title ">RCCG-World Changers Assembly</span>
+                                                   <span class="info_action_btn">
+                                                       <input type="checkbox" id="church_name_2" checked name="share_test" >
+                                                   </span>
+                                               </header>
+                                           </div>
+                                       </div>
+                                   </label>
+                               </article>
+                                <article class="list_card card_sm">
+                                   <label for="church_name_4" class="card_wrapper">
+                                       <div class="item_image_wrapper">
+                                           <div class="item_image">
+                                               <img src="./img/chc_logos/rccg.png" alt="Redeemed Christian Church of God">
+                                           </div>
+                                       </div>
+                                       <div class="item_detail_wrapper">
+                                           <div class="item_info">
+                                               <header class="info_header">
+                                                   <span class="info_title ">RCCG-World Changers Assembly</span>
+                                                   <span class="info_action_btn">
+                                                       <input type="checkbox" id="church_name_4" name="share_test" >
+                                                   </span>
+                                               </header>
+                                           </div>
+                                       </div>
+                                   </label>
+                               </article>
+                            </div>
+                            <!--Show if user church list is much-->
+                            <div class="pager hidden">
+                                <nav class="pager_nav">
+                                   <!--Show on page 2 upward-->
+                                    <span class="pager_item hidden prev">
+                                        <a href="#">Previous<i class="fa fa-caret-left"></i></a>
+                                    </span>
+                                    <span class="pager_item active">
+                                        <a href="#">1</a>
+                                    </span>
+                                    <span class="pager_item">
+                                        <a href="#">2</a>
+                                    </span>
+                                    <span class="pager_item next">
+                                        <a href="#">Next<i class="fa fa-caret-right"></i></a>
+                                    </span>
+                                </nav>
+                            </div>
+                       </form>            
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Share</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="pr_request">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">Submit Prayer Request</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                        <form action="">
+                            <div class="form-group">
+                                <label class="control-label">Prayer Point</label>
+                                <textarea rows="10" class="form-control" placeholder="Enter your prayer point here"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Send Request to?</label>
+                                <select class="form-control">
+                                    <option>User church name 1</option>
+                                    <option>User church name 2</option>
+                                    <option>User church name 3</option>
+                                    <option>User church name 4</option>
+                                </select>
+                                <p class="help-block">Select the church(es) you want to share this request with</p>
+                                <ul class="select_preview">
+                                    <li class="selected_item">
+                                        <a href="#" class="item_wrapper cls_filter">&times; 
+                                            <span class="item_label ">Clear all</span>
+                                        </a>
+                                    </li>
+                                    <li class="selected_item">
+                                        <a href="#" class="item_wrapper">
+                                            <span class="">
+                                                &times;
+                                            </span>
+                                            <span class="item_label color-primary">
+                                                selected church name
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="selected_item">
+                                        <a href="#" class="item_wrapper">
+                                            <span class="">
+                                                &times;
+                                            </span>
+                                            <span class="item_label color-primary">
+                                                selected church name
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                       </form>            
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="my_testimony">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">My Testimony</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                        <form action="">
+                            <div class="form-group">
+                                <div id="editor_toolbar"></div>
+                                <div id="editor"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Share with?</label>
+                                <select class="form-control">
+                                    <option>User church name 1</option>
+                                    <option>User church name 2</option>
+                                    <option>User church name 3</option>
+                                    <option>User church name 4</option>
+                                </select>
+                                <!--Auto select the churches he has shared the prayer with-->
+                                <p class="help-block">Select the church(es) you want to share this testimony with</p>
+                                <ul class="select_preview">
+                                    <li class="selected_item">
+                                        <a href="#" class="item_wrapper cls_filter">&times; 
+                                            <span class="item_label ">Clear all</span>
+                                        </a>
+                                    </li>
+                                    <li class="selected_item">
+                                        <a href="#" class="item_wrapper">
+                                            <span class="">
+                                                &times;
+                                            </span>
+                                            <span class="item_label color-primary">
+                                                selected church name
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="selected_item">
+                                        <a href="#" class="item_wrapper">
+                                            <span class="">
+                                                &times;
+                                            </span>
+                                            <span class="item_label color-primary">
+                                                selected church name
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                       </form>            
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <header role="banner" class="nav_header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.png" alt="Automate your tithing">
+                </a>
+            </div>	
+            <div class="sec_nav">
+                <ul class="menu_nav">
+                    <li class="nav_item ">
+                        <a href="user_dashboard.html" class="nav_link_item collapsibile" data-title="Offerings">
+                           <span class="long_text">Offerings</span>
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                       <a href="user_churches.html" class="nav_link_item collapsibile" data-title="Churches">
+                           <span class="long_text">My Churches</span>
+                       </a>
+                    </li>
+                    <li class="nav_item active">
+                       <a href="user_prayers.html" class="nav_link_item collapsibile" data-title="Requests">
+                           <span class="long_text">Prayer Requests</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="account_info">
+                    <li class="dropdown accounts">
+                        <a href="#" data-toggle="dropdown" class="nav_btn dropdown-toggle">
+                        <span class="profile_img">
+                            <img src="./img/default_user.png" alt="David Oyepoju">
+                        </span>
+                        <span class="profile_name">David Oyepoju</span>
+                        <i class="fa fa-chevron-circle-down"></i></a>
+                        <ul class="dropdown-menu dropdown-right">
+                            <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
+                            <li><a href="#"><i class="fa fa-gear"></i>Account Settings</a></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i>Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</header>
+		
+	<main class="st-content">
+        <header class="page_header bg_cotton">
+            <div class="container clearfix">
+                <div class="main_info">
+                    <h3 class="title color-secondary">Prayer Requests</h3>
+                    <span class="divider bg_slate_grey"></span>
+                </div>
+            </div>
+        </header>
+	    <section class="section_block bg_cotton">
+            <div class="container">
+                <section class="page_content_wrapper">              
+                    <article class="page_main">
+                        <div class="content_wrapper pane_widget">
+                            <header class="pane_header">
+                                <h4 class="pane_title title_font">Prayer Requests</h4>
+                                <div class="pane_action pull-right">
+                                    <ul class="user_control">
+                                        <li class="control" title="New Testimony">
+                                            <a href="#my_testimony" data-toggle="modal"><i class="fa fa-bullhorn"></i></a>
+                                        </li>
+                                        <li class="control" title="Write a prayer request">
+                                            <a href="#pr_request" data-toggle="modal" data-backdrop="static" class="btn btn-secondary">
+                                                 Request Prayer
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </header>
+                            <div class="pane_body">
+                                <div class="empty_state hidden">
+                                    <div class="def_img">
+                                        <img src="./img/icons/empty_note.png" alt="Oops! Empty">
+                                    </div>
+                                    <p class="">You have not submited any prayer request.</p>
+                                    <a href="#pr_request" data-toggle="modal" data-backdrop="static" class="btn btn-secondary">
+                                    Submit Prayer Requests</a>
+                                </div>
+                                <div class="panel_inner ">
+                                    
+                                    <!--Prayer text, tagged churches. Can edit, share to churches/social media/ share testimony with church (can choose to share to social media also)-->
+                                    <div class="sp_list">
+                                        <div class="list_segment">
+                                           
+                                            <h3 class="title color-grey">Prayer Requests</h3>
+                                            
+                                            <article class="sp_list_item">
+                                                <div class="list_wrapper">
+                                                    <div class="list_details">
+                                                        <div class="info_meta color-grey font-sm">
+                                                            <span class="meta_value"><time>20th Jan, 2017</time></span>
+                                                        </div>
+                                                        <p class="list_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia neque, sit? Ratione tempora est, asperiores,</p>
+                                                        <div class="info_meta h-pad-xs">
+                                                            <span class="meta_label has_colon">Shared With</span>
+                                                            <span class="meta_value">
+                                                                <ul class="thumb_list thumb_xs">
+                                                                    <li class="img_thumb" title="Foursquare christian fellowship">
+                                                                        <a href="church_bio.html" class="thumb_wrapper">
+                                                                           <img src="./img/chc_logos/Foursquare.png" alt="Foursquare christian fellowship">
+                                                                       </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list_controls">
+                                                        <div class="dropdown info_default">
+                                                            <a href="#" data-toggle="dropdown" class="btn btn-sm btn-default">Options <i class="fa fa-ellipsis-v"></i></a>
+                                                            <ul class="dropdown-menu dropdown-right">
+                                                                <li><a href="#pr_request" data-toggle="modal" data-backdrop="static">Edit Request</a></li>
+                                                                <li><a href="#my_testimony" data-toggle="modal">Mark as Answered</a></li>
+                                                                <li><a href="#">Remove Request</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                            
+                                            <article class="sp_list_item">
+                                                <div class="list_wrapper">
+                                                    <div class="list_details">
+                                                        <div class="info_meta color-grey font-sm">
+                                                            <span class="meta_value"><time>20th Jan, 2017</time></span>
+                                                        </div>
+                                                        <p class="list_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia neque, sit? Ratione tempora est, asperiores,</p>
+                                                        <div class="info_meta h-pad-xs">
+                                                            <span class="meta_label has_colon">Shared With</span>
+                                                            <span class="meta_value">
+                                                                <ul class="thumb_list thumb_xs">
+                                                                    <li class="img_thumb" title="The Baptist church">
+                                                                        <a href="church_bio.html" class="thumb_wrapper">
+                                                                           <img src="./img/chc_logos/baptist.png" alt="The Baptist church">
+                                                                       </a>
+                                                                    </li>
+                                                                    <li class="img_thumb" title="Dunamis gospel center">
+                                                                        <a href="church_bio.html" class="thumb_wrapper">
+                                                                           <img src="./img/chc_logos/dunamis.jpg" alt="Dunamis internation gospel center">
+                                                                       </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list_controls">
+                                                        <div class="dropdown info_default">
+                                                            <a href="#" data-toggle="dropdown" class="btn btn-sm btn-default">Options <i class="fa fa-ellipsis-v"></i></a>
+                                                            <ul class="dropdown-menu dropdown-right">
+                                                                <li><a href="#pr_request" data-toggle="modal" data-backdrop="static">Edit Request</a></li>
+                                                                <li><a href="#my_testimony" data-toggle="modal">Mark as Answered</a></li>
+                                                                <li><a href="#">Remove Request</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        
+                                        <div class="list_segment list_done panel-group" id="req_done">
+                                            <h3 class="title color-grey">My Testimonies</h3>
+                                            
+                                            <article class="sp_list_item info_panel ">
+                                                <div class="list_wrapper">
+                                                    <div class="list_details">
+                                                        <div class="info_meta color-grey font-sm">
+                                                            <span class="meta_value"><time>20th Jan, 2017</time></span>
+                                                        </div>
+                                                        <p class="list_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia neque, sit? Ratione tempora est, asperiores,</p>
+                                                        <div class="info_meta h-pad-xs">
+                                                            <span class="meta_label has_colon">Shared With</span>
+                                                            <span class="meta_value">
+                                                                <ul class="thumb_list thumb_xs">
+                                                                    <li class="img_thumb" title="The Baptist church">
+                                                                        <a href="church_bio.html" class="thumb_wrapper">
+                                                                           <img src="./img/chc_logos/baptist.png" alt="The Baptist church">
+                                                                       </a>
+                                                                    </li>
+                                                                    <li class="img_thumb" title="Dunamis gospel center">
+                                                                        <a href="church_bio.html" class="thumb_wrapper">
+                                                                           <img src="./img/chc_logos/dunamis.jpg" alt="Dunamis internation gospel center">
+                                                                       </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list_controls">
+                                                        <div class="control_alt">
+                                                            <a href="#more_info" class="btn btn-sm info_btn accordion-toggle collapsed" data-toggle="collapse" data-parent="#req_done" title="More information"><i class="fa fa-info"></i></a>
+                                                            <a href="#" class="btn btn-sm btn-primary-outline">Remove</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-collapse collapse"  id="more_info">
+                                                    <div class="panel-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nam fuga veritatis consequatur, in quisquam, repellendus rerum architecto dolores dolorum doloremque incidunt aliquid et rem obcaecati voluptatum cum aliquam! Quibusdam.</p>
+                                                        <div class="action_links">
+                                                            <a href="#tst_share" data-toggle="modal">Share</a>
+                                                            <a href="#my_testimony" data-toggle="modal">Edit</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                            <article class="sp_list_item info_panel ">
+                                                <div class="list_wrapper">
+                                                    <div class="list_details">
+                                                        <div class="info_meta color-grey font-sm">
+                                                            <span class="meta_value"><time>20th Jan, 2017</time></span>
+                                                        </div>
+                                                        <p class="list_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia neque, sit? Ratione tempora est, asperiores,</p>
+                                                        <div class="info_meta h-pad-xs">
+                                                            <span class="meta_label has_colon">Shared With</span>
+                                                            <span class="meta_value">
+                                                                <ul class="thumb_list thumb_xs">
+                                                                    <li class="img_thumb" title="The Baptist church">
+                                                                        <a href="church_bio.html" class="thumb_wrapper">
+                                                                           <img src="./img/chc_logos/baptist.png" alt="The Baptist church">
+                                                                       </a>
+                                                                    </li>
+                                                                    <li class="img_thumb" title="Dunamis gospel center">
+                                                                        <a href="church_bio.html" class="thumb_wrapper">
+                                                                           <img src="./img/chc_logos/dunamis.jpg" alt="Dunamis internation gospel center">
+                                                                       </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list_controls">
+                                                        <div class="control_alt">
+                                                            <a href="#more_info_2" class="btn btn-sm info_btn accordion-toggle collapsed" data-toggle="collapse" data-parent="#req_done" title="More information"><i class="fa fa-info"></i></a>
+                                                            <a href="#" class="btn btn-sm btn-primary-outline">Remove</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-collapse collapse"  id="more_info_2">
+                                                    <div class="panel-body">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nam fuga veritatis consequatur, in quisquam, repellendus rerum architecto dolores dolorum doloremque incidunt aliquid et rem obcaecati voluptatum cum aliquam! Quibusdam.</p>
+                                                        <div class="action_links">
+                                                            <a href="#tst_share" data-toggle="modal">Share</a>
+                                                            <a href="#my_testimony" data-toggle="modal">Edit</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <aside class="page_subitems">
+                        
+                        <article class="pane_widget widget_transparent">
+                            <header class="pane_header">
+                                <h4 class="pane_title title_font color-primary">Churches you follow</h4>
+                            </header>
+                            <div class="pane_body">
+                               <div class="empty_state hidden">
+                                    <p class="">You do not have any church on your list</p>
+                                    <a href="#find_church" data-toggle="modal" class="btn btn-primary-outline">Find a Church</a>
+                                </div>
+                                
+                                <div class="panel_inner">
+                                    <ul class="thumb_list">
+                                        <li class="img_thumb new_item">
+                                            <a href="#find_church" data-toggle="modal" class="thumb_wrapper">
+                                                <div class="item_pos" title="Add More">
+                                                    <i class="fa fa-plus act_icon"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="img_thumb" title="Foursquare christian fellowship">
+                                            <a href="church_bio.html" class="thumb_wrapper">
+                                               <img src="./img/chc_logos/Foursquare.png" alt="Foursquare christian fellowship">
+                                           </a>
+                                        </li>
+                                        <li class="img_thumb" title="Dunamis Christian center">
+                                            <a href="church_bio.html" class="thumb_wrapper">
+                                               <img src="./img/chc_logos/dunamis.jpg" alt="Dunamis Christian center">
+                                           </a>
+                                        </li>
+                                        <li class="img_thumb" title="Living faith ministries">
+                                            <a href="church_bio.html" class="thumb_wrapper">
+                                               <img src="./img/chc_logos/winners.jpg" alt="Living faith ministries">
+                                           </a>
+                                        </li>
+                                        <li class="img_thumb" title="Covenant christian center">
+                                            <a href="church_bio.html" class="thumb_wrapper">
+                                               <img src="./img/chc_logos/cc_center.png" alt="Covenant christian center">
+                                           </a>
+                                        </li>
+                                        <li class="img_thumb" title="Redeemed christian church of God">
+                                            <a href="church_bio.html" class="thumb_wrapper">
+                                               <img src="./img/chc_logos/rccg.png" alt="Redeemed christian church of God">
+                                           </a>
+                                        </li>
+                                        <li class="img_thumb more_item" title="See all">
+                                            <a href="user_churches.html" class="thumb_wrapper">
+                                                <div class="item_pos" title="4 More">
+                                                   +4
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="pane_widget">
+                            <header class="pane_header">
+                                <h4 class="pane_title title_font color-primary">Scheduled Offering</h4>
+                            </header>
+                            <div class="pane_body">
+                               <div class="empty_state hidden">
+                                    <div class="def_img">
+                                        <img src="./img/icons/empty_note.png" alt="Oops! Empty">
+                                    </div>
+                                    <p class="">You have no scheduled offering payment</p>
+                                    <a href="#shedule_pay" data-toggle="modal" data-backdrop="static" class="btn btn-primary-outline"><i class="fa fa-calendar"></i>Add Schedule</a>
+                                </div>
+                                
+                                <div class="panel_inner ">
+                                   
+                                    <article class="list_card schedule_list">
+                                       <div class="card_wrapper">
+                                            <div class="item_image_wrapper date_box">
+                                               <a href="#" class="box_wrapper">
+                                                    <span class="day">05</span>
+                                                    <span class="month">Jan.</span>
+                                               </a>
+                                           </div>
+                                           <div class="item_detail_wrapper">
+                                               <div class="item_info">
+                                                   <header class="info_header">
+                                                       <span class="info_title ">
+                                                           <p class="info_sub color-slate_grey">
+                                                               <i class="naira"></i><strong>25,000</strong> as
+                                                               <a href="#offering_info" data-toggle="modal"> Tithe</a> to:
+                                                           </p>
+                                                       </span>
+                                                       <span class="info_action_btn dropdown">
+                                                           <a href="#" class="dropdown-toggle card_control" data-toggle="dropdown">
+                                                               <i class="fa fa-gear"></i>
+                                                           </a>
+                                                           <ul class="dropdown-menu dropdown-right">
+                                                               <li><a href="#shedule_pay" data-toggle="modal" data-backdrop="static">Edit Schedule</a></li>
+                                                               <li><a href="#">Cancel Schedule</a></li>
+                                                           </ul>
+                                                       </span>
+                                                   </header>
+                                                   <h4 class="title_text body_font color-primary">
+                                                       <a href="church_bio.html">Covenant Christian Center.</a>
+                                                   </h4>
+                                               </div>
+                                           </div>
+                                        </div>
+                                    </article>
+                                    
+                                    <article class="list_card schedule_list">
+                                       <div class="card_wrapper">
+                                            <div class="item_image_wrapper date_box">
+                                               <a href="#" class="box_wrapper">
+                                                    <span class="day">07</span>
+                                                    <span class="month">Jan.</span>
+                                               </a>
+                                           </div>
+                                           <div class="item_detail_wrapper">
+                                               <div class="item_info">
+                                                   <header class="info_header">
+                                                       <span class="info_title ">
+                                                           <p class="info_sub color-slate_grey">
+                                                               <i class="naira"></i><strong>5,000</strong> as
+                                                               <a href="#offering_info" data-toggle="modal">Peace and global withness offering</a> to:
+                                                           </p>
+                                                       </span>
+                                                       <span class="info_action_btn dropdown">
+                                                           <a href="#" class="dropdown-toggle card_control" data-toggle="dropdown">
+                                                               <i class="fa fa-gear"></i>
+                                                           </a>
+                                                           <ul class="dropdown-menu dropdown-right">
+                                                               <li><a href="#shedule_pay" data-toggle="modal" data-backdrop="static">Edit Schedule</a></li>
+                                                               <li><a href="#">Cancel Schedule</a></li>
+                                                           </ul>
+                                                       </span>
+                                                   </header>
+                                                   <h4 class="title_text body_font color-primary">
+                                                       <a href="church_bio.html">Living faith church, Mushin</a>
+                                                   </h4>
+                                               </div>
+                                           </div>
+                                        </div>
+                                    </article>
+                                    
+                                    <article class="list_card new_item">
+                                       <div class="card_wrapper">
+                                           <a href="#shedule_pay" data-toggle="modal" data-backdrop="static" class="btn btn-block btn-primary-outline"><i class="fa fa-calendar"></i>New Schedule</a>
+                                        </div>
+                                    </article>
+                                    
+                                </div>
+                            </div>
+                        </article>
+                        
+                    </aside>
+                </section>
+            </div>
+        </section>
+        
+        <section class="section_block bg_default">
+            <div class="container text-center">
+                <div class="col-md-offset-4 col-md-4 col-sm-6 col-sm-offset-3 call_out">
+
+                    <h3 class="body_font color-primary">Need any help?</h3>
+                    <p class="color-default">Got problems with anything? Don't worry. <br>Visit our <a href="help_center.html">Help Center</a> or contact our support team.</p>
+                </div>
+            </div>
+        </section>
+	</main>
+	
+    <footer class="" role="contentinfo">
+        <div class="container">
+            <div class="foot_top footer_sections clearfix">
+                <ul class="misc-nav title_font">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="for_user.html">For Me</a></li>
+                    <li><a href="for_church.html">For Church</a></li>
+                    <li><a href="projects.html">Help Center</a></li>
+                    <li><a href="terms.html">Terms of Services</a></li>
+                    <li><a href="policy.html">Privacy Policy</a></li>
+                </ul>
+                <ul class="footer_social_links">
+                    <li><span class="title_font color-default">Follow Us:</span></li>
+                    <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="twi"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer_sections text-center">
+                <p class="copyright color-slate_grey">
+                    &copy; Sahara Internet 2017, all rights reserved. 
+                </p>
+            </div>
+        </div>
+    </footer>
+	
+	<script src="js/jquery-2.1.3.js"></script>
+	<script src="js/base.min.js"></script>
+	<script src="js/datepicker.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="https://cdn.quilljs.com/1.1.9/quill.js"></script>
+	
+	 <script>
+        $(document).ready(function(){
+            $('.date').datepicker({
+                format: "dd M, yyyy",
+                startView: "decade",
+                multidate: false,
+                autoclose: true,
+            });
+            
+            $('.month_year').datepicker({
+                minViewMode: 'months',
+                startView: 'year',
+                format: "M, yyyy",
+                autoclose: true,
+            });
+            
+            /*Instantiates the text editor*/
+            var quill = new Quill('#editor', {
+                placeholder: 'Please type your testimony here.',
+                modules: {
+                    toolbar: [
+                      [{ header: [3, 4] }],
+                      ['bold', 'italic', 'underline'],
+                      ['image', 'link']
+                    ]
+                },
+                //scrollingContainer: '.form-group', 
+                theme: 'snow'
+            });
+                        
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>New Donation  | Paytithe</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/theme.css"/>
+    <link rel="stylesheet" href="css/paytithe.css"/>
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+</head>
+
+<body>
+   
+    <div class="modal fade" id="new_card">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">New credit card</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                       <p class="help-block color-secondary">All fields are required</p>
+                        <form action="">
+                            <div class="form-horizontal">
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label">Card Type</label>
+                                   <select class="form-control" placeholder="">
+                                       <option>Select card type</option>
+                                       <option>Visa</option>
+                                       <option>Mastercard</option>
+                                       <option>Valve</option>
+                                       <option>American Express</option>
+                                  </select>
+                                </div>
+                                
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label">Card Number</label>
+                                   <input type="number" class="form-control" maxlength="16">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                               <label class="control-label">Card Holder name</label>
+                               <input type="text" class="form-control" value="David Oyepoju">
+                            </div>
+
+                            <div class="form-horizontal">
+                               <h4 class="form_title body_font">Expiry Date</h4>
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label sr-only">Month</label>
+                                    <input type="number" step="1" min="1" max="12" maxlength="2" class="form-control" placeholder="Month">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                   <label class="control-label sr-only">year</label>
+                                    <select class="form-control">
+                                        <option>Year</option>
+                                        <option>2016</option>
+                                        <option>2017</option>
+                                        <option>2018</option>
+                                        <option>2019</option>
+                                        <option>2020</option>
+                                        <option>2021</option>
+                                        <option>2022</option>
+                                        <option>2023</option>
+                                        <option>2025</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group form_mng">
+                                <label class="control-label ">CVV/CVC Number</label>
+                                <input type="password" maxlength="4" class="form-control" placeholder="cvv/cvc">
+                                <p class="help-block">Last 3 digits at the back of your card</p>
+                            </div>
+                          
+                       </form>              
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Save Card</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+    <div class="modal fade" id="find_church">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">Add Church</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                        <header class="filter_widget text-center">
+                            <div class="form-group">
+                                <input type="search" autofocus class="form-control" placeholder="Find church by Name, Alias or Denomination">
+                                <p class="help-block">Example: RCCG Upper room assembly, Abuja</p>
+                            </div>
+
+                            <!--Show when the user clicks the advance search button-->
+                            <div class="form-horizontal hidden">
+                               <div class="form-group col-sm-6">
+                                   <select class="form-control">
+                                       <option value="">-Filter by State-</option>
+                                       <option value="">Lagos</option>
+                                       <option value="">Fedral Capital Territory</option>
+                                       <option value="">Kano</option>
+                                       <option value="">Benue</option>
+                                       <option value="">Borno</option>
+                                       <option value="">Ogun</option>
+                                       <option value="">Oyo</option>
+                                       <option value="">Osun</option>
+                                   </select>
+                               </div>
+                               <div class="form-group col-sm-6">
+                                   <select class="form-control">
+                                       <option value="">-Filter by Denomination-</option>
+                                       <option value="">Pentecostal</option>
+                                       <option value="">Anglican</option>
+                                       <option value="">Catholic</option>
+                                       <option value="">Methodist</option>
+                                       <option value="">Presbyterian</option>
+                                       <option value="">Baptist</option>
+                                       <option value="">Evangelical</option>
+                                       <option value="">Apostolic</option>
+                                   </select>
+                               </div>
+                           </div> 
+
+                            <div class="widget_btn text-center">
+                                <button type="submit" class="btn btn-inverse"> 
+                                    <i class="fa fa-search"></i> Search
+                                </button>
+                                <!--Show the advance search option-->
+                                <button type="button" class="btn btn-card">Advance Search</button>
+                            </div>
+                        </header>
+                        <hr>
+                        <div class="info_cards has_image">
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/rccg.png" alt="Redeemed Christian Church of God">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">RCCG-World Changers Assembly</a>
+                                               </span>
+                                               <span class="info_action_btn">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Plot 3, Alagomeji, Yaba, Lagos State, Nigeria
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </article>
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/Foursquare.png" alt="Foursquare Gospel Church">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">Foursquare Gospel Church</a>
+                                               </span>
+                                               <span class="info_action_btn ">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Church Address here
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                            </article>
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/cac.gif" alt="Christ appostolic Church">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">CAC Agbala Ishegu</a>
+                                               </span>
+                                               <span class="info_action_btn ">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Church Address here
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                            </article>
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/cc_center.jpeg" alt="Covenant Christian center">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">Covenant Christian center</a>
+                                               </span>
+                                               <span class="info_action_btn ">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Church Address here
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                            </article>
+
+                           <article class="list_card result_list">
+                               <div class="card_wrapper">
+                                   <div class="item_image_wrapper">
+                                       <a href="church_bio.html" class="item_image">
+                                           <img src="./img/chc_logos/Foursquare.png" alt="Foursquare Gospel Church">
+                                       </a>
+                                   </div>
+                                   <div class="item_detail_wrapper">
+                                       <div class="item_info">
+                                           <header class="info_header">
+                                               <span class="info_title ">
+                                                   <a href="church_bio.html" class="title_text">Foursquare Gospel Church</a>
+                                               </span>
+                                               <span class="info_action_btn ">
+                                                   <button class="info_action">
+                                                       <span class="btn_icon"></span>
+                                                       <span class="btn_label"></span>
+                                                   </button>
+                                               </span>
+                                           </header>
+                                           <span class="info_sub color-slate_grey">
+                                               Church Address here
+                                           </span>
+                                       </div>
+                                   </div>
+                               </div>
+                            </article>
+
+                       </div>
+
+                       <div class="pager">
+                           <div class="count_details">
+                                <p><strong class="">1</strong><strong class="">20</strong>of 327</p>
+                            </div>
+                            <nav class="pager_nav">
+                               <!--Show on page 2 upward-->
+                                <span class="pager_item hidden prev">
+                                    <a href="#">Previous<i class="fa fa-caret-left"></i></a>
+                                </span>
+                                <span class="pager_item active">
+                                    <a href="#">1</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">2</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">3</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">4</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">5</a>
+                                </span>
+                                <span class="pager_item">
+                                    <a href="#">6</a>
+                                </span>
+                                <span class="pager_item next">
+                                    <a href="#">Next<i class="fa fa-caret-right"></i></a>
+                                </span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <header role="banner" class="nav_header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.png" alt="Automate your tithing">
+                </a>
+            </div>	
+            <div class="sec_nav">
+                <ul class="menu_nav">
+                    <li class="nav_item active">
+                        <a href="user_dashboard.html" class="nav_link_item collapsibile" data-title="Offerings">
+                           <span class="long_text">Offerings</span>
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                       <a href="user_churches.html" class="nav_link_item collapsibile" data-title="Churches">
+                           <span class="long_text">My Churches</span>
+                       </a>
+                    </li>
+                    <li class="nav_item">
+                       <a href="user_prayers.html" class="nav_link_item collapsibile" data-title="Requests">
+                           <span class="long_text">Prayer Requests</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="account_info">
+                    <li class="dropdown accounts">
+                        <a href="#" data-toggle="dropdown" class="nav_btn dropdown-toggle">
+                        <span class="profile_img">
+                            <img src="./img/default_user.png" alt="David Oyepoju">
+                        </span>
+                        <span class="profile_name">David Oyepoju</span>
+                        <i class="fa fa-chevron-circle-down"></i></a>
+                        <ul class="dropdown-menu dropdown-right">
+                            <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
+                            <li><a href="#"><i class="fa fa-gear"></i>Account Settings</a></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i>Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</header>
+		
+	<main class="st-content">
+        <header class="page_header bg_primary">
+            <div class="container text-center">
+                <div class="main_info">
+                    <h3 class="title_font color-secondary">New Offering</h3>
+                    <span class="divider bg_slate_grey"></span>
+                    <div class="quote_block">
+                        <p class="quote_text color-grey">There is one who scatters, and yet increases all the more, And there is one who withholds what is justly due, and yet it results only in want.</p>
+                        <p class="q_author title_font color-inverse">Proverbs 11:24 (NAS)</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+	    <section class="section_block bg_cotton">
+            <div class="container">
+               <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <!--Step 1-->
+                        <article class="form_step">
+                            <form action="" class="h-pad">
+                                <div class="form-group">
+                                    <label class="control-label">Offering Type</label>
+                                    <select class="form-control">
+                                        <option>Tithe</option>
+                                        <option>Regular offering</option>
+                                        <option>Church special offering 1</option>
+                                        <option>Church special offering 2</option>
+                                        <option>Church special offering 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Amount</label>
+                                    <input type="number" class="form-control" placeholder="How much you want to give">
+                                    <p class="help-block">E.g <i class="naira"></i>45,000</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Recipient</label>
+                                    <a href="#find_church" data-toggle="modal" class="btn-link pull-right"><i class="fa fa-plus"></i>Add Church</a>
+                                    <select class="form-control">
+                                        <option>Select a church</option>
+                                        <option>Church name 1</option>
+                                        <option>Church name 2</option>
+                                        <option>Church name 3</option>
+                                        <option>Church name 4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Payment Method</label>
+                                    <a href="#new_card" data-toggle="modal" class="btn-link pull-right"><i class="fa fa-plus"></i>Add Card</a>
+                                    <select class="form-control">
+                                        <option>Credit card name 1</option>
+                                        <option>Credit card name 2</option>
+                                        <option>Credit card name 3</option>
+                                    </select>
+                                    <p class="help-block">Select the card you wish to pay with</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Remarks <small>Optional</small></label>
+                                    <textarea class="form-control" rows="5" placeholder="General comment or special prayer request"></textarea>
+                                    <p class="help-block">E.g A token to appreciate God for the gift of life.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label sr-only">Repeat this payment?</label>
+                                    <div>
+                                        <div class="radio-inline">
+                                            <label for="pay_repeat" class="">
+                                                <input type="radio" id="pay_repeat" name="payment_sch">
+                                                <span>Repeat payment</span>
+                                            </label>
+                                        </div>
+                                        <div class="radio-inline">
+                                            <label for="pay_once" class="">
+                                                <input type="radio" id="pay_once" checked name="payment_sch" >
+                                                <span>Just this once</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!--Show this when the user sets the radio button to repeat payment-->
+                                <div class="form-group hidden">
+                                    <label class="control-label">Repeat Interval</label>
+                                    <select class="form-control ">
+                                        <option>Daily (Every day)</option>
+                                        <option>Weekly (Every week)</option>
+                                        <option selected>Monthly (Every month)</option>
+                                        <option>Quarterly (Every four months)</option>
+                                        <option>Annually (Every year)</option>
+                                    </select>
+                                </div>
+
+                                <div class="widget_btn text-center">
+                                    <!--Make payment via the payment gateway -->
+                                    <a href="donation_receipt.html" class="btn btn-lg btn-secondary">Continue <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </form>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section_block bg_default">
+            <div class="container text-center">
+                <div class="col-md-offset-4 col-md-4 col-sm-6 col-sm-offset-3 call_out">
+
+                    <h3 class="body_font color-primary">Need any help?</h3>
+                    <p class="color-default">Got problems with anything? Don't worry. <br>Visit our <a href="help_center.html">Help Center</a> or contact our support team.</p>
+                </div>
+            </div>
+        </section>
+	</main>
+	
+    <footer class="" role="contentinfo">
+        <div class="container">
+            <div class="foot_top footer_sections clearfix">
+                <ul class="misc-nav title_font">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="for_user.html">For Me</a></li>
+                    <li><a href="for_church.html">For Church</a></li>
+                    <li><a href="projects.html">Help Center</a></li>
+                    <li><a href="terms.html">Terms of Services</a></li>
+                    <li><a href="policy.html">Privacy Policy</a></li>
+                </ul>
+                <ul class="footer_social_links">
+                    <li><span class="title_font color-default">Follow Us:</span></li>
+                    <li><a href="#" class="fb"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="twi"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer_sections text-center">
+                <p class="copyright color-slate_grey">
+                    &copy; Sahara Internet 2017, all rights reserved. 
+                </p>
+            </div>
+        </div>
+    </footer>
+	
+	<script src="js/jquery-2.1.3.js"></script>
+	<script src="js/base.min.js"></script>
+	<script src="js/datepicker.min.js"></script>
+	<script src="js/main.js"></script>
+	
+	 <script>
+        $(document).ready(function(){
+            $('.date').datepicker({
+                format: "dd M, yyyy",
+                startView: "decade",
+                multidate: false,
+                autoclose: true,
+            });
+        });
+    </script>
+</body>
+</html>

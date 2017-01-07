@@ -22,11 +22,11 @@ a {
     }
 }
 
-.store_btn {
-    display: inline-block;
-    max-width: 140px;
-    padding: 5px;
-}
+// .store_btn {
+//     display: inline-block;
+//     max-width: 140px;
+//     padding: 5px;
+// }
 
 a:link, button {
     -webkit-tap-highlight-color: rgba($brand_accent, .6);
@@ -37,23 +37,19 @@ a:link, button {
     font-family: $body_font;
     box-shadow: none;
     outline: none;
-    border: none;
     font-size: 1em;
+    background-color: transparent;
     color: $color_white;
     letter-spacing: .5px;
-    padding: 6px 24px;
+    padding: 5px 18px;
     text-transform: capitalize;
     @include border-radius(3px);
     @include transition(all, .6s,ease);
     @include background-image(none);
-    margin: 5px;
     
-    .btn-group &, .input-group & {
-        margin: 0;
-    }
-
     &.btn-rounded {
         @include border-radius(25px);
+        padding: 6px 24px;
     }
 
     &.btn-primary {
@@ -62,17 +58,25 @@ a:link, button {
 
         &:hover, &:focus {
             background-color: darken($brand_primary, 5);
-            opacity:1;
         }
     }
 
     &.btn-secondary {
-        background: $brand_accent;
+        background-color: $brand_accent;
         @include background-image(none);
 
         &:hover, &:focus {
-            background: darken($brand_accent, 5);
-            color: $color_white;
+            background-color: darken($brand_accent, 5);
+        }
+    }
+
+    &.btn-primary-outline {
+        border: 2px solid $border_grey;
+        color: $border_grey_dark;
+        @include background-image(none);
+
+        &:hover, &:focus {
+            background-color: $brand_primary;
         }
     }
 
@@ -83,22 +87,49 @@ a:link, button {
 
         &:hover, &:focus {
             background-color: $brand_accent;
+        }
+    }
+
+    &.info_btn {
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 28px;
+        text-align: center;
+        color: $brand_inverse;
+        border: 1px solid $brand_inverse;
+        border-radius: 50%;
+
+        &.accordion-toggle {
+            background-color: $brand_inverse;
+            color: $color_white;
+
+            &.collapsed {
+                background-color: transparent;
+                color: $brand_inverse;
+                border-color: $brand_inverse;
+            }
+        }
+
+        > i {
+            padding: 0;
+        }
+
+        &:hover, &:focus {
+            background-color: $brand_inverse;
             color: $color_white;
         }
     }
 
     &.btn-inverse {
         background-color: $brand_inverse;
-        color: $color_white;
-
+        
         &:hover, &:focus {
-            background-color: darken($brand_inverse, 7.5);
-            opacity:1;
+            background-color: darken($brand_inverse, 5);
         }
     }
 
     &.btn-card {
-        background-color: transparent;
         color: $border_grey_dark;
 
         &:hover, &:focus{
@@ -119,8 +150,10 @@ a:link, button {
         border: 1px solid $border_grey;
         color: $color_text;
 
-        &:hover {
-            background-color: rgba($color_white, .9)
+        &:hover, &:focus {
+            background-color: $color_white;
+            border-color:$border_grey_dark;
+            color: $color_text;
         }
     }
 
@@ -146,25 +179,35 @@ a:link, button {
 
     &:hover, &:focus {
         text-decoration: none !important;
+        border-color: transparent;
+        color: $color_white;
+        opacity:1;
 
         .no-touch &{
             outline: none;
         }
     }
-
 }
 
 .btn-sm.btn, .btn-group-sm > .btn {
-    padding: 5px 15px;
+    padding: 4px 9px;
+    font-size: .85em;
+
+    &.info_btn {
+        width: 20px;
+        height: 20px;
+        line-height: 18px;
+    }
 }
 
 .btn-lg.btn, .btn-group-lg > .btn {
-    padding: 12px 48px;
+    padding: 10px 36px;
+    font-size: 1.25em;
 }
 
 .btn-link {
     padding: 0;
-    color: $color_grey_dark;
+    color: $color_text;
     display: inline-block;
     text-decoration: underline;
 
@@ -254,7 +297,6 @@ a:link, button {
             background-color: white;
             pointer-events: none;
         }
-        
     }
 }
 

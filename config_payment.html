@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" class="no-js">
 
 <head>
@@ -29,20 +29,14 @@
             </div>	
             <div class="sec_nav">
                 <ul class="account_info">
-                   <li class="">
-                       <a href="help_center.html" class="nav_link_item" data-title="Help">
-                           <i class="fa fa-life-buoy"></i>
-                           Help
-                       </a>
-                    </li>
                     <li class="dropdown accounts">
-                        <a href="#" data-toggle="dropdown" class="nav_link_item dropdown-toggle">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                         <span class="profile_img">
                             <img src="./img/default_user.png" alt="David Oyepoju">
                         </span>
                         <span class="profile_name">David Oyepoju</span>
                         <i class="fa fa-chevron-circle-down"></i></a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-right">
                             <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
                             <li><a href="#"><i class="fa fa-gear"></i>Account Settings</a></li>
                             <li><a href="#"><i class="fa fa-power-off"></i>Log Out</a></li>
@@ -89,7 +83,7 @@
 	        
 		    <article class=" wizard_body">
                 <div class="container clearfix">
-                    <div class="form_wrapper wizard_step row">
+                    <div class="form_wrapper wizard_step">
                         <div class="col-sm-6 col-sm-offset-3">
                             <header class="step_heading text-center">
                                 <div class="icon_holder icon_md">
@@ -103,11 +97,12 @@
                             
                         <div class="step_body row">
                             <div class="col-sm-6 col-sm-offset-3">
+                              <p class="help-block color-secondary">All fields are required</p>
                                <form action="">
                                     <div class="form-horizontal">
-                                        <div class="form-group form-group-sm col-sm-6">
+                                        <div class="form-group col-sm-6">
                                            <label class="control-label">Card Type</label>
-                                           <select class="form-control control-rounded" placeholder="">
+                                           <select class="form-control" placeholder="">
                                                <option>Select card type</option>
                                                <option>Visa</option>
                                                <option>Mastercard</option>
@@ -116,28 +111,29 @@
                                           </select>
                                         </div>
 
-                                        <div class="form-group form-group-sm col-sm-6">
-                                           <label class="control-label">Card Holder name</label>
-                                           <input type="text" class="form-control control-rounded" value="David Oyepoju">
+                                        <div class="form-group col-sm-6">
+                                           <label class="control-label">Card Number</label>
+                                           <input type="number" class="form-control" maxlength="16">
                                         </div>
                                     </div>
-                                    
-                                    <div class="form-group form-group-sm">
-                                       <label class="control-label">Card Number</label>
-                                       <input type="number" class="form-control control-rounded" maxlength="16">
+
+                                    <div class="form-group">
+                                       <label class="control-label">Card Holder name</label>
+                                       <input type="text" class="form-control" value="David Oyepoju">
                                     </div>
-                                    
+
                                     <div class="form-horizontal">
                                        <h4 class="form_title body_font">Expiry Date</h4>
-                                        <div class="form-group form-group-sm col-sm-4">
+                                        <div class="form-group col-sm-6">
                                            <label class="control-label sr-only">Month</label>
-                                            <input type="number" step="1" min="1" max="12" maxlength="2" class="form-control control-rounded" value="01">
+                                            <input type="number" step="1" min="1" max="12" maxlength="2" class="form-control" placeholder="Month">
                                         </div>
-                                        <div class="form-group form-group-sm col-sm-4">
+                                        <div class="form-group col-sm-6">
                                            <label class="control-label sr-only">year</label>
-                                            <select class="form-control control-rounded">
+                                            <select class="form-control">
+                                                <option>Year</option>
                                                 <option>2016</option>
-                                                <option selected>2017</option>
+                                                <option>2017</option>
                                                 <option>2018</option>
                                                 <option>2019</option>
                                                 <option>2020</option>
@@ -148,27 +144,20 @@
                                             </select>
                                         </div>
                                     </div>
-                                    
-                                    <div class="form-horizontal">
-                                       <h4 class="form_title body_font">
-                                           CVC/CVV
-                                           <small class="bracket_enclosure color-slate_grey">Last 3 digits at the back of your card</small>
-                                       </h4>
-                                        <div class="form-group form-group-sm col-sm-4">
-                                           <label class="control-label sr-only">Month</label>
-                                            <input type="password" maxlength="4" class="form-control control-rounded" placeholder="cvv/cvc">
-                                        </div>
-                                   </div>                           
-                                   
-                                   <div class="more-btn">
-                                       <a href="config_church.html" class="btn btn-default btn-rounded">
-                                            <i class="fa fa-chevron-left"></i> Back 
-                                        </a>
-                                        <button class="btn btn-secondary btn-rounded" type="submit">
-                                            Next Step <i class="fa fa-chevron-right"></i>
-                                        </button>
+                                    <div class="form-group form_mng">
+                                        <label class="control-label ">CVV/CVC Number</label>
+                                        <input type="password" maxlength="4" class="form-control" placeholder="cvv/cvc">
+                                        <p class="help-block">Last 3 digits at the back of your card</p>
                                     </div>
-                               </form>
+                               </form> 
+                               <div class="more-btn">
+                                    <a href="config_church.html" class="btn btn-default btn-rounded">
+                                        <i class="fa fa-chevron-left"></i> Back 
+                                    </a>
+                                    <button class="btn btn-secondary btn-rounded" type="submit">
+                                        Next Step <i class="fa fa-chevron-right"></i>
+                                    </button>
+                                </div>
                             </div>
                        </div>
                    </div>
@@ -206,7 +195,7 @@
             </div>
             <div class="footer_sections text-center">
                 <p class="copyright color-slate_grey">
-                    &copy; Copyright Sahara Internet 2017, all rights reserved. 
+                    &copy; Sahara Internet 2017, all rights reserved. 
                 </p>
             </div>
         </div>

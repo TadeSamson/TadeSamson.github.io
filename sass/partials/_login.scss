@@ -5,9 +5,19 @@
         font-size: 12px;
         padding-bottom: 15px;
     }
+}
 
-    .btn {
-        width: 47%;
+.social_widget {
+    margin: 0 -10px;
+
+    .btn_social {
+        padding: 10px;
+
+        @include MQ(S) {
+            width: 50%;
+            float: left;
+        }
+        
     }
 }
 
@@ -20,8 +30,6 @@
 }
 
 .form_wrapper {
-    padding: 15px;
-
     @include MQ(M) {
         padding: 0 60px;            
     }

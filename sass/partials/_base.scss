@@ -10,7 +10,7 @@ html {
 
 img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
 }
 
 .text-center {
@@ -26,7 +26,8 @@ body {
     color: $color_text;
     font-size: 12px;
     line-height: 1.35;
-    letter-spacing: .75px;
+    word-spacing: .5px;
+    letter-spacing: .5px;
     font-weight: 400;
     position: relative;
 }
@@ -35,6 +36,10 @@ body {
 
 .bg_default {
     background-color: $border_grey_light !important;
+}
+
+.bg_cotton {
+    background-color: $color_white !important;
 }
 
 .bg_slate_grey {
@@ -58,7 +63,7 @@ body {
 }
 
 .bg_white {
-    background-color: $color_white !important;
+    background-color: white !important;
 }
 
 .color-primary {
@@ -81,12 +86,32 @@ body {
     color: $border_grey_dark !important;
 }
 
+.color-off_white {
+    color: $border_grey_light !important;
+}
+
 .color-white {
     color: $color_white !important;
 }
 
 .color-default {
     color: $color_text;
+}
+
+.font-sm {
+    font-size: .85em !important;
+}
+
+.h-pad {
+    padding-top: 30px !important;
+}
+
+.h-pad-sm {
+    padding-top: 15px !important;
+}
+
+.h-pad-xs {
+    padding-top: 5px !important;
 }
 
 .title_font {
@@ -103,6 +128,14 @@ body {
     @include MQ(XL) {
         width: 85%;
     }
+}
+
+.narrow_container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 4;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -249,10 +282,7 @@ p {
     clear: both;
 
     > .form_title {
-        font-weight: 600;
-        text-transform: none;
         margin-bottom: 10px;
-        font-size: 13px;
     }
 }
 
@@ -281,6 +311,12 @@ p {
             }  
         }
     }
+
+    .ql-editor {
+        min-height: 200px;
+        max-height: 500px;
+        overflow-y: auto;
+    } 
 }
 
 textarea, textarea.form-control, 
@@ -354,7 +390,7 @@ input[type="radio"],
 .control-label {
 	text-transform: none;
     font-size: 13px;
-    font-weight: 600;
+    text-transform: uppercase;
     
     &[class*="col-"] {
         padding: 0;
@@ -413,7 +449,6 @@ fieldset {
 }
 
 hr {
-    border-color: $border_grey;
     margin: 15px 0;
     clear: both;
 }
@@ -448,7 +483,9 @@ label {
 }
 
 .help-block {
-	color: $color_grey_dark;
+    font-size: 11px;
+    color: $border_grey_dark;
+    font-style: italic;
 }
 
 .form_mng {
@@ -468,12 +505,12 @@ label {
 .empty_state {
     padding: 20px;
     margin: 20px 0;
-    background-color: rgba($border_grey_light, .5);
-    border: 1px dashed $border_grey_dark;
     text-align: center;
     
     .title {
-        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: $color_text;
     }
     
     .btn {
@@ -485,6 +522,11 @@ label {
         height: 120px;
         margin: 0px auto 10px;
         clear: both;
+    }
+
+    img {
+        height: 100%;
+        width: auto;
     }
         
     @include MQ(M) {

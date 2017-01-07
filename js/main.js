@@ -16,6 +16,9 @@ jQuery(document).ready(function($){
 			$back_to_top.addClass('fade-out');
 		}
 	});
+
+  $('[data-toggle="tooltip"]').tooltip({
+  });
     
 	//smooth scroll to top
 	$back_to_top.on('click', function(event){
@@ -25,21 +28,6 @@ jQuery(document).ready(function($){
 		 	}, scroll_top_duration
 		);
 	});
-
-	// Smooth scroll down
-	$('.slide_down > a').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top - 130
-            }, scroll_top_duration);
-            return false;
-          }
-        }
-      }); 
     
     /* General Navigation*/
 

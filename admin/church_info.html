@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Covenant Christian Center | Paytithe</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+    <link rel="icon" href="../img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/theme.css"/>
+    <link rel="stylesheet" href="../css/paytithe.css"/>
+    <link rel="stylesheet" href="../css/admin.css"/>
+    <script src="../js/modernizr.js"></script> <!-- Modernizr -->
+</head>
+
+<!--Add class "loading" to activate the loader-->
+<body class="">
+    
+    <div class="modal fade" id="new_bank">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">Bank account information</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                        <form action="">
+                                   
+                            <div class="form-group">
+                                <label class="control-label">Account Name</label>
+                                <input type="text" class="form-control" placeholder="Web address here">
+                                <p class="help-block">E.g: COZA International</p>
+                            </div>
+
+                            <div class="form-group">
+                               <label class="control-label">Bank Name</label>
+                               <select class="form-control">
+                                   <option selected>-Select a bank-</option>
+                                   <option>First Bank Plc</option>
+                                   <option>GT Bank</option>
+                                   <option>United Bank of Africa</option>
+                                   <option>Access Bank PLC</option>
+                                   <option>Zenith Bank</option>
+                                   <option>WEMA Bank</option>
+                                   <option>Skye Bank</option>
+                                   <option>Heritage Bank</option>
+                                   <option>Union Bank</option>
+                                   <option>Fidelity Bank</option>
+                               </select>
+                            </div>
+
+                            <div class="form-group">
+                               <label class="control-label">Account Number</label>
+                               <input type="number" class="form-control" placeholder="0011325356">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-rounded btn-secondary">Save Card</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-rounded btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <header class="mobile_heading">
+        <div class="logo">
+           <a href="../index.html">
+               <img src="../img/logo.png" alt="Paytithe">
+           </a>
+       </div>
+        <a href="#0" class="nav_trigger"><span></span></a>
+    </header>
+     
+    <main class="main-content">
+           
+        <aside class="nav_sidebar bg_white">
+            <div class="content_wrapper">
+               <header class="sidebar_header">
+                   <div class="logo">
+                       <a href="../index.html">
+                           <img src="../img/logo.png" alt="Paytithe">
+                       </a>
+                   </div>
+               </header>
+                
+                <div class="nav_block nav_banner bg_primary">
+                    <h4 class="title color-white">Welcome, <span>Babatunde</span></h4>
+                    <div class="media_card media_sm card_cloacked">
+                        <div class="media_image_holder dropdown">
+                            <a href="adm_profile.html" class="media_image media_circle bg_default">
+                                <img src="../img/default_user.png" alt="Babatunde O. Calebs">
+                            </a>
+                        </div>
+                        <div class="media_info dropdown">
+                            <h4 class="media_title color-off_white">
+                                <a href="adm_profile.html" class="dropdown-toggle" data-toggle="dropdown">
+                                    Babatunde O. Calebs
+                                </a>
+                            </h4>
+                            <span class="text_label color-secondary">Super Admin</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="nav_block main_nav">
+                    <h4 class="block_label title_font color-grey">Menu</h4>
+                    <ul class="">
+                        <li class="link_nav">
+                            <a href="dashboard.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-dashboard"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Monitor all activities as they unfold accross the platform.">Dashboard</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav active">
+                            <a href="churches_list.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-industry"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View and manage available churches">Manage Churches</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav ">
+                            <a href="tr_history.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-history"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View all transactions made on the platform">Transaction History</h6>
+                                </div>
+                            </a>
+                        </li>   
+                        <li class="link_nav ">
+                            <a href="site_settings.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-sliders"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Make site wide content configurations">Site Settings</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav ">
+                            <a href="help_mng.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-life-bouy"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Post and manage help articles to the site help center">Help Center</h6>
+                                </div>
+                            </a>
+                        </li>   
+                        <li class="link_nav ">
+                            <a href="help_mng.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-info-circle"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View and attend to user feedbacks">Feedbacks</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="nav_block nav_footer">
+                    <ul class="footer_links">
+                        <li>
+                            <a href="../index.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Go to paytithe site homepage">Home</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mng_password.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Manage your admin account details">Account</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../login.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-power-off"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Log out of your admin account">logout</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <section class="layout_content">
+            <div class="box_wrapper bg_default">
+               
+               <div class="site_bread_crumb">
+                    <div class="container">
+                        <div class="control_wrapper clearfix">
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="churches_list.html">Churches</a>
+                                </li>
+
+                                <li>
+                                    <a href="church_info.html">Covenant Christian Center</a>
+                                </li>
+                                <li class="active">Church Profile</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="main_wrapper">
+                   
+                    <header class="page_header">
+                        <div class="clearfix">
+                            <div class="main_info">
+                                <nav>
+                                    <ul class="surrogate_nav">
+                                        <li class="active">
+                                            <a href="church_info.html" title="Church Profile" data-toggle="tooltip">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="church_offerings.html" title="Church offering campaigns" data-toggle="tooltip">Offerings</a>
+                                        </li>
+                                        <li>
+                                            <a href="church_transactions.html" title="Church offering record" data-toggle="tooltip">Record</a>
+                                        </li>
+                                        <li>
+                                            <a href="church_followers.html" title="Church followers" data-toggle="tooltip">Followers</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="pry_action">
+                               <a href="churches_list.html" class="btn btn-default btn-rounded btn-sm"><i class="fa fa-arrow-left"></i> Back to Churches</a>
+                            </div>
+                        </div>
+                    </header>
+                    
+                    <div class="content_pane">
+                        
+                        <section class="content_preview">            
+                            <header class="content_banner info_banner church_banner" style="background-image: url(../img/banners/cc_center_banner.jpg);">
+                                <div class="overlay_pattern"></div>
+                                <div class="wrapper">
+                                    <div class="banner_caption ">
+                                        <div class="banner_image">
+                                            <a href="#">
+                                                <img src="../img/chc_logos/cc_center.png" alt="Covenant Christian center">
+                                            </a>
+                                        </div>
+                                        <div class="banner_details">
+                                            <h4 class="banner_title title_font color-white">Covenant Christian Center</h4>
+                                            <p class="subtitle color-white">Insight for excellence</p>
+                                            <!--Add the class "u_selected" if the user is already following the church-->
+                                            <div class="banner_btns">
+                                                <a href="#" class="btn btn-inverse btn-rounded">Edit Profile</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                           </header>
+                            
+                            <div class="content_inner">
+                                <div class="page_content_wrapper info_details">
+                                    <article class="page_main">
+                                        <div class="content_wrapper">
+                                            <h4 class="title title_font color-primary">About Church</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magnam fuga consequatur libero modi similique animi sed pariatur sit eveniet architecto, dolor dignissimos, tempora quo assumenda laborum at dolorem esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magnam fuga consequatur libero modi similique animi sed pariatur sit</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magnam fuga consequatur libero modi similique animi sed pariatur sit eveniet architecto, dolor dignissimos, tempora quo assumenda laborum at dolorem esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magnam fuga consequatur libero modi similique animi sed pariatur sit</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magnam fuga consequatur libero modi similique animi sed pariatur sit eveniet architecto, dolor dignissimos, tempora quo assumenda laborum at dolorem esse. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magnam fuga consequatur libero modi similique animi sed pariatur sit</p>
+                                        </div>
+                                    </article>
+                                    <aside class="page_subitems left_bordered">
+                                        <article class="pane_widget widget_transparent">
+                                            <header class="pane_header">
+                                                <h4 class="pane_title title_font color-slate_grey">Contact Information</h4>
+                                            </header>
+                                            <div class="pane_body">
+                                                <div class="info_meta">
+                                                    <span class="meta_label">
+                                                       <i class="fa fa-link"></i>
+                                                   </span>
+                                                   <span class="meta_value">
+                                                        <a href="https://paytithe.church/cc_center">paytithe.church/cc_center</a>
+                                                   </span>
+                                                </div>
+                                               <div class="info_meta">
+                                                   <span class="meta_label">
+                                                       <i class="fa fa-external-link"></i>
+                                                   </span>
+                                                   <span class="meta_value">
+                                                        <a href="http://www.insightsforliving.org/" target="_blank">insightsforliving.org</a>
+                                                   </span>
+                                               </div>
+                                               <div class="info_meta">
+                                                   <span class="meta_label">
+                                                       <i class="fa fa-envelope"></i>
+                                                   </span>
+                                                   <span class="meta_value">
+                                                        <a href="mailto:enquiries@covenantchristiancentre.org" target="_blank">enquiries@covenantchristiancentre.org</a>
+                                                   </span>
+                                               </div>
+                                               <div class="info_meta">
+                                                   <span class="meta_label">
+                                                       <i class="fa fa-phone"></i>
+                                                   </span>
+                                                   <span class="meta_value">
+                                                        <a href="tel:+2348188411111" target="_blank">2348188411111</a>
+                                                   </span>
+                                               </div>
+                                               <div class="info_meta">
+                                                   <span class="meta_label">
+                                                       <i class="fa fa-map-signs"></i>
+                                                   </span>
+                                                   <span class="meta_value">
+                                                       <address>
+                                                           <p>Covenant Christian Centre, Lekki Chapel, By 4th Round About, Chisco Bus Stop, Behind Oando Filling Station</p>
+                                                       </address>
+                                                   </span>
+                                               </div>
+                                            </div>
+                                        </article>
+
+                                        <article class="pane_widget widget_transparent">
+                                            <header class="pane_header">
+                                                <h4 class="pane_title title_font color-slate_grey">Bank Accounts</h4>
+                                                <div class="pane_action pull-right">
+                                                    <a href="#new_bank" data-toggle="modal" data-backdrop="static" class="btn-link">
+                                                        <i class="fa fa-plus"></i> New Bank
+                                                    </a>
+                                                </div>
+                                            </header>
+                                            <div class="pane_body">
+                                                <div class="empty_state hidden">
+                                                    <div class="def_wrapper text-center">
+                                                        <h4 class="title">You have no bank account</h4>
+                                                        <p class="color-slate_grey">You need to add a bank account before you can start receiving offerings on this platform.</p>
+                                                        <a href="#new_bank" data-toggle="modal" data-backdrop="static" class="btn btn-inverse btn-sm btn-rounded">
+                                                            <i class="fa fa-plus"></i> Add a bank account
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="item_cards">
+                                                    <article class="address_card">
+                                                        <div class="card_wrapper">
+                                                            <span class="addr_field addr_title font_bold color-secondary">Covenant Christian Partners</span>
+                                                            <span class="addr_field">
+                                                                 <i class="field_sub">Zenith Bank plc</i>   
+                                                                 <i class="field_sub">0117423001</i>   
+                                                            </span>
+                                                            <div class="banner_overlay">
+                                                                <ul class="overlay_controls">
+                                                                    <li class="control_item">
+                                                                        <a href="#new_bank" data-toggle="modal">
+                                                                            <i class="fa fa-edit"></i> Edit
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="control_item">
+                                                                        <a href="#">
+                                                                            <i class="fa fa-trash"></i> Delete
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <article class="address_card">
+                                                        <div class="card_wrapper">
+                                                            <span class="addr_field addr_title font_bold color-secondary">Covenant Christian Center</span>
+                                                            <span class="addr_field">
+                                                                 <i class="field_sub">Access Bank plc</i>   
+                                                                 <i class="field_sub">0017423311</i>   
+                                                            </span>
+                                                            <div class="banner_overlay">
+                                                                <ul class="overlay_controls">
+                                                                    <li class="control_item">
+                                                                        <a href="#new_bank" data-toggle="modal">
+                                                                            <i class="fa fa-edit"></i> Edit
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="control_item">
+                                                                        <a href="#">
+                                                                            <i class="fa fa-trash"></i> Delete
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        
+                                        <article class="pane_widget widget_transparent">
+                                            <header class="pane_header">
+                                                <h4 class="pane_title title_font color-slate_grey">Offering Information</h4>
+                                            </header>
+                                            <div class="pane_body">
+                                                <div class="card_rows">
+                                                    <div class="row_icon">
+                                                        <i class="fa fa-list color-grey"></i>
+                                                    </div>
+                                                    <div class="row_detail">
+                                                        <span class="meta_value">
+                                                            5,927
+                                                        </span>
+                                                        <span class="meta_label color-grey">
+                                                            Payments Received
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="card_rows">
+                                                    <div class="row_icon">
+                                                        <i class="fa fa-suitcase color-grey"></i>
+                                                    </div>
+                                                    <div class="row_detail">
+                                                        <span class="meta_value">
+                                                            4
+                                                        </span>
+                                                        <span class="meta_label color-grey">
+                                                            Offering Campaigns
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                    </aside>
+                                </div>               
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!--Add class "loading" to activate the loader-->
+    <div class="ajax_loader">
+        <div class="loader_content">
+            <div class="fig_thumb">
+                <img src="../img/logo_mark.png" alt="Paytithe">
+            </div>
+            <p class="subtitle">Please wait while page load...</p>
+        </div>
+    </div>
+
+    <!-- Javascript starts here-->
+    <script src="../js/jquery-2.1.3.js"></script>
+    <script src="../js/base.min.js"></script>
+	<script src="../js/main.js"></script>
+	
+</body>
+
+</html>

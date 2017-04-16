@@ -1,0 +1,53 @@
+.grid_wrapper {
+	@include clearfix;
+	margin: 0 -10px;
+}
+
+.grid_block {
+	padding: 10px;
+	display: block;
+
+	.wrapper {
+		border-radius: 4px;
+		padding: 20px;
+
+		@include MQ(M) {
+			padding: 20px 40px;
+		}
+	}
+}
+
+.block_hero {
+
+	.wrapper {
+		background-image: url(../img/banners/church_il.png);
+		background-repeat: repeat-x;
+		background-position: bottom center;
+		background-size: 400px;
+		overflow: hidden;
+
+		@include MQ(M) {
+			min-height: 300px;
+		}
+	}
+}
+
+.action_widget {
+	margin: 20px 0 40px;
+
+	@include MQ(M) {
+		max-width: 550px;
+		margin: 30px 0;
+
+		.title {
+			font-size: 45px;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+.block_label {
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}

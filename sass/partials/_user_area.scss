@@ -2,6 +2,10 @@
 	@include clearfix;
 	padding: 30px 0;
 
+	.main_wrapper & {
+		padding-top: 15px;
+	}
+
 	.title {
 		padding-bottom: 0;
 		font-size: 14px;
@@ -92,7 +96,7 @@
 	width: 100%;
 	background-color: white;
 	border-radius: 4px;
-	border:  1px solid $border_grey_light;
+	border: 1px solid $border_grey_light;
 
 	&.widget_transparent {
 		background-color: transparent;
@@ -118,6 +122,14 @@
 	.pane_title, .pane_action {
 		display: inline-block;
 		vertical-align: -webkit-baseline-middle;
+	}
+
+	.info_pane & {
+		padding-bottom: 15px;
+		
+		@include MQ(M) {
+			padding-left: 40px;
+		}
 	}
 }
 
@@ -153,22 +165,69 @@
 	@include flexbox();
 	font-size: 12px;
 
+	.meta_block & {
+		flex-direction: column;
+		align-items: center;
+		flex: 1;
+
+		+ .info_meta  {
+			margin-top: 0;
+		}
+	}
+
+	.profile_banner & {
+		justify-content: center;
+	}
+
+	.meta_list & {
+		+ .info_meta  {
+			margin-top: 0;
+			margin-left: 1em;
+		}
+	}
+
 	+ .info_meta {
-		margin-top: 5px;
+		margin-top: 7.5px;
 	}
 
 	.card_details & {
 		font-size: 11px;
 	}
 
+	.tag + .tag {
+		&::before {
+			content: ",";
+			padding-right: 3px;
+		}
+	}
+
 	a {
-		color: $brand_primary;
 		display: block;
 		white-space: normal;
 
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+}
+
+.meta_list {
+	@include flexbox();
+	flex-wrap: wrap;
+    padding-top: 10px;
+
+	&.list_centered {
+		max-width: 450px;
+		margin: auto;
+		justify-content: center;
+	}
+}
+
+.meta_block {
+	@include flexbox();
+
+	.meta_value {
+		font-size: 18px;
 	}
 }
 
@@ -181,7 +240,54 @@
 		content: ":";
 	}
 
+	.meta_block & {
+		padding-right: 0;
+		padding-bottom: 5px;
+		font-family: $header_font;
+		text-transform: uppercase;
+		letter-spacing: .15em;
+	}
+
+	.meta_list & {
+		padding-right: 5px;	
+	}
+
 	.card_details & {
 		padding-right: 5px;
 	}
+}
+
+.aux_wrapper {
+	@include flexbox();
+	flex-direction: column;
+
+	@include MQ(M) {
+		flex-direction: row;
+	}
+}
+
+.aux_nav {
+	padding-bottom: 30px;
+
+	@include MQ(M) {
+		width: 30%;
+		padding-bottom: 0;
+		padding-right: 30px;
+	}
+}
+
+.aux_content {
+	@include MQ(M) {
+		width: 70%;
+	}
+
+	.pane_body {
+		padding-top: 30px;
+	}
+}
+
+.pane_item {
+    + .pane_item {
+        padding-top: 30px;
+    }
 }

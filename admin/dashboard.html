@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin Dashboard | Paytithe</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+    <link rel="icon" href="../img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/datepicker.min.css">
+    <link rel="stylesheet" href="../css/theme.css"/>
+    <link rel="stylesheet" href="../css/paytithe.css"/>
+    <link rel="stylesheet" href="../css/admin.css"/>
+    <script src="../js/modernizr.js"></script> <!-- Modernizr -->
+</head>
+
+<!--Add class "loading" to activate the loader-->
+<body class="">
+   
+    <div class="modal fade" id="offering_info">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="info_banner offering_banner" style="">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <div class="banner_caption">
+                        <h2 class="info_title title_font color-white">Tithe</h2>
+                        <div class="meta_list color-grey_light">
+                            <article class="info_meta" title="Number of Givers" data-toggle="tooltip">
+                                <span class="meta_label">
+                                   <i class="fa fa-gift"></i>
+                               </span>
+                               <span class="meta_value">
+                                    2,587
+                               </span>
+                            </article>
+                            <article class="info_meta" title="Total amount received" data-toggle="tooltip">
+                                <span class="meta_label">
+                                   <i class="fa fa-calculator"></i>
+                               </span>
+                               <span class="meta_value">
+                                    <i class="naira"></i>2,575,340
+                               </span>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body info_details">
+                    <p class="">Your tithe is the 10% of your income. This income can be a cash gift, your monthly salary or wage for a job done. </p>
+                    <div class="more-btn h-pad">
+                        <a href="offering_record.html" class="btn btn-rounded btn-secondary">View Record</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal profile_info_card fade" id="user_info">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="info_banner bg_inverse profile_banner" style="">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <article class="profile_info text-center">
+                        <div class="profile_image">
+                            <img src="../img/test_dp.png" alt="Akinfoyeku Oluwakemi D">
+                        </div>
+                        <div class="profile_details">
+                            <h4 class="title color-white">Akinfoyeku Oluwakemi D</h4>
+                            <div class="info_meta">
+                                <span class="meta_label">
+                                   <i class="fa fa-map-marker"></i>
+                               </span>
+                               <span class="meta_value">
+                                   <i class="tag state">Lagos</i>
+                                   <i class="tag country">Nigeria</i>
+                               </span>
+                            </div>
+                            <a href="user_bio.html" class="btn btn-sm btn-default btn-rounded">View Profile</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="modal-body info_details">
+                    <div class="meta_block">
+                        <div class="info_meta" title="Number of Offerings paid" data-toggle="tooltip" data-displacement="top">
+                           <span class="meta_label color-inverse">
+                               Payments
+                           </span>
+                           <span class="meta_value">
+                                20
+                           </span>
+                       </div>
+                        <div class="info_meta" title="Number of churches followed" data-toggle="tooltip" data-displacement="top">
+                           <span class="meta_label color-inverse">
+                               Following
+                           </span>
+                           <span class="meta_value">
+                                5
+                           </span>
+                       </div>
+                        <div class="info_meta" title="Prayer requests made" data-toggle="tooltip" data-displacement="top">
+                           <span class="meta_label color-inverse">
+                               Requests
+                           </span>
+                           <span class="meta_value">
+                                0
+                           </span>
+                       </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <header class="mobile_heading">
+        <div class="logo">
+           <a href="../index.html">
+               <img src="../img/logo.png" alt="Paytithe">
+           </a>
+       </div>
+        <a href="#0" class="nav_trigger"><span></span></a>
+    </header>
+     
+    <main class="main-content">
+           
+        <aside class="nav_sidebar bg_white">
+            <div class="content_wrapper">
+               <header class="sidebar_header">
+                   <div class="logo">
+                       <a href="../index.html">
+                           <img src="../img/logo.png" alt="Paytithe">
+                       </a>
+                   </div>
+               </header>
+                
+                <div class="nav_block nav_banner bg_primary">
+                    <h4 class="title color-white">Welcome, <span>Babatunde</span></h4>
+                    <div class="media_card media_sm card_cloacked">
+                        <div class="media_image_holder dropdown">
+                            <a href="adm_profile.html" class="media_image media_circle bg_default">
+                                <img src="../img/default_user.png" alt="Babatunde O. Calebs">
+                            </a>
+                        </div>
+                        <div class="media_info dropdown">
+                            <h4 class="media_title color-off_white">
+                                <a href="adm_profile.html" class="dropdown-toggle" data-toggle="dropdown">
+                                    Babatunde O. Calebs
+                                </a>
+                            </h4>
+                            <span class="text_label color-secondary">Super Admin</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="nav_block main_nav">
+                    <h4 class="block_label title_font color-grey">Menu</h4>
+                    <ul class="">
+                        <li class="link_nav active">
+                            <a href="dashboard.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-dashboard"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Monitor all activities as they unfold accross the platform.">Dashboard</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav ">
+                            <a href="churches_list.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-industry"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View and manage available churches">Manage Churches</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav ">
+                            <a href="tr_history.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-history"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View all transactions made on the platform">Transaction History</h6>
+                                </div>
+                            </a>
+                        </li>   
+                        <li class="link_nav ">
+                            <a href="site_settings.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-sliders"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Make site wide content configurations">Site Settings</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav ">
+                            <a href="help_mng.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-life-bouy"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Post and manage help articles to the site help center">Help Center</h6>
+                                </div>
+                            </a>
+                        </li>   
+                        <li class="link_nav ">
+                            <a href="help_mng.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-info-circle"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View and attend to user feedbacks">Feedbacks</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="nav_block nav_footer">
+                    <ul class="footer_links">
+                        <li>
+                            <a href="../index.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Go to paytithe site homepage">Home</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mng_password.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Manage your admin account details">Account</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../login.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-power-off"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Log out of your admin account">logout</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <section class="layout_content">
+            <div class="box_wrapper bg_default">
+               
+               <div class="site_bread_crumb">
+                    <div class="container">
+                        <div class="control_wrapper clearfix">
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="../index.html">Home</a>
+                                </li>
+                                <li class="active">Admin Dashboard</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="main_wrapper">
+                    <!--Main view Area--> 
+                    <div class="grid_wrapper">
+                       
+                        <article class="grid_block block_hero">
+                            <div class="wrapper bg_white">
+                                <div class="action_widget">
+                                    <h4 class="title ">You have <span>250</span> active churches on the platform</h4>
+                                    <a href="new_church.html" class="btn btn-rounded btn-inverse">Add a new church</a>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="grid_block block_tiles">
+                            <div class="wrapper bg_off_white">
+                                <div class="info_widget">
+                                   <article class="widget_item">
+                                        <div class="wrapper">
+                                            <span class="widget_value title_font color-secondary">2,500</span>
+                                            <span class="widget_label">Registered Users</span>
+                                        </div>
+                                    </article>   
+                                    <article class="widget_item">
+                                        <div class="wrapper">
+                                            <span class="widget_value title_font color-secondary">250</span>
+                                            <span class="widget_label">Registered Churches</span>
+                                        </div>
+                                    </article>   
+                                    <article class="widget_item">
+                                        <div class="wrapper">
+                                            <span class="widget_value title_font color-secondary">550</span>
+                                            <span class="widget_label">Tithes Paid</span>
+                                        </div>
+                                    </article>   
+                                    <article class="widget_item">
+                                        <div class="wrapper">
+                                            <span class="widget_value title_font color-secondary">3,450</span>
+                                            <span class="widget_label">Offerings Paid</span>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="grid_block block_table">
+                            <div class="wrapper bg_white">
+                                <h4 class="block_label font_bold">Recent Transactions</h4>
+                                
+                                <div class="empty_state hidden">
+                                    <div class="def_wrapper text-center">
+                                        <div class="def_img">
+                                            <img src="../img/icons/empty_donations.png" alt="Oops! Empty">
+                                        </div>
+                                        <p class="">No transaction has record yet.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="panel_inner">
+                                   
+                                   <div class="filter_widget">                                        
+                                        <div class="filter_block">
+                                            <label class="control-label sr-only">From</label>
+                                            <div class="filter_control">
+                                                <input type="text" class="form-control month_year" placeholder="--From--">
+                                            </div>
+                                        </div>
+                                        <div class="filter_block">
+                                            <label class="control-label sr-only">To</label>
+                                            <div class="filter_control">
+                                                <input type="text" class="form-control month_year" placeholder="--To--">
+                                            </div>
+                                        </div>
+                                           
+                                        <div class="filter_block search_bar">
+                                            <label class="control-label sr-only">Search</label>
+                                            <div class="input-group input-group-sm">
+                                                <input type="search" class="form-control" placeholder="Search list">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default">
+                                                        <i class="fa fa-search"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="filter_block filter_actions">
+                                            <ul class="user_control">
+                                                <li class="control hidden-xs" title="Print Report">
+                                                    <a href="#"><i class="fa fa-print"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table post_table">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Description</th>
+                                                    <th>Amount</th>
+                                                    <th>Type</th>
+                                                    <th>Church</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Erubu Eyitayo A</a> paid <a href="#offering_info" data-toggle="modal">Offering</a> to <a href="church_info.html">Covenant Christian Center.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#offering_info" data-toggle="modal">
+                                                        Offering
+                                                    </a>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            Covenant Christian Center
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_success">Completed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Erubu Eyitayo A</a> paid <a href="#offering_info" data-toggle="modal">Kingdom Partners Offering</a> to <a href="church_info.html">Covenant Christian Center.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <a href="#offering_info" data-toggle="modal">
+                                                            Kingdom Partners Offering
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            Covenant Christian Center
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_secondary">failed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Erubu Eyitayo A</a> paid <a href="#offering_info" data-toggle="modal">tithe</a> to <a href="church_info.html">Covenant Christian Center.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#offering_info" data-toggle="modal">
+                                                        Tithe
+                                                    </a>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            Covenant Christian Center
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_success">Completed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Akinfoyeku Oluwakemi O</a> paid <a href="#offering_info" data-toggle="modal">Peace offering</a> to <a href="church_info.html">RCCG - Upper room assemble.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#offering_info" data-toggle="modal">
+                                                        Peace Offering
+                                                    </a>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            RCCG - Upper room assemble
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_success">Completed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Akinfoyeku Oluwakemi O</a> paid <a href="#offering_info" data-toggle="modal">Peace offering</a> to <a href="church_info.html">RCCG - Upper room assemble.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#offering_info" data-toggle="modal">
+                                                        Peace Offering
+                                                    </a>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            RCCG - Upper room assemble
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_inverse">canceled</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Erubu Eyitayo A</a> paid <a href="#offering_info" data-toggle="modal">Offering</a> to <a href="church_info.html">Covenant Christian Center.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#offering_info" data-toggle="modal">
+                                                        Offering
+                                                    </a>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            Covenant Christian Center
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_success">Completed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Erubu Eyitayo A</a> paid <a href="#offering_info" data-toggle="modal">Kingdom Partners Offering</a> to <a href="church_info.html">Covenant Christian Center.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <a href="#offering_info" data-toggle="modal">
+                                                            Kingdom Partners Offering
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            Covenant Christian Center
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_secondary">failed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Erubu Eyitayo A</a> paid <a href="#offering_info" data-toggle="modal">tithe</a> to <a href="church_info.html">Covenant Christian Center.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#offering_info" data-toggle="modal">
+                                                        Tithe
+                                                    </a>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            Covenant Christian Center
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_success">Completed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Akinfoyeku Oluwakemi O</a> paid <a href="#offering_info" data-toggle="modal">Peace offering</a> to <a href="church_info.html">RCCG - Upper room assemble.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#offering_info" data-toggle="modal">
+                                                        Peace Offering
+                                                    </a>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            RCCG - Upper room assemble
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_success">Completed</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span><time>12/13/2016</time></span>
+                                                </td>
+                                                <td class="highlight">
+                                                    <p class="">
+                                                        <a href="#user_info" data-toggle="modal">Akinfoyeku Oluwakemi O</a> paid <a href="#offering_info" data-toggle="modal">Peace offering</a> to <a href="church_info.html">RCCG - Upper room assemble.</a>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        <i class="naira"></i>15,000   
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="#offering_info" data-toggle="modal">
+                                                        Peace Offering
+                                                    </a>
+                                                </td>
+                                                <td class="highlight">
+                                                    <span>
+                                                        <a href="church_info.html">
+                                                            RCCG - Upper room assemble
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                                <td class="">
+                                                   <span class="status status_inverse">canceled</span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="more-btn">
+                                        <a href="tr_history.html" class="btn btn-sm btn-rounded btn-inverse">View all Transactions</a>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </article>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!--Add class "loading" to activate the loader-->
+    <div class="ajax_loader">
+        <div class="loader_content">
+            <div class="fig_thumb">
+                <img src="../img/logo_mark.png" alt="Paytithe">
+            </div>
+            <p class="subtitle">Please wait while page load...</p>
+        </div>
+    </div>
+
+    <!-- Javascript starts here-->
+    <script src="../js/jquery-2.1.3.js"></script>
+    <script src="../js/base.min.js"></script>
+    <script src="../js/datepicker.min.js"></script>
+	<script src="../js/main.js"></script>
+	
+	 <script>
+        $(document).ready(function(){            
+            $('.date').datepicker({
+                format: "dd M, yyyy",
+                startView: "decade",
+                multidate: false,
+                autoclose: true,
+            });
+            
+            $('.month_year').datepicker({
+                minViewMode: 'months',
+                startView: 'year',
+                format: "M, yyyy",
+                autoclose: true,
+            });
+        });
+    </script>
+
+</body>
+
+</html>

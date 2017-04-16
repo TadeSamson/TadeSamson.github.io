@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>New offering campaign | Paytithe</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+    <link rel="icon" href="../img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/font-awesome.css"/>
+    <link href="https://cdn.quilljs.com/1.1.9/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/theme.css"/>
+    <link rel="stylesheet" href="../css/paytithe.css"/>
+    <link rel="stylesheet" href="../css/admin.css"/>
+    <script src="../js/modernizr.js"></script> <!-- Modernizr -->
+</head>
+
+<!--Add class "loading" to activate the loader-->
+<body class="">
+   
+   <div class="modal fade" id="new_bank">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">New bank account</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                        <form action="">
+                                   
+                            <div class="form-group">
+                                <label class="control-label">Account Name</label>
+                                <input type="text" class="form-control" placeholder="Web address here">
+                                <p class="help-block">E.g: COZA International</p>
+                            </div>
+
+                            <div class="form-group">
+                               <label class="control-label">Bank Name</label>
+                               <select class="form-control">
+                                   <option selected>-Select a bank-</option>
+                                   <option>First Bank Plc</option>
+                                   <option>GT Bank</option>
+                                   <option>United Bank of Africa</option>
+                                   <option>Access Bank PLC</option>
+                                   <option>Zenith Bank</option>
+                                   <option>WEMA Bank</option>
+                                   <option>Skye Bank</option>
+                                   <option>Heritage Bank</option>
+                                   <option>Union Bank</option>
+                                   <option>Fidelity Bank</option>
+                               </select>
+                            </div>
+
+                            <div class="form-group">
+                               <label class="control-label">Account Number</label>
+                               <input type="number" class="form-control" placeholder="0011325356">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-rounded btn-secondary">Save Card</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-rounded btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <header class="mobile_heading">
+        <div class="logo">
+           <a href="../index.html">
+               <img src="../img/logo.png" alt="Paytithe">
+           </a>
+       </div>
+        <a href="#0" class="nav_trigger"><span></span></a>
+    </header>
+     
+    <main class="main-content">
+           
+        <aside class="nav_sidebar bg_white">
+            <div class="content_wrapper">
+               <header class="sidebar_header">
+                   <div class="logo">
+                       <a href="../index.html">
+                           <img src="../img/logo.png" alt="Paytithe">
+                       </a>
+                   </div>
+               </header>
+                
+                <div class="nav_block nav_banner bg_primary">
+                    <h4 class="title color-white">Welcome, <span>Babatunde</span></h4>
+                    <div class="media_card media_sm card_cloacked">
+                        <div class="media_image_holder dropdown">
+                            <a href="adm_profile.html" class="media_image media_circle bg_default">
+                                <img src="../img/default_user.png" alt="Babatunde O. Calebs">
+                            </a>
+                        </div>
+                        <div class="media_info dropdown">
+                            <h4 class="media_title color-off_white">
+                                <a href="adm_profile.html" class="dropdown-toggle" data-toggle="dropdown">
+                                    Babatunde O. Calebs
+                                </a>
+                            </h4>
+                            <span class="text_label color-secondary">Super Admin</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="nav_block main_nav">
+                    <h4 class="block_label title_font color-grey">Menu</h4>
+                    <ul class="">
+                        <li class="link_nav">
+                            <a href="dashboard.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-dashboard"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Monitor all activities as they unfold accross the platform.">Dashboard</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav active">
+                            <a href="churches_list.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-industry"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View and manage available churches">Manage Churches</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav ">
+                            <a href="tr_history.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-history"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View all transactions made on the platform">Transaction History</h6>
+                                </div>
+                            </a>
+                        </li>   
+                        <li class="link_nav ">
+                            <a href="site_settings.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-sliders"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Make site wide content configurations">Site Settings</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link_nav ">
+                            <a href="help_mng.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-life-bouy"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Post and manage help articles to the site help center">Help Center</h6>
+                                </div>
+                            </a>
+                        </li>   
+                        <li class="link_nav ">
+                            <a href="help_mng.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-info-circle"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="View and attend to user feedbacks">Feedbacks</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="nav_block nav_footer">
+                    <ul class="footer_links">
+                        <li>
+                            <a href="../index.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Go to paytithe site homepage">Home</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mng_password.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Manage your admin account details">Account</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../login.html">
+                                <div class="link_icon">
+                                    <i class="fa fa-power-off"></i>
+                                </div>
+                                <div class="link_details">
+                                    <h6 class="link_title" title="Log out of your admin account">logout</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <section class="layout_content">
+            <div class="box_wrapper bg_default">
+               
+               <div class="site_bread_crumb">
+                    <div class="container">
+                        <div class="control_wrapper clearfix">
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="churches_list.html">Churches</a>
+                                </li>
+                                <li>
+                                    <a href="church_info.html">Covenant Christian Center</a>
+                                </li>
+                                <li>
+                                    <a href="church_offerings.html">Church Offerings</a>
+                                </li>
+                                <li class="active">New Offering</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="main_wrapper">
+                    <header class="page_header">
+                        <div class="head_wrapper clearfix">
+                            <div class="main_info">
+                                <h3 class="pane_title title_font color-secondary">Add / Edit Offering
+                                </h3>
+                                <span class="divider bg_primary"></span>
+                            </div>
+                            <div class="pry_action">
+                                <a href="church_offerings.html" class="btn btn-default btn-sm btn-rounded">
+                                    <i class="fa fa-times"></i>
+                                    Exit
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+                                        
+                    <div class="content_pane">
+                        <section class="content_preview">                            
+                            <div class="content_inner ">
+                                <div class="step_form ">
+                                    <header class="step_heading">
+                                        <h3 class="title body_font color-inverse">Offering Details</h3>
+                                        <p class="subtitle color-default">Give full details of your offering, explaining why you are collecting it, and why people should give towards it.</p>
+                                    </header>
+                                    <div class="step_body">
+                                        <form action="">
+                                            <!--Bind the name from the signup form here-->
+                                            <div class="form-group">
+                                               <label for="ch_name" class="control-label">Offering Title</label>
+                                               <input type="text" id="ch_name" autofocus class="form-control" placeholder="Offering title here">
+                                               <p class="help-block">E.g: Missionary Offering</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                               <label class="control-label">About the offering</label>
+                                                <div id="editor_toolbar"></div>
+                                                <div id="editor"></div>
+                                                <textarea rows="15" class="form-control hidden" placeholder="More information about the offering"></textarea>
+                                               <p class="help-block">Tell us about the offering, and what you want to achieve with it.</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label">Collection bank Account</label>
+                                                <a href="#new_bank" data-toggle="modal" class="btn-link pull-right">
+                                                    <i class="fa fa-plus"></i>New Bank</a>
+                                                <select class="form-control">
+                                                    <option>Zenit Bank - 0121134808</option>
+                                                    <option>Heritage Bank - 2028309128</option>
+                                                </select>
+                                                <p class="help-block">Select or create the bank account you want payments for this offering to be made into</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    Banner Image
+                                                </label>
+                                                <p class="help-block">An promotional image made towards the program/mission.</p>
+                                                <div class="media_uploader">
+                                                    <div class="media_large media_item">
+                                                        <div class="media_thumb">
+                                                            <!--Insert uploaded image here-->
+                                                           <!--<img src="./img/banners/cc_center_banner.jpg" class="" alt="Church banner here">-->
+                                                        </div>
+                                                    </div>
+                                                    <p class="help-block">Recommended Dimensions: 1280px by 800px</p>   
+                                                    <div class="file_upload">
+                                                        <input type="file" name="file" id="banner_image" class="inputfile" />
+                                                        <label for="banner_image">
+                                                            <i class="fa fa-upload" title="Upload header image"></i>
+                                                            <span>Change Image</span>
+                                                        </label>
+                                                    </div> 
+                                                </div>
+                                            </div>
+
+                                           <div class="more-btn">
+                                                <button class="btn btn-default btn-rounded" type="submit">
+                                                    <i class="fa fa-times"></i> Cancel
+                                                </button>
+                                                <button class="btn btn-secondary btn-rounded" type="submit">
+                                                    Create Offering
+                                                </button>
+                                            </div>
+                                       </form>
+                                    </div>
+
+                                </div>             
+                            </div>
+                            
+                            <div class="centered post_result hidden">
+                                <div class="wrapper">
+                                    <div class="intro-text">
+                                        <div class="icon_holder">
+                                            <img src="../img/icons/success.png" alt="Success">
+                                        </div>
+
+                                        <h4 class="title font_bold color-primary">Congratulations</h4>
+                                        <span class="divider bg_accent"></span>
+
+                                        <p class="subtitle">Your offering <span class="font_bold">Global impact offering</span> has been created successfully. Now you can start recieving payments for this offering using paytithe</p>
+                                        <div class="action_btn">
+                                            <a href="church_offerings.html" class="btn btn-outline-secondary btn-rounded">
+                                                <i class="fa fa-arrow-left"></i>Back to Offerings
+                                            </a>
+                                            <!--  Hide this, and show the package creation form -->
+                                            <button class="btn btn-outline-secondary btn-rounded"><i class="fa fa-plus"></i> Create another</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!--Add class "loading" to activate the loader-->
+    <div class="ajax_loader">
+        <div class="loader_content">
+            <div class="fig_thumb">
+                <img src="../img/logo_mark.png" alt="Paytithe">
+            </div>
+            <p class="subtitle">Please wait while page load...</p>
+        </div>
+    </div>
+
+    <!-- Javascript starts here-->
+    <script src="../js/jquery-2.1.3.js"></script>
+    <script src="../js/base.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.1.9/quill.js"></script>
+	<script src="../js/main.js"></script>
+	
+	<script>
+        $(document).ready(function(){
+            /*Instantiates the text editor*/
+            var quill = new Quill('#editor', {
+                placeholder: 'A full description of the offering and what its meant for',
+                modules: {
+                    toolbar: [
+                      [{ header: [3, 4] }],
+                      ['bold', 'italic', 'underline'],
+                      ['image', 'link']
+                    ]
+                },
+                theme: 'snow'
+            });
+                        
+        });
+    </script>
+	
+</body>
+
+</html>

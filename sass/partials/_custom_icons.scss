@@ -20,88 +20,71 @@
 .pt-church:before {
   content: "\e902";
 }
-.pt-church_info:before {
-  content: "\e903";
-}
-.pt-my_church:before {
-  content: "\e904";
-}
+
 .pt-donate:before {
   content: "\1f394";
 }
 .pt-naira:before {
   content: "\e901";
 }
-.pt-add:before {
-  content: "\e145";
-}
-.pt-add_alert:before {
-  content: "\e003";
-}
-.pt-assignment:before {
-  content: "\e85d";
-}
-.pt-insert_comment:before {
-  content: "\e24c";
-}
-.pt-room:before {
-  content: "\e8b4";
-}
-.pt-more_horiz:before {
-  content: "\e5d3";
-}
-.pt-more_vert:before {
-  content: "\e5d4";
-}
-.pt-phone_iphone:before {
-  content: "\e325";
-}
-.pt-photo_filter:before {
-  content: "\e43b";
-}
-.pt-photo_size_select_actual:before {
-  content: "\e432";
-}
-.pt-pie_chart:before {
-  content: "\e6c4";
-}
-.pt-pie_chart_outlined:before {
-  content: "\e6c5";
-}
-.pt-playlist_add:before {
-  content: "\e03b";
-}
-.pt-playlist_add_check:before {
-  content: "\e065";
-}
-.pt-sentiment_very_dissatisfied:before {
-  content: "\e814";
-}
-.pt-sentiment_very_satisfied:before {
-  content: "\e815";
-}
-.pt-stay_primary_portrait:before {
-  content: "\e0d6";
-}
-.pt-textsms:before {
-  content: "\e0d8";
-}
-.pt-thumb_down:before {
-  content: "\e8db";
-}
-.pt-thumb_up:before {
-  content: "\e8dc";
-}
-.pt-update:before {
-  content: "\e923";
-}
-.pt-verified_user:before {
-  content: "\e8e8";
-}
-.pt-watch_later:before {
-  content: "\e924";
-}
-.pt-wifi_tethering:before {
-  content: "\e1e2";
+
+
+/* SVG Icon systems */
+
+.cust_icon {
+  display: inline-block;
+  width: 68px;
+  height: 68px;
+  overflow: hidden;
+
+  img, svg {
+    display: block;
+    width: 100%l;
+  }
+
+  &.icon_xs {
+      width: 30px;
+      height: 30px;
+  }
+  
+  &.icon_sm {
+      width: 48px;
+      height: 48px;
+  }
 }
 
+/* Logo Text */
+
+.user_title {
+    font-size: 14px;
+
+    @include MQ(M) {
+        font-size: 16px;
+    }
+
+    img, .logo_text {
+        width: 100px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.logo_text {
+    max-width: 150px;
+    
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .brand_name {
+        fill: $brand_primary;
+    }
+    
+    &.color-white {   
+        .brand_name {
+            fill: $color_white;
+        }
+    }
+}

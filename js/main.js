@@ -28,6 +28,21 @@ jQuery(document).ready(function($){
 		 	}, scroll_top_duration
 		);
 	});
+
+    // Smooth scroll down
+  $('.hero_down > a, .nav_item > a').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, scroll_top_duration);
+            return false;
+          }
+        }
+    }); 
     
     /* General Navigation*/
 
@@ -59,6 +74,14 @@ jQuery(document).ready(function($){
           this.previousTop = currentTop;
       });
     }
+        
+        //open/close primary navigation
+    $('.primary-nav-trigger').on('click', function(){
+        event.stopPropagation();
+        $('.menu-icon').toggleClass('is-clicked');
+        $('.menu_collapse').toggleClass('menu-is-open');
+        $('.menu_collapse').toggleClass('is-active');
+      });
 
 });
 
@@ -71,4 +94,21 @@ visualTrigger.click(function () {
     } else{
         pwd_input.attr("type", "password");
     }
+});
+
+/*Responsive Main nav script*/
+
+$(function() {
+   var  sidebar = $('.nav_sidebar'),
+		sidebarTrigger = $('.nav_trigger');
+
+    $('[data-toggle="tooltip"]').tooltip({
+    });
+        
+    //open/close primary navigation
+    sidebarTrigger.on('click', function(event){
+        event.preventDefault();
+		$([sidebar, sidebarTrigger]).toggleClass('nav-is-visible');
+    });
+
 });

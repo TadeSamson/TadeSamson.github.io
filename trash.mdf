@@ -1,0 +1,87 @@
+
+<div class="action_links centered">
+    <a href="#">Submit Prayer request</a>
+    <a href="#">Share Testimony</a>
+    <a href="#">Back to Offerings</a>
+</div>
+
+// Custom Offering
+
+
+    <div class="modal fade" id="offering_form">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal_close"></span>
+                    </button>
+                    <h2 class="modal-title title_font color-primary">Special Offering</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="content-panel">
+                      <p class="">Special offerings can be offerings like; Missionary offerings, building, Anniversary, etc. They are specific to your church, and are usually collected over a given period of time.</p>
+                       <p class="help-block color-secondary">All fields are required</p>
+                        <form action="">
+                            <div class="form-group">
+                               <label class="control-label required">Offering Name / Title</label>
+                               <input type="text" class="form-control" autofocus placeholder="Enter a title for your offering">
+                               <p class="help-block">E.g Missionary Offering</p>
+                            </div>
+                            <div class="form-group">
+                               <label class="control-label required">Description</label>
+                                <div id="editor_toolbar"></div>
+                                <div id="editor"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">
+                                    Offering banner Image
+                                </label>
+                                <p class="help-block">Any promotional banner/ flyer designed to create an awareness for the offering program.</p>
+                                <div class="media_uploader">
+                                    <div class="media_large media_item">
+                                        <div class="media_thumb">
+                                            <!--Insert uploaded image here-->
+                                           <img src="./img/banners/offering_default.jpg" class="" alt="Offering Banner">
+                                        </div>
+                                    </div>
+                                    <p class="help-block">Recommended Dimensions: 640px by 320px</p>   
+                                    <div class="file_upload">
+                                        <input type="file" name="file" id="banner_image" class="inputfile" />
+                                        <label for="banner_image">
+                                            <i class="fa fa-upload" title="Upload header image"></i>
+                                            <span>Change Image</span>
+                                        </label>
+                                    </div> 
+                                </div>
+                            </div>
+                            
+                       </form>              
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Save Details</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-card">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+// Admin Layout Structure
+
+<section class="content_preview">                 
+    <header class="content_banner bg_shapes bg_off_white">
+        <div class="wrapper">
+            <h3 class="title title_font color-secondary">Churches</h3>
+            <p class="subtitle">Offer your trainings & events to the corps member community and benefit from greater patronage & impact.</p>
+            <div class="banner_cto">
+                <a href="" class="btn btn-inverse"><i class="fa fa-plus"></i>New Training</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="content_inner">
+        <h2 class="pane_title">Hello from this side</h2>    
+    </div>
+</section>
+

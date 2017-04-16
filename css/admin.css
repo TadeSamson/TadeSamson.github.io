@@ -1,0 +1,535 @@
+@font-face {
+  font-family: 'robotoRegular';
+  src: url("../fonts/roboto_regular/Roboto-Regular-webfont.eot");
+  src: url("../fonts/roboto_regular/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto_regular/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/roboto_regular/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/roboto_regular/Roboto-Regular-webfont.svg#robotoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'paytithe_icons';
+  src: url("../fonts/pt_icons/paytithe_icons.eot");
+  src: url("../fonts/pt_icons/paytithe_icons.eot?#iefix") format("embedded-opentype"), url("../fonts/pt_icons/paytithe_icons.woff") format("woff"), url("../fonts/pt_icons/paytithe_icons.ttf") format("truetype"), url("../fonts/pt_icons/paytithe_icons.svg#robotoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@-webkit-keyframes jello {
+  from, 11.1%, to {
+    -webkit-transform: none;
+    transform: none;
+  }
+  22.2% {
+    -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  33.3% {
+    -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  44.4% {
+    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  55.5% {
+    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  66.6% {
+    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  77.7% {
+    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
+    transform: skewX(0.39063deg) skewY(0.39063deg);
+  }
+  88.8% {
+    -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
+    transform: skewX(-0.19531deg) skewY(-0.19531deg);
+  }
+}
+@keyframes jello {
+  from, 11.1%, to {
+    -webkit-transform: none;
+    transform: none;
+  }
+  22.2% {
+    -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  33.3% {
+    -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  44.4% {
+    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  55.5% {
+    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  66.6% {
+    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  77.7% {
+    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
+    transform: skewX(0.39063deg) skewY(0.39063deg);
+  }
+  88.8% {
+    -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
+    transform: skewX(-0.19531deg) skewY(-0.19531deg);
+  }
+}
+/* line 1, ../sass/partials/_admin_layout.scss */
+.box_wrapper {
+  display: block;
+  min-height: 700px;
+  height: 100%;
+  position: relative;
+}
+/* line 7, ../sass/partials/_admin_layout.scss */
+.box_wrapper .main_wrapper {
+  padding: 10px 15px;
+}
+@media only screen and (min-width: 992px) {
+  /* line 7, ../sass/partials/_admin_layout.scss */
+  .box_wrapper .main_wrapper {
+    padding: 10px 30px;
+  }
+}
+
+/* line 16, ../sass/partials/_admin_layout.scss */
+.nav_trigger {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 34px;
+  height: 45px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: transparent;
+}
+/* line 26, ../sass/partials/_admin_layout.scss */
+.nav_trigger span, .nav_trigger span::before, .nav_trigger span::after {
+  /* hamburger icon in CSS */
+  position: absolute;
+  display: inline-block;
+  height: 3px;
+  width: 24px;
+  background: #4c5563;
+}
+/* line 35, ../sass/partials/_admin_layout.scss */
+.nav_trigger span {
+  /* line in the center */
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  margin-top: -2px;
+  -moz-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/* line 43, ../sass/partials/_admin_layout.scss */
+.nav_trigger span::before, .nav_trigger span::after {
+  /* other 2 lines */
+  content: '';
+  right: 0;
+  /* Force Hardware Acceleration in WebKit */
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform-origin: 0% 50% 50%;
+  -ms-transform-origin: 0% 50% 50%;
+  -webkit-transform-origin: 0% 50% 50%;
+  transform-origin: 0% 50% 50%;
+  -moz-transition: -moz-transform 0.2s;
+  -o-transition: -o-transform 0.2s;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+}
+/* line 55, ../sass/partials/_admin_layout.scss */
+.nav_trigger span::before {
+  /* menu icon top line */
+  top: -6px;
+}
+/* line 60, ../sass/partials/_admin_layout.scss */
+.nav_trigger span::after {
+  /* menu icon bottom line */
+  top: 6px;
+}
+/* line 67, ../sass/partials/_admin_layout.scss */
+.nav_trigger.nav-is-visible span {
+  /* hide line in the center */
+  background: rgba(251, 252, 247, 0);
+}
+/* line 71, ../sass/partials/_admin_layout.scss */
+.nav_trigger.nav-is-visible span::before {
+  -moz-transform: translateX(4px) translateY(8px) rotate(45deg);
+  -ms-transform: translateX(4px) translateY(8px) rotate(45deg);
+  -webkit-transform: translateX(4px) translateY(8px) rotate(45deg);
+  transform: translateX(4px) translateY(8px) rotate(45deg);
+}
+/* line 75, ../sass/partials/_admin_layout.scss */
+.nav_trigger.nav-is-visible span::after {
+  -moz-transform: translateX(4px) translateY(-4px) rotate(-45deg);
+  -ms-transform: translateX(4px) translateY(-4px) rotate(-45deg);
+  -webkit-transform: translateX(4px) translateY(-4px) rotate(-45deg);
+  transform: translateX(4px) translateY(-4px) rotate(-45deg);
+}
+@media only screen and (min-width: 992px) {
+  /* line 16, ../sass/partials/_admin_layout.scss */
+  .nav_trigger {
+    display: none;
+  }
+}
+
+/* line 86, ../sass/partials/_admin_layout.scss */
+.nav_sidebar {
+  z-index: 6;
+  top: 0;
+  width: 300px;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  -moz-transform: translateX(-400px);
+  -ms-transform: translateX(-400px);
+  -webkit-transform: translateX(-400px);
+  transform: translateX(-400px);
+  -moz-transition: all, 0.75s, linear;
+  -o-transition: all, 0.75s, linear;
+  -webkit-transition: all, 0.75s, linear;
+  transition: all, 0.75s, linear;
+}
+/* line 97, ../sass/partials/_admin_layout.scss */
+.nav_sidebar .content_wrapper {
+  position: relative;
+  min-height: 600px;
+  height: 100%;
+}
+/* line 103, ../sass/partials/_admin_layout.scss */
+.nav_sidebar.nav-is-visible {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -moz-transition: all, 0.75s, linear;
+  -o-transition: all, 0.75s, linear;
+  -webkit-transition: all, 0.75s, linear;
+  transition: all, 0.75s, linear;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+/* line 109, ../sass/partials/_admin_layout.scss */
+.nav_sidebar ul.top-nav > li:last-of-type > a {
+  border-bottom: none;
+}
+@media only screen and (min-width: 992px) {
+  /* line 86, ../sass/partials/_admin_layout.scss */
+  .nav_sidebar {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  /* line 116, ../sass/partials/_admin_layout.scss */
+  .nav_sidebar + .layout_content {
+    padding-left: 300px;
+    width: 100%;
+  }
+}
+
+/* line 123, ../sass/partials/_admin_layout.scss */
+.mobile_heading {
+  display: block;
+  position: relative;
+  background-color: rgba(251, 252, 247, 0.9);
+  height: 50px;
+  padding: 0 15px;
+}
+/* line 130, ../sass/partials/_admin_layout.scss */
+.mobile_heading .logo {
+  line-height: 50px;
+}
+@media only screen and (min-width: 992px) {
+  /* line 123, ../sass/partials/_admin_layout.scss */
+  .mobile_heading {
+    display: none;
+  }
+}
+
+/* line 139, ../sass/partials/_admin_layout.scss */
+.sidebar_header {
+  padding: 10px 20px;
+  position: relative;
+  *zoom: 1;
+}
+/* line 43, ../sass/partials/_mixins.scss */
+.sidebar_header:before, .sidebar_header:after {
+  content: "";
+  display: table;
+}
+/* line 50, ../sass/partials/_mixins.scss */
+.sidebar_header:after {
+  clear: both;
+}
+
+/* line 145, ../sass/partials/_admin_layout.scss */
+.nav_block {
+  padding: 15px 0;
+}
+/* line 148, ../sass/partials/_admin_layout.scss */
+.nav_block .block_label {
+  margin: 0;
+  font-size: 11px;
+  padding: 0 20px 10px;
+}
+/* line 154, ../sass/partials/_admin_layout.scss */
+.nav_block.nav_banner {
+  padding: 30px 20px;
+}
+/* line 158, ../sass/partials/_admin_layout.scss */
+.nav_block.nav_footer {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  padding: 0;
+}
+/* line 165, ../sass/partials/_admin_layout.scss */
+.nav_block .title {
+  font-size: 22px;
+  line-height: 150%;
+  font-weight: 200;
+}
+
+/* line 172, ../sass/partials/_admin_layout.scss */
+.link_nav {
+  position: relative;
+  border-bottom: 1px solid #f5f5f5;
+}
+/* line 176, ../sass/partials/_admin_layout.scss */
+.link_nav a {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 15px 20px;
+  font-family: "robotoRegular", Helvetica, Open Sans, sans-serif;
+  -moz-transition: all, 0.6s;
+  -o-transition: all, 0.6s;
+  -webkit-transition: all, 0.6s;
+  transition: all, 0.6s;
+}
+/* line 184, ../sass/partials/_admin_layout.scss */
+.link_nav a:hover, .link_nav a:focus {
+  opacity: 1;
+  box-shadow: inset 4px 0 #e76024;
+}
+/* line 190, ../sass/partials/_admin_layout.scss */
+.link_nav.active > a {
+  box-shadow: inset 4px 0 #e76024;
+  color: #f5f5f5;
+  text-transform: uppercase;
+  background-color: #e76024;
+}
+/* line 196, ../sass/partials/_admin_layout.scss */
+.link_nav.active > a::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  bottom: auto;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-top: 20px solid transparent;
+  border-right: 20px solid #E9EBEE;
+  border-bottom: 20px solid transparent;
+}
+
+/* line 208, ../sass/partials/_admin_layout.scss */
+.link_icon {
+  width: 20px;
+  font-size: 15px;
+}
+/* line 212, ../sass/partials/_admin_layout.scss */
+.link_nav .link_icon {
+  position: absolute;
+  top: 10px;
+}
+/* line 216, ../sass/partials/_admin_layout.scss */
+.link_nav .link_icon + .link_details {
+  padding-left: 25px;
+}
+/* line 221, ../sass/partials/_admin_layout.scss */
+.footer_links .link_icon {
+  margin: 0 auto 5px;
+}
+
+/* line 226, ../sass/partials/_admin_layout.scss */
+.link_title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  font-size: 12px;
+}
+
+/* line 231, ../sass/partials/_admin_layout.scss */
+.footer_links {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+/* line 236, ../sass/partials/_admin_layout.scss */
+.footer_links li {
+  flex-grow: 1;
+}
+/* line 240, ../sass/partials/_admin_layout.scss */
+.footer_links a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 10px;
+  color: #768692;
+  border-radius: 4px;
+}
+/* line 247, ../sass/partials/_admin_layout.scss */
+.footer_links a:hover {
+  color: #e76024;
+}
+
+/* line 253, ../sass/partials/_admin_layout.scss */
+.content_pane {
+  background-color: white;
+  min-height: 600px;
+  border-radius: 4px;
+}
+
+/* line 259, ../sass/partials/_admin_layout.scss */
+.wrapper {
+  clear: both;
+  padding: 10px 15px;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 266, ../sass/partials/_admin_layout.scss */
+.content_banner {
+  clear: both;
+  background-color: #f5f5f5;
+  position: relative;
+}
+/* line 271, ../sass/partials/_admin_layout.scss */
+.content_banner .wrapper {
+  padding: 20px 15px;
+  z-index: 5;
+}
+@media only screen and (min-width: 992px) {
+  /* line 271, ../sass/partials/_admin_layout.scss */
+  .content_banner .wrapper {
+    padding: 30px 60px;
+  }
+}
+/* line 280, ../sass/partials/_admin_layout.scss */
+.content_banner .banner_cto {
+  padding-top: 10px;
+}
+@media only screen and (min-width: 992px) {
+  /* line 280, ../sass/partials/_admin_layout.scss */
+  .content_banner .banner_cto {
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+  }
+}
+/* line 291, ../sass/partials/_admin_layout.scss */
+.content_banner .subtitle {
+  font-size: 14px;
+}
+
+/* line 296, ../sass/partials/_admin_layout.scss */
+.content_inner {
+  padding: 20px 15px;
+}
+@media only screen and (min-width: 992px) {
+  /* line 296, ../sass/partials/_admin_layout.scss */
+  .content_inner {
+    padding: 30px 60px;
+  }
+}
+
+/* line 1, ../sass/partials/_dashboard.scss */
+.grid_wrapper {
+  *zoom: 1;
+  margin: 0 -10px;
+}
+/* line 43, ../sass/partials/_mixins.scss */
+.grid_wrapper:before, .grid_wrapper:after {
+  content: "";
+  display: table;
+}
+/* line 50, ../sass/partials/_mixins.scss */
+.grid_wrapper:after {
+  clear: both;
+}
+
+/* line 6, ../sass/partials/_dashboard.scss */
+.grid_block {
+  padding: 10px;
+  display: block;
+}
+/* line 10, ../sass/partials/_dashboard.scss */
+.grid_block .wrapper {
+  border-radius: 4px;
+  padding: 20px;
+}
+@media only screen and (min-width: 992px) {
+  /* line 10, ../sass/partials/_dashboard.scss */
+  .grid_block .wrapper {
+    padding: 20px 40px;
+  }
+}
+
+/* line 22, ../sass/partials/_dashboard.scss */
+.block_hero .wrapper {
+  background-image: url(../img/banners/church_il.png);
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: 400px;
+  overflow: hidden;
+}
+@media only screen and (min-width: 992px) {
+  /* line 22, ../sass/partials/_dashboard.scss */
+  .block_hero .wrapper {
+    min-height: 300px;
+  }
+}
+
+/* line 35, ../sass/partials/_dashboard.scss */
+.action_widget {
+  margin: 20px 0 40px;
+}
+@media only screen and (min-width: 992px) {
+  /* line 35, ../sass/partials/_dashboard.scss */
+  .action_widget {
+    max-width: 550px;
+    margin: 30px 0;
+  }
+  /* line 42, ../sass/partials/_dashboard.scss */
+  .action_widget .title {
+    font-size: 45px;
+    padding-bottom: 20px;
+  }
+}
+
+/* line 49, ../sass/partials/_dashboard.scss */
+.block_label {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}

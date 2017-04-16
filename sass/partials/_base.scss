@@ -21,15 +21,24 @@ img {
     text-align: right;
 }
 
+mark {
+    padding:0 5px; 
+    border-radius: 5px;
+    background-color: lighten($brand_accent, 35);
+}
+
 body {
     font-family: $body_font;
     color: $color_text;
     font-size: 12px;
     line-height: 1.35;
     word-spacing: .5px;
-    letter-spacing: .5px;
     font-weight: 400;
     position: relative;
+
+    &.loading {
+        overflow: hidden;
+    }
 }
 
 /* Backgrounds */
@@ -38,8 +47,16 @@ body {
     background-color: $border_grey_light !important;
 }
 
+.bg_grey {
+    background-color: $border_grey !important;
+}
+
 .bg_cotton {
     background-color: $color_white !important;
+}
+
+.bg_off_white {
+    background-color: $off_white !important;
 }
 
 .bg_slate_grey {
@@ -87,7 +104,15 @@ body {
 }
 
 .color-off_white {
+    color: $off_white !important;
+}
+
+.color-grey_light {
     color: $border_grey_light !important;
+}
+
+.color-off_white {
+    color: $off_white !important;
 }
 
 .color-white {
@@ -95,7 +120,11 @@ body {
 }
 
 .color-default {
-    color: $color_text;
+    color: $color_text !important;
+}
+
+.color-black {
+    color: $color_black !important;
 }
 
 .font-sm {
@@ -117,17 +146,21 @@ body {
 .title_font {
     font-family: $header_font;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 700;
 }
+
+.font_bold {
+    font-family: $header_font;
+    font-weight: 700;
+} 
 
 .body_font {
     font-family: $body_font;
 }
 
 .container {
-    @include MQ(XL) {
-        width: 85%;
-    }
+    width: auto;
+    max-width: 1170px;
 }
 
 .narrow_container {
@@ -264,8 +297,7 @@ p {
 
     .btn {
         vertical-align: top;
-        text-transform: capitalize;
-        padding: 6px 14px;
+        padding: 6px 15px;
     }
 }
 
@@ -348,6 +380,12 @@ input[type=email], input[type=number], [type=text].form-control,select.form-cont
         border-color: $brand_primary;
     	box-shadow: none;
     }
+
+    .filter_control &{
+        padding: 4px 12px;
+        background-color: transparent;
+        height: auto;
+    }
 }
 
 select.form-control {
@@ -389,30 +427,13 @@ input[type="radio"],
 
 .control-label {
 	text-transform: none;
-    font-size: 13px;
-    text-transform: uppercase;
+    font-size: 1em;
+    color: $brand_primary;
     
     &[class*="col-"] {
         padding: 0;
         text-align: right;
     }
-
-	> small {
-	    color: $color_grey_dark;
-	    font-size: .8em;
-	    margin-left: 4px;
-        font-weight: normal;
-
-	    &::before {
-	    	padding-right: 2px;
-	    	content: "(";
-	    }
-
-	    &::after {
-	    	padding-left: 2px;
-	    	content: ")";
-	    }
-	}
 }
 
 
@@ -503,34 +524,74 @@ label {
 }
 
 .empty_state {
-    padding: 20px;
-    margin: 20px 0;
-    text-align: center;
+    position: relative;
+    max-width: 450px;
+    margin: auto;
+    height: 300px;
+
+    &.height_auto {
+        height: auto;
+    }
+
+    .def_wrapper {
+        position: absolute;
+        @include center(xy);
+        width: 100%;
+    }
     
     .title {
         font-size: 16px;
         font-weight: 500;
-        color: $color_text;
     }
     
     .btn {
-        margin-top: 10px;
+        margin-top: 20px;
     }
     
     .def_img {
-        width: 120px;
-        height: 120px;
-        margin: 0px auto 10px;
+        width: 200px;
+        margin: 20px auto 0;
         clear: both;
     }
+}
 
-    img {
-        height: 100%;
-        width: auto;
+.status {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 1;
+    border: 2px solid $border_grey;
+    color: $border_grey;
+    border-radius: 5px;
+
+    &.st_rounded {
+        border-radius: 15px;
     }
-        
-    @include MQ(M) {
-        padding: 30px;
+
+    &.status_success {
+        border-color: green;
+        color: green;
+    }
+
+    &.status_primary {
+        border-color: $brand_primary;
+        color: $brand_primary;
+    }
+
+    &.status_secondary {
+        border-color: $brand_accent;
+        color: $brand_accent;
+    }
+
+    &.status_inverse {
+        border-color: $brand_inverse;
+        color: $brand_inverse;
+    }
+
+    &.status_black {
+        border-color: $color_text;
+        color: $color_text;
     }
 }
 
@@ -538,4 +599,75 @@ label {
     content: "\20A6";
     color: inherit;
     font-style: normal;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 6px;
+    font-size: 10px;
+    line-height: 1;
+    border-radius: 6px;
+    color: $color_white;
+    cursor: pointer;
+
+    &.badge-default {
+        background-color: $border_grey;
+        color: $color_text;
+    }
+
+    &.badge-primary {
+        background-color: $brand_primary;
+    }
+
+    &.badge-secondary {
+        background-color: $brand_accent;
+        color: $color_text;
+    }
+
+    &.badge-inverse {
+        background-color: $brand_inverse;
+    }
+
+    &.badge-black {
+        background-color: $color_text;
+    }
+}
+
+.ajax_loader {
+    position: fixed;
+    top: 0; bottom: 0;
+    right: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($color_white, .9);
+    display: none;
+    visibility: hidden;;
+    @include transition(visibility 5s ease-in-out);
+
+    .loading & {
+        display: block;
+        visibility: visible;
+        z-index: 40000;
+        @include transition(visibility 5s ease-in-out);
+    }
+}
+
+.loader_content {
+    position: absolute;
+    @include center(xy);
+    font-size: 14px;
+    text-align: center;
+    max-width: 300px;
+
+    .fig_thumb{
+        width: 128px;
+        margin: auto;
+        padding-bottom: 15px;
+    }
+
+    img {
+        animation: jello 2s ease-in-out infinite;
+        animation-fill-mode: both;
+        @include transform-origin(center);
+    }
 }

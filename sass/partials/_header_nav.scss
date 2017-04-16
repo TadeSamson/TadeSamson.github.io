@@ -10,8 +10,24 @@ header[role="banner"] {
     box-shadow: 0 1px 3px rgba($border_grey, .3);
     @include font-smoothing;
 
+    .user_area & {
+        box-shadow: 0 1px 3px rgba($border_grey_dark, .7);
+    } 
+
     + .st-content {
         padding-top: $header-height-S;
+    }
+    
+    &.menu_collapse {
+        height: $header-height-M;
+        
+        + .st-content {
+            padding-top: $header-height-M;
+        }
+                
+        .logo {
+            line-height: $header-height-M;
+        }    
     }
 
     @include MQ(M) {
@@ -24,16 +40,21 @@ header[role="banner"] {
 }
 
 .nav_header {
-    background: rgba(white, .9);
-    font-family: $body_font;
+    background: rgba(white, .95);
+    color: $color_text;
 
-    .sec_nav {
-        line-height: 40px;
+    .user_area & {
+        background-color: darken($brand_primary, 10);
+        color: $color_white;
     }
 
     .logo {
         line-height: 40px;
         display: inline-block;
+    }
+    
+    .sec_nav {
+        line-height: 40px;
     }
 
     @include MQ(M) {
@@ -45,7 +66,7 @@ header[role="banner"] {
             line-height: $header-height-M;
         }
 
-        .sec_nav {
+        .sec_nav, .primary_nav {
             line-height: $header-height-M;
             display: inline-block;
         }
@@ -61,9 +82,12 @@ header[role="banner"] {
             /* when the user scrolls down, we hide the header right above the viewport */
             position: fixed;
             top: -$header-height-M;
-            background-color: rgba($color_white, .96);
+            background-color: rgba($color_white, .95);
             @include transition(transform .5s);
-            border-bottom: 1px solid $border_grey;
+
+            .user_area & {
+                background-color: darken($brand_primary, 5);
+            }
         }
 
         &.is-visible {
@@ -74,7 +98,29 @@ header[role="banner"] {
 }
 
 .nav_item {
+    text-transform: capitalize;
     display: inline-block;
+    padding: 10px 15px;
+    line-height: 22px;
+    
+    .primary_nav & {
+        display: block;
+        border-bottom: 1px solid $border_grey_light;
+        
+        a[class*= "btn"] {
+            display: block;
+        }
+        
+        @include MQ(M) {
+            display: inline-block;
+            border-bottom: none;
+            
+            a[class*= "btn"] {
+                display: inline-block;
+            }
+        }
+    }
+    
 }
 
 .sec_nav {
@@ -96,17 +142,63 @@ header[role="banner"] {
     }
 }
 
+.primary_nav {
+    background: white;
+    visibility: hidden;
+    width: 100%;
+    @include transform(scaleY(0));
+    @include transition(all, .6s, cubic-bezier(.68,.34,.15,1));
+    height: 100%;
+    transform-origin: top;
+    position: fixed;
+    left: 0;
+    top: $header-height-M;
+    
+    .menu_nav {
+        @include transform(scaleY(0));
+        transform-origin: top;
+        opacity: .2;
+        @include transition(all 1s cubic-bezier(.45,1,.61,1.17));
+        transition-delay: .05s;
+    }
+        
+    .is-active & {
+        border-top: 2px solid $brand_accent;
+        @include transform(scaleY(1));
+        visibility: visible;
+        @include transition(transform .8s cubic-bezier(.68,.34,.15,1));
+        
+        .menu_nav {
+            @include transform(scaleY(1));
+            opacity: 1;
+        }
+    }
+    
+    @include MQ(M) {
+        width: auto;
+        display: inline-block;
+        float: right;
+        @include transform(scaleY(1));
+        position: static;
+        visibility: visible;
+        border-top: none;
+        background-color: transparent;
+        
+        .menu_nav {
+            @include transform(none);
+            opacity: 1;
+        }
+    }
+}
+
 .nav_link_item {
     display: block;
-    padding: 0 .5em;
-    color: $brand_accent;
-    letter-spacing: .05px;
-    text-transform: uppercase;
-
+    color: inherit;
+    @include transition(all .6s ease-out);
+    position: relative;
+    padding: 0;
+    
     &.collapsibile {
-        font-size: 13px;
-        color: $color_text;
-
         &::after {
             content: attr(data-title);
 
@@ -123,41 +215,58 @@ header[role="banner"] {
             }
         }
     }
+    
+    @include MQ(M) { 
+        &::after {
+            @include transition(all, .6s, cubic-bezier(.93,0,.17,1));
+            width: 0;
+            position: absolute;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            border-radius: 2px;
+            background-color: transparent;
+            content: '';
+        }
+        
+        .active &, &:hover, &:focus {
+            color: $brand_accent;
+            
+            &::after {
+                background-color: $brand_accent;
+                width: 100%;
+            }
 
-    @include MQ(M) {
-        font-size: 14px;
-        padding: 0 1em;
-    }
-
-    .fa { 
-        color: $border_grey_dark;
-    }
-
-    &:hover, &:focus, .active & {
-        color: $brand_accent;
-        box-shadow: inset 0 -3px 0 $brand_accent;
+            .user_area &  {
+                color: $brand_inverse;
+                
+                &::after {
+                    background-color: $brand_inverse;
+                }
+            }
+        }
     }
 }
 
 .nav_btn {
-    background-color: $brand_primary;
+    background-color: $brand_accent;
     color: $color_white;
-    font-size: 12px;
     text-transform: none;
-    font-family: $body_font;
     padding: 5px 12px;
     border-radius: 4px;
 
     .account_info & {
         padding: 10px 15px;
         background-color: transparent;
-        color: $brand_primary;
+        color: inherit;
+
+        .user_area & {
+            color: $border_grey;
+        }
     }
     
     .active &, &:hover, &:focus {
-        background-color: darken($brand_primary, 5);
-        color: $brand_inverse;
-        border-color: transparent;
+        background-color: darken($brand_accent, 5);
     }
 }
 
@@ -166,13 +275,29 @@ header[role="banner"] {
     width: 120px;
     margin-right: 15px;
 
+    @include MQ(M) {
+        width: 150px;
+    }
+
     > a {
         display: block;
-        background: transparent url(../img/logo.png) no-repeat center center;
+        background: transparent url(../img/logo.svg) no-repeat center center;
         padding: 0;
         background-size: contain;
         font-size: 16px;
         @include image_replacement;
+        
+        .no-svg & {
+            background-image: url(../img/logo.png);
+        }
+
+        .user_church & {
+            background-image: url(../img/logo_church.png);
+        }
+
+        .user_me & {
+            background-image: url(../img/logo_user.png);
+        }
     }
 }
 
@@ -211,7 +336,7 @@ header[role="banner"] {
         }
 
         a {
-            color: inherit;
+            //color: inherit;
             padding: 7.5px 20px;
         }
     } 
@@ -239,5 +364,228 @@ header[role="banner"] {
 
     @include MQ(M) {
         position: static;
+    }
+}
+
+.nav_trigger {
+    display: inline-block;
+    position: absolute;
+    width: 110px;
+    @include center(y);
+    right: 15px;
+    text-align: right;
+    
+    @include MQ(M) {
+        display: none;
+    }
+}
+
+.menu-text {
+    text-transform: uppercase;
+    display: block;
+    font-size: 14px;
+}
+
+.primary-nav-trigger {
+
+    .menu-icon {
+        /* this span is the central line of the menu icon */
+        display: inline-block;
+        position: absolute;
+        @include center; // mixin inside partials > _mixins.scss
+        width: 18px;
+        height: 2px;
+        background-color: $brand_primary;
+        @include transition(background-color .3s);
+
+        /* these are the upper and lower lines in the menu icon */
+        &::before, &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: $brand_accent;
+            right: 0;
+            @include transition(transform .3s, top .3s, background-color 0s);
+        }
+
+        &::before {
+            top: -5px;
+        }
+
+        &::after {
+            top: 5px;
+        }
+
+        &.is-clicked {
+            background-color: rgba($brand_accent, 0);
+
+            &::before, &::after {
+                background-color: rgba($brand_accent, 1);
+            }
+
+            &::before {
+                top: 0;
+                @include transform(rotate(135deg));
+            }
+
+            &::after {
+                top: 0;
+                @include transform(rotate(225deg));
+            }
+        }
+    }
+
+    @include MQ(M) {
+        width: 100px;
+        padding-left: 1em;
+        background-color: transparent;
+        height: 30px;
+        line-height: 30px;
+        position: relative;
+        border: none;
+        @include center(y);
+
+        .menu-text {
+            display: inline-block;
+        }
+
+        .menu-icon {
+            left: -1em;
+            @include transform(translateX(0) translateY(-50%));
+        }
+    }
+}
+
+/*Footer*/
+
+footer[role="contentinfo"]{
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    clear:both;
+    
+    a:hover, a:focus {
+        color: $brand_accent;
+    }
+
+    .foot_top {
+        border-bottom: 1px solid $border_grey;
+        padding: 15px 0 15px;
+    }
+
+    @include MQ(S) {
+        text-align: left;
+    }
+}
+
+.footer_base {
+    padding: 12.5px 0;
+    font-size: 11px;
+    text-align: center;
+    
+    @include MQ(S) {
+        text-align: inherit;
+    }
+}
+
+.copyright {
+    padding-top: 10px;
+    
+    @include MQ(S) {
+        padding: 0;
+        margin: 0;
+        float: right;
+    }
+}
+
+.footer_block {
+    padding: 15px 0;
+    
+    .block_title {
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+    
+    p > a {
+        color: $brand_accent;
+    }
+    
+    .item_title {
+        font-size: 14px;
+        margin: 0;
+    }
+}
+
+.footer_nav {
+    li {
+        display: inline-block;
+        
+        a {
+            padding: 2.5px 0;
+        }
+        
+
+        + li::before {
+            content: '\f111';
+            font-family: "FontAwesome";
+            color: $brand_accent;
+            padding: 5px;
+            vertical-align: bottom;
+            font-size: .5em;
+            
+            @include MQ(S) {
+                display: none;
+            }
+        }
+        
+        @include MQ(S) {
+            display: block;
+        }
+    }
+}
+
+.link_items {
+    display: block;
+    padding: 5px 0 10px;
+    line-height: 150%;
+    
+    > a {
+        display: block;
+    }
+}
+
+.footer_social_links {
+
+    a {
+        display: inline-block;
+        font-size: 18px;
+        @include transform(scale(1,1));
+        @include transition(all, .6s, cubic-bezier(.68,.34,.15,1));
+        
+        + a {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            @include transform(scale(1.5,1.5));
+        }
+    }
+}
+
+.misc_links {
+    display: inline-block;
+    
+    li {
+        display: inline-block;
+        
+        + li::before {
+            content: "|";
+            color: $brand_primary;
+             padding: 0 5px;
+        }
     }
 }

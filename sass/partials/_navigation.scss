@@ -22,30 +22,26 @@ a {
     }
 }
 
-// .store_btn {
-//     display: inline-block;
-//     max-width: 140px;
-//     padding: 5px;
-// }
-
 a:link, button {
     -webkit-tap-highlight-color: rgba($brand_accent, .6);
     -moz-tap-highlight-color: rgba($brand_accent, .6);
 }
 
 .btn, a.btn {
-    font-family: $body_font;
     box-shadow: none;
     outline: none;
     font-size: 1em;
     background-color: transparent;
     color: $color_white;
-    letter-spacing: .5px;
     padding: 5px 18px;
-    text-transform: capitalize;
+    text-transform: uppercase;
     @include border-radius(3px);
     @include transition(all, .6s,ease);
     @include background-image(none);
+
+    + .btn {
+        margin-left: .75em;
+    }
     
     &.btn-rounded {
         @include border-radius(25px);
@@ -72,7 +68,7 @@ a:link, button {
 
     &.btn-primary-outline {
         border: 2px solid $border_grey;
-        color: $border_grey_dark;
+        color: $color_text;
         @include background-image(none);
 
         &:hover, &:focus {
@@ -133,26 +129,37 @@ a:link, button {
         color: $border_grey_dark;
 
         &:hover, &:focus{
-            background-color: $border_grey_light;
+            background-color: $border_grey;
             color: $color_text;
         }
     }
 
+    &.btn-grey {
+        background-color: $color_text;
+        color: $off_white;
+
+        &:hover, &:focus{
+            background-color: $border_grey_dark;
+        }
+    }
+
     &.btn-icon {
-        padding: 4px 8px;
+        padding: 0;
         font-size: 14px;
-        @include border-radius(50%);
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
     }
 
     &.btn-default {
         @include background-image(none);
-        background-color: $border_grey_light;
+        background-color: $color_white;
         border: 1px solid $border_grey;
         color: $color_text;
 
         &:hover, &:focus {
-            background-color: $color_white;
-            border-color:$border_grey_dark;
+            border-color: $border_grey_dark;
             color: $color_text;
         }
     }
@@ -202,7 +209,7 @@ a:link, button {
 
 .btn-lg.btn, .btn-group-lg > .btn {
     padding: 10px 36px;
-    font-size: 1.25em;
+    font-size: 1.15em;
 }
 
 .btn-link {
@@ -224,111 +231,70 @@ a:link, button {
     }
 }
 
-.pagination {
-    border-top: 4px solid $border_grey;
-    width: 100%;
-    display: block;
-    padding: 30px 0 0;
-    margin-bottom: 0;
-    text-align: center;
-    border-radius: 3px;
-
-    > .active > a {
-        &,&:hover, &:focus {
-            background-color: $brand_accent;
-            z-index: 1;
-        }
-    }
-
-    > li {
-        display: inline-block;
-
-        > a, > span {
-            margin-left: .85em;
-            @include border-radius(3px);
-            color: $color_text;
-            font-size: 1em;
-            border: none;
-            background-color: $border_grey;
-            font-weight: bold;
-
-            &:hover, &:focus {
-                background: $brand_accent;
-                color: $color_white;
-            }
-        }
-        
-
-        &:first-of-type, &:last-of-type {
-            a, span {
-                background-color: $color_grey_dark;
-                color: $color_white;
-
-                &:hover, &:focus {
-                    background-color: $brand_accent;
-                }
-            }
-        }
-        
-        &.disabled {
-            > a, > span {
-                background-color: $color_white;
-                color: $color_text;
-                
-                &:hover, &:focus {
-                    background-color: $color_white;
-                    color: $color_text;
-                }
-            }
-        }
-    }
-}
-
-.nav-tabs{
-    > li {
-        > a {
-            font-family: $body_font;
-            color: $border_grey_dark;
-            text-decoration: none;
-        }
-
-        &.active > a {
-            color: $color_text;
-            background-color: white;
-            pointer-events: none;
-        }
-    }
-}
-
-.nav-tabs, .nav-pills {
-    float: none;
-    border: none;
-    
-    li {
-        > a {
-            border-radius: 0;
-        } 
-    }
-}
-
 .nav-pills {
     > li {
-        display: block;
+        display: inline-block;
         clear: both;
         float: none;
 
         > a  {
-            color: $color_text;
             display: block;
             padding: .5em 1em;
-            border: 1px solid transparent;
+            border-radius: 0;
+            color: $color_grey_light;
+
+             &:hover, &:focus {
+                color: $brand_inverse;
+                background-color: transparent;
+             }
         }
 
-        &.active > a, > a:hover, > a:focus {
+        &.active > a {
             color:  $brand_accent;
-            box-shadow: inset 4px 0 $brand_accent;
-            border-color: $border_grey_light;
+            text-transform: uppercase;
+            background-color: transparent;
+            box-shadow: inset 0 -2px 0 $brand_accent;
+            pointer-events: none;
+        }
+
+        @include MQ(M) {
+            display: block;
+
+            &.active > a { 
+                box-shadow: inset 2px 0 $brand_accent;
+            }
+        }
+    }
+}
+
+.surrogate_nav {
+    display: flex;
+    margin: 0 -10px;
+    flex-wrap: wrap;
+
+    > li {
+        padding: 5px;
+
+        > a  {
+            padding: 5px 16px;
+            display: block;
+            border-radius: 15px;
+            font-size: 12px;
+            border: 1px solid $border_grey;
+            background-color: $color_white;
+            color: $color_grey_dark;
+
+             &:hover, &:focus {
+                color: $brand_accent;
+                border-color: $brand_accent;
+             }
+        }
+
+        &.active > a {
             background-color: white;
+            color: $brand_accent;
+            border-color: $brand_accent;
+            border-width: 2px;
         }
     }
 }
@@ -370,5 +336,40 @@ a:link, button {
     &.fade-out {
         /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
         opacity: .5;
+    }
+}
+
+.site_bread_crumb {
+    border-bottom: 1px solid $color_grey_light;
+    
+    .control_wrapper {
+        border-top: none;
+        padding: 10px 0;
+    }
+
+    .breadcrumb {
+        padding: 0;
+        background-color: transparent;
+        border-radius: 0;
+        margin-bottom: 0;
+
+        li {
+            font-size: 12px;
+            color: $color_grey_dark;
+
+            + li::before {
+                padding: 0;
+            }
+
+            &.active {
+                text-transform: uppercase;
+                color: $color_text;
+                pointer-events: none;
+            }
+
+            &:hover, &:focus {
+                color: $brand_accent;
+            }
+        } 
     }
 }
